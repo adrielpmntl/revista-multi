@@ -626,6 +626,13 @@ body {
   line-height: calc(var(--u) * 17);
 }
 
+.fontes .ressalva {
+  top: calc(var(--u) * 968);
+  font-size: calc(var(--u) * 13.5);
+  font-style: italic;
+  line-height: 1;
+}
+
 .fontes strong {
   font-weight: 700;
 }

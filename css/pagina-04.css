@@ -171,7 +171,7 @@ h1 span {
 
 .intro,
 .conceito-texto,
-.conceito-nota,
+.padroes-nota,
 .padrao p,
 .definicoes,
 .nota {
@@ -221,7 +221,7 @@ h1 span {
 
 .conceito-texto {
   left: calc(var(--u) * 218.3);
-  top: calc(var(--u) * 394.9);
+  top: calc(var(--u) * 420.9);
   font-size: calc(var(--u) * 17.55);
   line-height: calc(var(--u) * 22);
 }
@@ -232,22 +232,24 @@ h1 span {
   font-weight: 700;
 }
 
-.conceito-nota {
-  left: calc(var(--u) * 219.4);
-  top: calc(var(--u) * 466.9);
-  font-size: calc(var(--u) * 14.39);
-  line-height: calc(var(--u) * 18.7);
+
+.padroes-nota {
+  left: calc(var(--u) * 755);
+  top: calc(var(--u) * 539);
+  font-size: calc(var(--u) * 14);
+  font-style: italic;
+  line-height: 1;
 }
 
 .tarja-padroes {
   left: calc(var(--u) * 754);
-  top: calc(var(--u) * 258);
+  top: calc(var(--u) * 250);
   width: calc(var(--u) * 240);
 }
 
 .padroes-titulo {
   left: calc(var(--u) * 770.1);
-  top: calc(var(--u) * 273.5);
+  top: calc(var(--u) * 265.5);
   font-family: "Anton", sans-serif;
   font-weight: 400;
   font-size: calc(var(--u) * 27.9);
@@ -260,13 +262,13 @@ h1 span {
 
 .padrao img {
   left: calc(var(--u) * (var(--icone) - 37));
-  top: calc(var(--u) * 324);
+  top: calc(var(--u) * 316);
   width: calc(var(--u) * 74);
 }
 
 .padrao h3 {
   left: calc(var(--u) * var(--titulo));
-  top: calc(var(--u) * 407.4);
+  top: calc(var(--u) * 399.4);
   font-family: "Anton", sans-serif;
   font-weight: 400;
   font-size: calc(var(--u) * 20.6);
@@ -279,7 +281,7 @@ h1 span {
 
 .padrao p {
   left: calc(var(--u) * var(--texto));
-  top: calc(var(--u) * 437.6);
+  top: calc(var(--u) * 429.6);
   font-size: calc(var(--u) * 13.5);
   letter-spacing: -0.02em;
   line-height: calc(var(--u) * 20.6);
@@ -291,9 +293,9 @@ h1 span {
   content: "";
   position: absolute;
   left: calc(var(--u) * var(--divisor));
-  top: calc(var(--u) * 327);
+  top: calc(var(--u) * 319);
   width: calc(var(--u) * 1);
-  height: calc(var(--u) * 218);
+  height: calc(var(--u) * 208);
   background: var(--fio-padrao);
 }
 
@@ -326,7 +328,7 @@ h1 span {
 
 .grupos {
   left: calc(var(--u) * 50);
-  top: calc(var(--u) * 565);
+  top: calc(var(--u) * 562);
   width: calc(var(--u) * 1338);
   border-collapse: collapse;
   border: calc(var(--u) * 2) solid var(--borda);
@@ -381,16 +383,16 @@ h1 span {
 }
 
 .grupos tbody tr {
-  height: calc(var(--u) * 28.7);
+  height: calc(var(--u) * 30.5);
   border-bottom: calc(var(--u) * 1) solid var(--fio-linha);
 }
 
 .grupos tbody tr:first-child {
-  height: calc(var(--u) * 31);
+  height: calc(var(--u) * 32);
 }
 
 .grupos tbody tr:last-child {
-  height: calc(var(--u) * 31.8);
+  height: calc(var(--u) * 32);
   border-bottom: 0;
 }
 
@@ -422,7 +424,7 @@ h1 span {
 
 .tarja-graficos {
   left: calc(var(--u) * 46);
-  top: calc(var(--u) * 850);
+  top: calc(var(--u) * 856);
   width: calc(var(--u) * 302);
 }
 
@@ -444,11 +446,11 @@ h1 span {
 }
 
 .lg-1 {
-  top: calc(var(--u) * 866.1);
+  top: calc(var(--u) * 872.1);
 }
 
 .lg-2 {
-  top: calc(var(--u) * 907.1);
+  top: calc(var(--u) * 913.1);
 }
 
 .leitura::before,
@@ -460,28 +462,28 @@ h1 span {
 
 .leitura::before {
   left: calc(var(--u) * 372);
-  top: calc(var(--u) * 863);
+  top: calc(var(--u) * 869);
   width: calc(var(--u) * 1.5);
   height: calc(var(--u) * 87);
 }
 
 .leitura::after {
   left: calc(var(--u) * 1090);
-  top: calc(var(--u) * 864);
+  top: calc(var(--u) * 870);
   width: calc(var(--u) * 2);
   height: calc(var(--u) * 86);
 }
 
 .definicoes {
   left: calc(var(--u) * 404.5);
-  top: calc(var(--u) * 869.75);
+  top: calc(var(--u) * 875.75);
   font-size: calc(var(--u) * 16.05);
   line-height: calc(var(--u) * 25);
 }
 
 .nota {
   left: calc(var(--u) * 1121.5);
-  top: calc(var(--u) * 876);
+  top: calc(var(--u) * 882);
   font-size: calc(var(--u) * 13.3);
   line-height: calc(var(--u) * 18.5);
 }

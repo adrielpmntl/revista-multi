@@ -293,13 +293,13 @@ h1 span {
 
 .indice li {
   position: relative;
-  height: calc(var(--u) * 39.18);
+  height: calc(var(--u) * 36.9);
   border-bottom: calc(var(--u) * 1) solid var(--fio);
 }
 
 .num {
   left: calc(var(--u) * -70.3);
-  top: calc(var(--u) * 3.84);
+  top: calc(var(--u) * 2.7);
   font-family: "Anton", sans-serif;
   font-size: calc(var(--u) * 36);
   line-height: 1;
@@ -310,7 +310,7 @@ h1 span {
 
 .item {
   left: calc(var(--u) * 2);
-  top: calc(var(--u) * 11.99);
+  top: calc(var(--u) * 10.85);
   font-family: "Libre Caslon Text", serif;
   font-size: calc(var(--u) * 18);
   line-height: 1;

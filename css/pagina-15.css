@@ -269,9 +269,9 @@ body {
 }
 
 .sublinhado {
-  left: calc(var(--u) * 585);
+  left: calc(var(--u) * 282);
   top: calc(var(--u) * 282);
-  width: calc(var(--u) * 245);
+  width: calc(var(--u) * 220);
 }
 
 .subtitulo,
@@ -288,8 +288,8 @@ body {
 
 .subtitulo {
   left: calc(var(--u) * 41.5);
-  top: calc(var(--u) * 304.4);
-  font-size: calc(var(--u) * 25.18);
+  top: calc(var(--u) * 306.9);
+  font-size: calc(var(--u) * 22.1);
   line-height: 1;
 }
 

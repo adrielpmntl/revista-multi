@@ -196,18 +196,6 @@ body {
   background: var(--preto);
 }
 
-.secao {
-  left: calc(var(--u) * 183.4);
-  top: calc(var(--u) * 39.4);
-  font-family: "Barlow", sans-serif;
-  font-weight: 700;
-  font-size: calc(var(--u) * 12.9);
-  letter-spacing: 0.21em;
-  line-height: 1;
-  white-space: nowrap;
-  color: var(--preto);
-}
-
 .t1 {
   left: calc(var(--u) * 35.9);
   top: calc(var(--u) * 74.6);

@@ -490,9 +490,16 @@ body {
 
 .fontes p {
   left: calc(var(--u) * 773);
-  top: calc(var(--u) * 977.9);
+  top: calc(var(--u) * 975.9);
   font-size: calc(var(--u) * 12);
-  line-height: calc(var(--u) * 15);
+  line-height: calc(var(--u) * 14.5);
+}
+
+.fontes .nota-estudos {
+  top: calc(var(--u) * 1005.4);
+  font-size: calc(var(--u) * 11);
+  font-style: italic;
+  line-height: 1;
 }
 
 .fontes strong {
