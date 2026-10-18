@@ -1,0 +1,526 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #e6dccd;
+  --preto: #131211;
+  --vermelho: #b20c0c;
+  --tinta: #1d1b19;
+  --borda: #2e281b;
+  --fio-coluna: #6c6356;
+  --fio-linha: #a39b88;
+  --fio-padrao: #8e8574;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.pagina {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  background: var(--papel);
+  overflow: hidden;
+}
+
+.pagina::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 670);
+  top: 0;
+  width: calc(var(--u) * 100);
+  height: 100%;
+  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.1) 30%, rgba(40, 28, 15, 0.42) 50%, rgba(70, 50, 30, 0.12) 70%, rgba(70, 50, 30, 0) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.pagina > *,
+.abertura > *,
+.capitulo > *,
+h1 span,
+.conceito > *,
+.padroes > *,
+.padrao > *,
+.leitura > *,
+.leitura h2 span,
+.rodape > * {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.colagem {
+  left: calc(var(--u) * 742);
+  top: calc(var(--u) * 14);
+  width: calc(var(--u) * 690);
+  z-index: 1;
+}
+
+.abertura,
+.conceito,
+.padroes,
+.padrao,
+.leitura,
+.rodape,
+.capitulo,
+.abertura h1 {
+  inset: 0;
+}
+
+.abertura,
+.padroes,
+.leitura,
+.rodape {
+  z-index: 2;
+}
+
+.capitulo {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 17.1);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.capitulo::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 364);
+  top: calc(var(--u) * 35.5);
+  width: calc(var(--u) * 322);
+  height: calc(var(--u) * 1);
+  background: var(--preto);
+}
+
+.cap-num {
+  left: calc(var(--u) * 49.5);
+  top: calc(var(--u) * 27.6);
+  letter-spacing: 0.0906em;
+  color: var(--vermelho);
+}
+
+.cap-tit {
+  left: calc(var(--u) * 150.8);
+  top: calc(var(--u) * 27.6);
+  letter-spacing: 0.12em;
+  color: var(--preto);
+}
+
+.abertura h1 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+h1 span {
+  display: block;
+  transform-origin: left top;
+}
+
+.t1 {
+  left: calc(var(--u) * 50.2);
+  top: calc(var(--u) * 60.9);
+  font-size: calc(var(--u) * 96);
+  color: var(--preto);
+  transform: scaleX(0.948);
+}
+
+.t2 {
+  left: calc(var(--u) * 48.4);
+  top: calc(var(--u) * 160.2);
+  font-size: calc(var(--u) * 89.5);
+  color: var(--preto);
+  transform: scaleX(0.896);
+}
+
+.t3 {
+  left: calc(var(--u) * 487.8);
+  top: calc(var(--u) * 160.2);
+  font-size: calc(var(--u) * 89.5);
+  color: var(--vermelho);
+  transform: scaleX(0.825);
+}
+
+.intro,
+.conceito-texto,
+.conceito-nota,
+.padrao p,
+.definicoes,
+.nota {
+  font-family: "Libre Caslon Text", serif;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.intro {
+  left: calc(var(--u) * 50.2);
+  top: calc(var(--u) * 252.4);
+  font-size: calc(var(--u) * 20.24);
+  line-height: calc(var(--u) * 23.75);
+}
+
+.conceito::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 50);
+  top: calc(var(--u) * 377);
+  width: calc(var(--u) * 637);
+  height: calc(var(--u) * 175);
+  border: calc(var(--u) * 1.5) solid var(--borda);
+}
+
+.conceito h2 {
+  left: calc(var(--u) * 50);
+  top: calc(var(--u) * 377);
+  width: calc(var(--u) * 145);
+  height: calc(var(--u) * 32);
+  padding-left: calc(var(--u) * 18.3);
+  padding-top: calc(var(--u) * 3.4);
+  background: var(--vermelho);
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 600;
+  font-size: calc(var(--u) * 24);
+  letter-spacing: 0.11em;
+  line-height: 1;
+  color: #fff;
+}
+
+.cabeca {
+  left: calc(var(--u) * 64);
+  top: calc(var(--u) * 417);
+  width: calc(var(--u) * 136);
+}
+
+.conceito-texto {
+  left: calc(var(--u) * 218.3);
+  top: calc(var(--u) * 394.9);
+  font-size: calc(var(--u) * 17.55);
+  line-height: calc(var(--u) * 22);
+}
+
+.conceito-texto strong,
+.definicoes strong,
+.nota strong {
+  font-weight: 700;
+}
+
+.conceito-nota {
+  left: calc(var(--u) * 219.4);
+  top: calc(var(--u) * 466.9);
+  font-size: calc(var(--u) * 14.39);
+  line-height: calc(var(--u) * 18.7);
+}
+
+.tarja-padroes {
+  left: calc(var(--u) * 754);
+  top: calc(var(--u) * 258);
+  width: calc(var(--u) * 240);
+}
+
+.padroes-titulo {
+  left: calc(var(--u) * 770.1);
+  top: calc(var(--u) * 273.5);
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: calc(var(--u) * 27.9);
+  line-height: 1;
+  white-space: nowrap;
+  color: #fff;
+  transform: scaleX(1.097);
+  transform-origin: left top;
+}
+
+.padrao img {
+  left: calc(var(--u) * (var(--icone) - 37));
+  top: calc(var(--u) * 324);
+  width: calc(var(--u) * 74);
+}
+
+.padrao h3 {
+  left: calc(var(--u) * var(--titulo));
+  top: calc(var(--u) * 407.4);
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: calc(var(--u) * 20.6);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--vermelho);
+  transform: translateX(-50%) scaleX(1.02);
+  transform-origin: center top;
+}
+
+.padrao p {
+  left: calc(var(--u) * var(--texto));
+  top: calc(var(--u) * 437.6);
+  font-size: calc(var(--u) * 13.5);
+  letter-spacing: -0.02em;
+  line-height: calc(var(--u) * 20.6);
+}
+
+.padrao-2::before,
+.padrao-3::before,
+.padrao-4::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * var(--divisor));
+  top: calc(var(--u) * 327);
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 218);
+  background: var(--fio-padrao);
+}
+
+.padrao-1 {
+  --icone: 828.5;
+  --titulo: 828;
+  --texto: 755;
+}
+
+.padrao-2 {
+  --icone: 990.5;
+  --titulo: 990.5;
+  --texto: 931;
+  --divisor: 919;
+}
+
+.padrao-3 {
+  --icone: 1155;
+  --titulo: 1158;
+  --texto: 1086;
+  --divisor: 1064.5;
+}
+
+.padrao-4 {
+  --icone: 1330;
+  --titulo: 1330.5;
+  --texto: 1263;
+  --divisor: 1246;
+}
+
+.grupos {
+  left: calc(var(--u) * 50);
+  top: calc(var(--u) * 565);
+  width: calc(var(--u) * 1338);
+  border-collapse: collapse;
+  border: calc(var(--u) * 2) solid var(--borda);
+  table-layout: fixed;
+  z-index: 2;
+}
+
+.grupos th,
+.grupos td {
+  padding: 0;
+  line-height: 1;
+  white-space: nowrap;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.grupos thead tr {
+  height: calc(var(--u) * 36);
+}
+
+.grupos th {
+  background: var(--vermelho);
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: calc(var(--u) * 22.1);
+  color: #fff;
+  text-align: center;
+}
+
+.grupos th + th {
+  border-left: calc(var(--u) * 1) solid rgba(255, 255, 255, 0.45);
+}
+
+.grupos th span {
+  display: inline-block;
+  transform: translateX(calc(var(--u) * var(--desvio))) scaleX(1.14);
+}
+
+.col-grupo {
+  width: calc(var(--u) * 352);
+  --desvio: 8.5;
+}
+
+.col-efeitos {
+  width: calc(var(--u) * 460);
+  --desvio: -12;
+}
+
+.col-riscos {
+  width: calc(var(--u) * 526);
+  --desvio: -3;
+}
+
+.grupos tbody tr {
+  height: calc(var(--u) * 28.7);
+  border-bottom: calc(var(--u) * 1) solid var(--fio-linha);
+}
+
+.grupos tbody tr:first-child {
+  height: calc(var(--u) * 31);
+}
+
+.grupos tbody tr:last-child {
+  height: calc(var(--u) * 31.8);
+  border-bottom: 0;
+}
+
+.grupos td {
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 15.5);
+  color: var(--tinta);
+}
+
+.grupos td + td {
+  border-left: calc(var(--u) * 1) solid var(--fio-coluna);
+}
+
+.grupos td:nth-child(1) {
+  padding-left: calc(var(--u) * 28);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 18.6);
+  color: var(--preto);
+}
+
+.grupos td:nth-child(2) {
+  padding-left: calc(var(--u) * 31.4);
+}
+
+.grupos td:nth-child(3) {
+  padding-left: calc(var(--u) * 25.4);
+}
+
+.tarja-graficos {
+  left: calc(var(--u) * 46);
+  top: calc(var(--u) * 850);
+  width: calc(var(--u) * 302);
+}
+
+.leitura h2 {
+  position: absolute;
+  inset: 0;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: calc(var(--u) * 36);
+  line-height: 1;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.leitura h2 span {
+  left: calc(var(--u) * 77.8);
+  transform: scaleX(1.11);
+  transform-origin: left top;
+}
+
+.lg-1 {
+  top: calc(var(--u) * 866.1);
+}
+
+.lg-2 {
+  top: calc(var(--u) * 907.1);
+}
+
+.leitura::before,
+.leitura::after {
+  content: "";
+  position: absolute;
+  background: var(--borda);
+}
+
+.leitura::before {
+  left: calc(var(--u) * 372);
+  top: calc(var(--u) * 863);
+  width: calc(var(--u) * 1.5);
+  height: calc(var(--u) * 87);
+}
+
+.leitura::after {
+  left: calc(var(--u) * 1090);
+  top: calc(var(--u) * 864);
+  width: calc(var(--u) * 2);
+  height: calc(var(--u) * 86);
+}
+
+.definicoes {
+  left: calc(var(--u) * 404.5);
+  top: calc(var(--u) * 869.75);
+  font-size: calc(var(--u) * 16.05);
+  line-height: calc(var(--u) * 25);
+}
+
+.nota {
+  left: calc(var(--u) * 1121.5);
+  top: calc(var(--u) * 876);
+  font-size: calc(var(--u) * 13.3);
+  line-height: calc(var(--u) * 18.5);
+}
+
+.rodape {
+  font-family: "Barlow Condensed", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 17.1);
+  letter-spacing: 0.063em;
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--preto);
+}
+
+.rodape::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 50);
+  top: calc(var(--u) * 975.5);
+  width: calc(var(--u) * 1338);
+  height: calc(var(--u) * 2);
+  background: var(--borda);
+}
+
+.marca {
+  left: calc(var(--u) * 49.7);
+  top: calc(var(--u) * 980.6);
+}
+
+.ponto {
+  left: calc(var(--u) * 138);
+  top: calc(var(--u) * 987);
+  width: calc(var(--u) * 7);
+  height: calc(var(--u) * 7);
+  border-radius: 50%;
+  background: var(--vermelho);
+}
+
+.folio {
+  left: calc(var(--u) * 160);
+  top: calc(var(--u) * 980.6);
+}

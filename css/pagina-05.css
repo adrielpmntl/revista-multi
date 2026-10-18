@@ -1,0 +1,464 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #ebe4d4;
+  --preto: #131211;
+  --vermelho: #b3080b;
+  --vermelho-vivo: #cc050a;
+  --tinta: #1d1b19;
+  --branco: #f2eee6;
+  --divisoria: #6b685e;
+  --fio: #514d41;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.pagina {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  background: var(--papel);
+  overflow: hidden;
+}
+
+.pagina::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 670);
+  top: 0;
+  width: calc(var(--u) * 100);
+  height: 100%;
+  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.1) 30%, rgba(40, 28, 15, 0.38) 50%, rgba(70, 50, 30, 0.12) 70%, rgba(70, 50, 30, 0) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.pagina > *,
+.abertura > *,
+.abertura h1 span,
+.linha-do-tempo > *,
+.marco > *,
+.marco-3 .ano span,
+.trajetoria > *,
+.trajetoria h2 span,
+.durkheim > *,
+.durkheim h2 span,
+.fontes > * {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.colagem {
+  left: calc(var(--u) * 745);
+  top: calc(var(--u) * 25);
+  width: calc(var(--u) * 695);
+  z-index: 1;
+}
+
+.caixa-preta {
+  left: calc(var(--u) * 770);
+  top: calc(var(--u) * 705);
+  width: calc(var(--u) * 650);
+  z-index: 1;
+}
+
+.foto-durkheim {
+  left: calc(var(--u) * 1245);
+  top: calc(var(--u) * 688);
+  width: calc(var(--u) * 195);
+  z-index: 3;
+}
+
+.abertura,
+.abertura h1,
+.linha-do-tempo,
+.marco,
+.marco-3 .ano,
+.trajetoria,
+.trajetoria h2,
+.durkheim,
+.durkheim h2,
+.fontes {
+  inset: 0;
+}
+
+.abertura,
+.linha-do-tempo,
+.trajetoria,
+.fontes {
+  z-index: 2;
+}
+
+.durkheim {
+  z-index: 4;
+}
+
+.abertura h1,
+.ano,
+.marco h3,
+.trajetoria h2,
+.durkheim h2,
+.numero {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.abertura h1 span,
+.ano,
+.marco-3 .ano span,
+.marco h3,
+.trajetoria h2 span,
+.durkheim h2 span,
+.numero {
+  display: block;
+  transform-origin: left top;
+}
+
+.numero {
+  left: calc(var(--u) * 35);
+  top: calc(var(--u) * 32.5);
+  font-size: calc(var(--u) * 23.3);
+  color: var(--vermelho);
+  transform: scaleX(0.93);
+}
+
+.abertura::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 72);
+  top: calc(var(--u) * 44.5);
+  width: calc(var(--u) * 110);
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+.t1 {
+  left: calc(var(--u) * 38.9);
+  top: calc(var(--u) * 65.6);
+  font-size: calc(var(--u) * 115.1);
+  color: var(--preto);
+  transform: scaleX(0.919);
+}
+
+.t2 {
+  left: calc(var(--u) * 38);
+  top: calc(var(--u) * 174.5);
+  font-size: calc(var(--u) * 101.5);
+  color: var(--vermelho);
+  transform: scaleX(1.23);
+}
+
+.subtitulo {
+  left: calc(var(--u) * 41.5);
+  top: calc(var(--u) * 278.2);
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 34.16);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.linha-do-tempo::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 43);
+  top: calc(var(--u) * 340);
+  width: calc(var(--u) * 1358);
+  height: calc(var(--u) * 3);
+  background: var(--vermelho);
+}
+
+.marco::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * (var(--ponto) - 10));
+  top: calc(var(--u) * 331.5);
+  width: calc(var(--u) * 20);
+  height: calc(var(--u) * 20);
+  border-radius: 50%;
+  background: var(--vermelho);
+}
+
+.marco-2::before,
+.marco-3::before,
+.marco-4::before,
+.marco-5::before,
+.marco-6::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * var(--divisao));
+  top: calc(var(--u) * 361);
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 312);
+  background: var(--divisoria);
+}
+
+.ano {
+  left: calc(var(--u) * var(--ano-x));
+  top: calc(var(--u) * 364.5);
+  font-size: calc(var(--u) * 70.9);
+  color: var(--vermelho);
+  transform: scaleX(var(--ano-sx));
+}
+
+.marco-3 .ano {
+  left: 0;
+  top: 0;
+  font-size: calc(var(--u) * 43);
+  transform: none;
+}
+
+.ano-a {
+  left: calc(var(--u) * 521);
+  top: calc(var(--u) * 367.2);
+  transform: scaleX(0.866);
+}
+
+.ano-b {
+  left: calc(var(--u) * 521);
+  top: calc(var(--u) * 408.2);
+  transform: scaleX(0.854);
+}
+
+.marco h3 {
+  left: calc(var(--u) * var(--tit-x));
+  top: calc(var(--u) * var(--tit-y));
+  font-size: calc(var(--u) * 30.2);
+  color: var(--preto);
+  transform: scaleX(var(--tit-sx));
+}
+
+.marco-3 h3 {
+  font-size: calc(var(--u) * 23.3);
+}
+
+.marco p {
+  left: calc(var(--u) * var(--txt-x));
+  top: calc(var(--u) * var(--txt-y));
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 19);
+  line-height: calc(var(--u) * 25);
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.marco-6 p {
+  font-size: calc(var(--u) * 17.9);
+  line-height: calc(var(--u) * 23.1);
+}
+
+.marco-1 {
+  --ponto: 58.5;
+  --ano-x: 41;
+  --ano-sx: 0.715;
+  --tit-x: 41.7;
+  --tit-y: 443.1;
+  --tit-sx: 1.033;
+  --txt-x: 40.2;
+  --txt-y: 489.7;
+}
+
+.marco-2 {
+  --ponto: 305;
+  --divisao: 269;
+  --ano-x: 291;
+  --ano-sx: 0.672;
+  --tit-x: 291.1;
+  --tit-y: 443.1;
+  --tit-sx: 1.01;
+  --txt-x: 291.2;
+  --txt-y: 490.2;
+}
+
+.marco-3 {
+  --ponto: 594.5;
+  --divisao: 496;
+  --tit-x: 519.5;
+  --tit-y: 458.5;
+  --tit-sx: 1.1;
+  --txt-x: 520.2;
+  --txt-y: 495.2;
+}
+
+.marco-4 {
+  --ponto: 783.5;
+  --divisao: 734.5;
+  --ano-x: 758;
+  --ano-sx: 0.679;
+  --tit-x: 758.1;
+  --tit-y: 443.1;
+  --tit-sx: 0.944;
+  --txt-x: 761.5;
+  --txt-y: 489.2;
+}
+
+.marco-5 {
+  --ponto: 1014;
+  --divisao: 939;
+  --ano-x: 963;
+  --ano-sx: 0.73;
+  --tit-x: 963.1;
+  --tit-y: 442.1;
+  --tit-sx: 0.966;
+  --txt-x: 965;
+  --txt-y: 490.2;
+}
+
+.marco-6 {
+  --ponto: 1258.5;
+  --divisao: 1149;
+  --ano-x: 1174;
+  --ano-sx: 0.7;
+  --tit-x: 1175.7;
+  --tit-y: 441.1;
+  --tit-sx: 0.99;
+  --txt-x: 1175.8;
+  --txt-y: 483.5;
+}
+
+.trajetoria::before,
+.trajetoria::after {
+  content: "";
+  position: absolute;
+}
+
+.trajetoria::before {
+  left: calc(var(--u) * 40);
+  top: calc(var(--u) * 697.5);
+  width: calc(var(--u) * 758);
+  height: calc(var(--u) * 1);
+  background: var(--fio);
+}
+
+.trajetoria::after {
+  left: calc(var(--u) * 393);
+  top: calc(var(--u) * 837);
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 130);
+  background: var(--divisoria);
+}
+
+.b1 {
+  left: calc(var(--u) * 39.7);
+  top: calc(var(--u) * 712.2);
+  font-size: calc(var(--u) * 59.3);
+  color: var(--preto);
+  transform: scaleX(1.115);
+}
+
+.b2 {
+  left: calc(var(--u) * 43);
+  top: calc(var(--u) * 769.6);
+  font-size: calc(var(--u) * 52.3);
+  color: var(--vermelho);
+  transform: scaleX(1.223);
+}
+
+.coluna-1,
+.coluna-2 {
+  top: calc(var(--u) * 830.7);
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 17.6);
+  line-height: calc(var(--u) * 22.5);
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.coluna-1 {
+  left: calc(var(--u) * 43.5);
+}
+
+.coluna-2 {
+  left: calc(var(--u) * 417.3);
+}
+
+.durkheim::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 831);
+  top: calc(var(--u) * 838.5);
+  width: calc(var(--u) * 408);
+  height: calc(var(--u) * 1.5);
+  background: var(--vermelho-vivo);
+}
+
+.k1 {
+  left: calc(var(--u) * 828.6);
+  top: calc(var(--u) * 735);
+  font-size: calc(var(--u) * 47.7);
+  color: var(--vermelho-vivo);
+  transform: scaleX(1.061);
+}
+
+.k2 {
+  left: calc(var(--u) * 831);
+  top: calc(var(--u) * 787.8);
+  font-size: calc(var(--u) * 34.9);
+  color: var(--branco);
+  transform: scaleX(1.048);
+}
+
+.durkheim p {
+  left: calc(var(--u) * 829.5);
+  top: calc(var(--u) * 845.7);
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 16.6);
+  line-height: calc(var(--u) * 29.5);
+  white-space: nowrap;
+  color: var(--branco);
+}
+
+.fontes::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 671);
+  top: calc(var(--u) * 993.5);
+  width: calc(var(--u) * 769);
+  height: calc(var(--u) * 1);
+  background: var(--fio);
+}
+
+.fontes p {
+  left: calc(var(--u) * 40.6);
+  top: calc(var(--u) * 986.8);
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 11.9);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.fontes strong {
+  font-weight: 700;
+}

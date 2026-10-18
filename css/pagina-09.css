@@ -1,0 +1,521 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #ede4d2;
+  --preto: #131211;
+  --vermelho: #b80202;
+  --vermelho-barra: #be0705;
+  --preenchimento: #b60101;
+  --trilha: #dbd2c3;
+  --tinta: #1d1b19;
+  --branco: #f6f1e8;
+  --fio: #2e2a24;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.pagina {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  background: var(--papel);
+  overflow: hidden;
+}
+
+.pagina::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 667);
+  top: 0;
+  width: calc(var(--u) * 100);
+  height: 100%;
+  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.36) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.pagina > *,
+.abertura > *,
+.abertura h1 span,
+.marca span,
+.historia > *,
+.bloco > *,
+.bloco h2 span,
+.retrato > *,
+.retrato h2 span,
+.lecuca span,
+.indicador > *,
+.fontes > * {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.praca {
+  left: calc(var(--u) * 640);
+  top: calc(var(--u) * 15);
+  width: calc(var(--u) * 800);
+  z-index: 3;
+}
+
+.faixa-retrato {
+  left: calc(var(--u) * 508);
+  top: calc(var(--u) * 465);
+  width: calc(var(--u) * 672);
+  z-index: 1;
+}
+
+.caixa-preta {
+  left: calc(var(--u) * 506);
+  top: calc(var(--u) * 843);
+  width: calc(var(--u) * 670);
+  z-index: 1;
+}
+
+.folha {
+  left: calc(var(--u) * 1128);
+  top: calc(var(--u) * 478);
+  width: calc(var(--u) * 312);
+  z-index: 2;
+}
+
+.abertura,
+.abertura h1,
+.marca,
+.historia,
+.bloco,
+.bloco h2,
+.retrato,
+.retrato h2,
+.lecuca,
+.indicador,
+.fontes {
+  inset: 0;
+}
+
+.abertura,
+.retrato {
+  z-index: 4;
+}
+
+.historia,
+.fontes {
+  z-index: 2;
+}
+
+.numero,
+.marca,
+.abertura h1,
+.bloco h2,
+.retrato h2,
+.grande,
+.valor {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.numero,
+.marca span,
+.abertura h1 span,
+.bloco h2 span,
+.retrato h2 span,
+.grande {
+  display: block;
+  transform-origin: left top;
+}
+
+.numero {
+  left: calc(var(--u) * 34.8);
+  top: calc(var(--u) * 30.5);
+  font-size: calc(var(--u) * 23.3);
+  color: var(--vermelho);
+  transform: scaleX(1.01);
+}
+
+.abertura::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 76);
+  top: calc(var(--u) * 43.5);
+  width: calc(var(--u) * 105);
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+.marca span {
+  top: calc(var(--u) * 18.2);
+  font-size: calc(var(--u) * 27.9);
+}
+
+.marca-sob {
+  left: calc(var(--u) * 1308.7);
+  color: var(--preto);
+  transform: scaleX(0.89);
+}
+
+.marca-efeito {
+  left: calc(var(--u) * 1349.2);
+  color: var(--vermelho);
+  transform: scaleX(0.945);
+}
+
+.t1 {
+  left: calc(var(--u) * 35.5);
+  top: calc(var(--u) * 61);
+  font-size: calc(var(--u) * 157);
+  color: var(--preto);
+  transform: scaleX(0.794);
+}
+
+.t2 {
+  left: calc(var(--u) * 34.3);
+  top: calc(var(--u) * 207);
+  font-size: calc(var(--u) * 155.8);
+  color: var(--vermelho);
+  transform: scaleX(0.791);
+}
+
+.subtitulo,
+.bloco p,
+.lecuca,
+.rotulo,
+.aviso,
+.fontes p {
+  font-family: "Libre Caslon Text", serif;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.subtitulo {
+  left: calc(var(--u) * 42.1);
+  top: calc(var(--u) * 362.8);
+  font-size: calc(var(--u) * 30.3);
+  line-height: calc(var(--u) * 37);
+}
+
+.historia::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 37.5);
+  top: calc(var(--u) * 449.5);
+  width: calc(var(--u) * 1363.5);
+  height: calc(var(--u) * 16);
+  background:
+    radial-gradient(circle at calc(var(--u) * 8) calc(var(--u) * 8), var(--vermelho) calc(var(--u) * 7.6), transparent calc(var(--u) * 8.2)),
+    linear-gradient(var(--vermelho), var(--vermelho)) calc(var(--u) * 8) calc(var(--u) * 7) / 100% calc(var(--u) * 3) no-repeat;
+}
+
+.historia::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 492);
+  top: calc(var(--u) * 480);
+  width: calc(var(--u) * 1.5);
+  height: calc(var(--u) * 520);
+  background: var(--fio);
+}
+
+.bloco::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 39);
+  top: calc(var(--u) * var(--barra-y));
+  width: calc(var(--u) * 11);
+  height: calc(var(--u) * 82);
+  background: var(--vermelho-barra);
+}
+
+.bloco-2::after,
+.bloco-3::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 39);
+  width: calc(var(--u) * 429);
+  height: calc(var(--u) * 1);
+  background: var(--fio);
+}
+
+.bloco-2::after {
+  top: calc(var(--u) * 643.5);
+}
+
+.bloco-3::after {
+  top: calc(var(--u) * 804.5);
+}
+
+.preto {
+  color: var(--preto);
+}
+
+.vermelho {
+  color: var(--vermelho);
+}
+
+.bloco-1 {
+  --barra-y: 479;
+}
+
+.bloco-2 {
+  --barra-y: 659;
+}
+
+.bloco-3 {
+  --barra-y: 817;
+}
+
+.bloco-1 h2 span {
+  top: calc(var(--u) * 476.3);
+  font-size: calc(var(--u) * 41.9);
+}
+
+.bloco-1 .preto {
+  left: calc(var(--u) * 68.2);
+  transform: scaleX(0.932);
+}
+
+.bloco-1 .vermelho {
+  left: calc(var(--u) * 210);
+  transform: scaleX(0.922);
+}
+
+.bloco-2 h2 span {
+  top: calc(var(--u) * 655.2);
+  font-size: calc(var(--u) * 43);
+}
+
+.bloco-2 .preto {
+  left: calc(var(--u) * 71.2);
+  transform: scaleX(0.913);
+}
+
+.bloco-2 .vermelho {
+  left: calc(var(--u) * 159);
+  transform: scaleX(0.957);
+}
+
+.bloco-3 h2 span {
+  top: calc(var(--u) * 814.2);
+  font-size: calc(var(--u) * 43);
+}
+
+.bloco-3 .preto {
+  left: calc(var(--u) * 71.1);
+  transform: scaleX(0.903);
+}
+
+.bloco-3 .vermelho {
+  left: calc(var(--u) * 186.1);
+  transform: scaleX(0.879);
+}
+
+.bloco p {
+  line-height: calc(var(--u) * 21);
+}
+
+.bloco-1 p {
+  left: calc(var(--u) * 69.4);
+  top: calc(var(--u) * 524.9);
+  font-size: calc(var(--u) * 16.6);
+}
+
+.bloco-2 p {
+  left: calc(var(--u) * 72.3);
+  top: calc(var(--u) * 704.5);
+  font-size: calc(var(--u) * 16.8);
+}
+
+.bloco-3 p {
+  left: calc(var(--u) * 72.5);
+  top: calc(var(--u) * 864.8);
+  font-size: calc(var(--u) * 16.2);
+}
+
+.retrato h2 span {
+  top: calc(var(--u) * 477.4);
+  font-size: calc(var(--u) * 72.1);
+}
+
+.r-branco {
+  left: calc(var(--u) * 527.4);
+  color: var(--branco);
+  transform: scaleX(1.104);
+}
+
+.r-preto {
+  left: calc(var(--u) * 995.5);
+  color: var(--preto);
+  transform: scaleX(1.03);
+}
+
+.lecuca span {
+  font-weight: 700;
+  line-height: 1;
+}
+
+.lecuca-a {
+  left: calc(var(--u) * 524.4);
+  top: calc(var(--u) * 564.4);
+  font-size: calc(var(--u) * 20.6);
+}
+
+.lecuca-b {
+  left: calc(var(--u) * 869.3);
+  top: calc(var(--u) * 560.8);
+  font-size: calc(var(--u) * 24.85);
+  color: var(--vermelho);
+}
+
+.indicador-2::before,
+.indicador-3::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * var(--divisao));
+  top: calc(var(--u) * 600);
+  width: calc(var(--u) * 1.5);
+  height: calc(var(--u) * 228);
+  background: var(--fio);
+}
+
+.grande {
+  left: calc(var(--u) * var(--grande-x));
+  top: calc(var(--u) * 597);
+  font-size: calc(var(--u) * 46.5);
+  color: var(--vermelho);
+  transform: scaleX(var(--grande-sx));
+}
+
+.rotulo {
+  left: calc(var(--u) * var(--rotulo-x));
+  top: calc(var(--u) * 648.6);
+  font-weight: 700;
+  font-size: calc(var(--u) * 16);
+  line-height: calc(var(--u) * 19.5);
+}
+
+.indicador-1 .rotulo {
+  top: calc(var(--u) * 648.2);
+  font-size: calc(var(--u) * 17);
+}
+
+.trilha {
+  left: calc(var(--u) * var(--trilha-x));
+  top: calc(var(--u) * 708);
+  width: calc(var(--u) * 108);
+  height: calc(var(--u) * 112);
+  background: var(--trilha);
+}
+
+.preenchimento {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: var(--fracao);
+  background: var(--preenchimento);
+}
+
+.valor {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: calc(var(--u) * 9.2);
+  font-size: calc(var(--u) * 24.4);
+  text-align: center;
+  color: var(--branco);
+  transform: scaleX(0.927);
+}
+
+.indicador-1 {
+  --grande-x: 529.7;
+  --grande-sx: 0.905;
+  --rotulo-x: 530.5;
+  --trilha-x: 531;
+  --fracao: 90.2%;
+}
+
+.indicador-2 {
+  --divisao: 716;
+  --grande-x: 749.6;
+  --grande-sx: 0.876;
+  --rotulo-x: 749.4;
+  --trilha-x: 758;
+  --fracao: 93.8%;
+}
+
+.indicador-3 {
+  --divisao: 941;
+  --grande-x: 972.1;
+  --grande-sx: 0.871;
+  --rotulo-x: 972.5;
+  --trilha-x: 979;
+  --fracao: 93.8%;
+}
+
+.retrato::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 524);
+  top: calc(var(--u) * 853);
+  width: calc(var(--u) * 14);
+  height: calc(var(--u) * 51);
+  background: #c50202;
+}
+
+.aviso {
+  left: calc(var(--u) * 553.2);
+  top: calc(var(--u) * 855.6);
+  font-size: calc(var(--u) * 17.05);
+  line-height: calc(var(--u) * 25);
+  color: var(--branco);
+}
+
+.fontes::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 519);
+  top: calc(var(--u) * 939.5);
+  width: calc(var(--u) * 886);
+  height: calc(var(--u) * 1);
+  background: var(--fio);
+}
+
+.fontes p {
+  left: calc(var(--u) * 516.6);
+  top: calc(var(--u) * 955.4);
+  font-size: calc(var(--u) * 12.49);
+  line-height: 1;
+}
+
+.fontes strong {
+  font-weight: 700;
+}

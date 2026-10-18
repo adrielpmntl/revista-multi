@@ -1,0 +1,444 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #f1e5d1;
+  --preto: #131211;
+  --vermelho: #c60302;
+  --vermelho-sub: #ce1511;
+  --tinta: #1d1b19;
+  --fio: #2e2a24;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.pagina {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  background: var(--papel);
+  overflow: hidden;
+}
+
+.pagina::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 670);
+  top: 0;
+  width: calc(var(--u) * 100);
+  height: 100%;
+  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.36) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.pagina > *,
+.abertura > *,
+.abertura h1 span,
+.marca span,
+.pagina-num span,
+.lentes > *,
+.cartao > *,
+.cartao h2 span,
+.rodape > * {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.abertura,
+.abertura h1,
+.marca,
+.pagina-num,
+.lentes,
+.cartao,
+.cartao h2,
+.rodape {
+  inset: 0;
+}
+
+.abertura,
+.lentes,
+.rodape {
+  z-index: 2;
+}
+
+.marca,
+.pagina-n,
+.abertura h1,
+.cartao h2,
+.cartao h3 {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.marca span,
+.pagina-num span,
+.abertura h1 span,
+.cartao h2 span,
+.cartao h3 {
+  display: block;
+  transform-origin: left top;
+}
+
+.marca span {
+  top: calc(var(--u) * 22);
+  font-size: calc(var(--u) * 30.2);
+}
+
+.marca-sob {
+  left: calc(var(--u) * 34);
+  color: var(--preto);
+  transform: scaleX(0.82);
+}
+
+.marca-efeito {
+  left: calc(var(--u) * 75.2);
+  color: var(--vermelho);
+  transform: scaleX(0.86);
+}
+
+.abertura::before,
+.abertura::after {
+  content: "";
+  position: absolute;
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+.abertura::before {
+  left: calc(var(--u) * 146);
+  top: calc(var(--u) * 38.5);
+  width: calc(var(--u) * 108);
+}
+
+.abertura::after {
+  left: calc(var(--u) * 1224);
+  top: calc(var(--u) * 40.5);
+  width: calc(var(--u) * 85);
+}
+
+.pagina-txt {
+  left: calc(var(--u) * 1321);
+  top: calc(var(--u) * 27);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 20);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--preto);
+  transform: scaleX(0.83);
+  transform-origin: left top;
+}
+
+.pagina-n {
+  left: calc(var(--u) * 1384);
+  top: calc(var(--u) * 19.8);
+  font-size: calc(var(--u) * 33.7);
+  color: var(--vermelho);
+  transform: scaleX(0.83);
+}
+
+.t-vermelho {
+  left: calc(var(--u) * 56.2);
+  top: calc(var(--u) * 73.5);
+  font-size: calc(var(--u) * 100);
+  color: var(--vermelho);
+  transform: scaleX(0.835);
+}
+
+.t-preto {
+  left: calc(var(--u) * 434);
+  top: calc(var(--u) * 76);
+  font-size: calc(var(--u) * 93);
+  color: var(--preto);
+  transform: scaleX(0.741);
+}
+
+.subtitulo,
+.texto,
+.veja,
+.rodape p {
+  font-family: "Libre Caslon Text", serif;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.subtitulo {
+  left: calc(var(--u) * 256.9);
+  top: calc(var(--u) * 177.7);
+  font-size: calc(var(--u) * 26.6);
+  line-height: 1;
+}
+
+.lentes::before,
+.lentes::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 34);
+  width: calc(var(--u) * 1371);
+  height: calc(var(--u) * 1.5);
+  background: linear-gradient(90deg, var(--fio) 0, var(--fio) 48.43%, transparent 48.43%, transparent 51.57%, var(--fio) 51.57%, var(--fio) 100%);
+}
+
+.lentes::before {
+  top: calc(var(--u) * 471.5);
+}
+
+.lentes::after {
+  top: calc(var(--u) * 717.5);
+}
+
+.retrato {
+  left: calc(var(--u) * var(--ret-x));
+  top: calc(var(--u) * var(--ret-y));
+  width: calc(var(--u) * var(--ret-w));
+}
+
+.cartao::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * var(--bar-x));
+  top: calc(var(--u) * var(--bar-y));
+  width: calc(var(--u) * 13);
+  height: calc(var(--u) * 63);
+  background: var(--vermelho);
+}
+
+.cartao h2 span {
+  top: calc(var(--u) * var(--nome-y));
+  font-size: calc(var(--u) * 48.8);
+}
+
+.nome {
+  left: calc(var(--u) * var(--nome-x));
+  color: var(--preto);
+  transform: scaleX(var(--nome-sx));
+}
+
+.sobrenome {
+  left: calc(var(--u) * var(--sob-x));
+  color: var(--vermelho);
+  transform: scaleX(var(--sob-sx));
+}
+
+.cartao h3 {
+  left: calc(var(--u) * var(--sub-x));
+  top: calc(var(--u) * var(--sub-y));
+  font-size: calc(var(--u) * 27.9);
+  color: var(--vermelho-sub);
+  transform: scaleX(var(--sub-sx));
+}
+
+.texto {
+  left: calc(var(--u) * var(--txt-x));
+  top: calc(var(--u) * var(--txt-y));
+  font-size: calc(var(--u) * var(--txt-fs));
+  line-height: calc(var(--u) * var(--txt-lh));
+}
+
+.veja {
+  left: calc(var(--u) * var(--veja-x));
+  top: calc(var(--u) * var(--veja-y));
+  font-size: calc(var(--u) * 16.8);
+  line-height: 1;
+}
+
+.veja strong {
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 19);
+  color: var(--vermelho);
+}
+
+.cartao-1 {
+  --ret-x: 31;
+  --ret-y: 232;
+  --ret-w: 293;
+  --bar-x: 329;
+  --bar-y: 236;
+  --nome-y: 238.8;
+  --nome-x: 360;
+  --nome-sx: 0.743;
+  --sob-x: 451;
+  --sob-sx: 0.805;
+  --sub-x: 361.2;
+  --sub-y: 296.2;
+  --sub-sx: 0.918;
+  --txt-x: 364.5;
+  --txt-y: 332.8;
+  --txt-fs: 15.05;
+  --txt-lh: 23;
+  --veja-x: 363;
+  --veja-y: 431.1;
+}
+
+.cartao-2 {
+  --ret-x: 737;
+  --ret-y: 229;
+  --ret-w: 313;
+  --bar-x: 1053;
+  --bar-y: 236;
+  --nome-y: 238.8;
+  --nome-x: 1084;
+  --nome-sx: 0.758;
+  --sob-x: 1183.9;
+  --sob-sx: 0.757;
+  --sub-x: 1084.4;
+  --sub-y: 296.2;
+  --sub-sx: 0.946;
+  --txt-x: 1086.4;
+  --txt-y: 331.8;
+  --txt-fs: 15.05;
+  --txt-lh: 23;
+  --veja-x: 1088;
+  --veja-y: 431.1;
+}
+
+.cartao-3 {
+  --ret-x: 27;
+  --ret-y: 479;
+  --ret-w: 298;
+  --bar-x: 330;
+  --bar-y: 488;
+  --nome-y: 490.8;
+  --nome-x: 360;
+  --nome-sx: 0.797;
+  --sob-x: 490;
+  --sob-sx: 0.762;
+  --sub-x: 362.2;
+  --sub-y: 550.2;
+  --sub-sx: 0.966;
+  --txt-x: 364.5;
+  --txt-y: 590.8;
+  --txt-fs: 15.05;
+  --txt-lh: 24;
+  --veja-x: 363;
+  --veja-y: 674.1;
+}
+
+.cartao-4 {
+  --ret-x: 739;
+  --ret-y: 475;
+  --ret-w: 311;
+  --bar-x: 1055;
+  --bar-y: 488;
+  --nome-y: 490.8;
+  --nome-x: 1086;
+  --nome-sx: 0.807;
+  --sob-x: 1197.4;
+  --sob-sx: 0.725;
+  --sub-x: 1086.2;
+  --sub-y: 549.2;
+  --sub-sx: 0.941;
+  --txt-x: 1087.4;
+  --txt-y: 585.8;
+  --txt-fs: 14.4;
+  --txt-lh: 23.3;
+  --veja-x: 1088;
+  --veja-y: 682.1;
+}
+
+.cartao-5 {
+  --ret-x: 27;
+  --ret-y: 729;
+  --ret-w: 296;
+  --bar-x: 330;
+  --bar-y: 732;
+  --nome-y: 734.8;
+  --nome-x: 361;
+  --nome-sx: 0.731;
+  --sob-x: 469;
+  --sob-sx: 0.763;
+  --sub-x: 362.2;
+  --sub-y: 792.2;
+  --sub-sx: 0.94;
+  --txt-x: 364.4;
+  --txt-y: 831;
+  --txt-fs: 15.57;
+  --txt-lh: 23;
+  --veja-x: 363;
+  --veja-y: 929.1;
+}
+
+.cartao-6 {
+  --ret-x: 735;
+  --ret-y: 721;
+  --ret-w: 315;
+  --bar-x: 1055;
+  --bar-y: 732;
+  --nome-y: 734.8;
+  --nome-x: 1086;
+  --nome-sx: 0.771;
+  --sob-x: 1155.6;
+  --sob-sx: 0.797;
+  --sub-x: 1087.2;
+  --sub-y: 790.2;
+  --sub-sx: 0.86;
+  --txt-x: 1087.4;
+  --txt-y: 828.8;
+  --txt-fs: 14.4;
+  --txt-lh: 23.3;
+  --veja-x: 1088;
+  --veja-y: 931.1;
+}
+
+.rodape::before,
+.rodape::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--u) * 984.5);
+  height: calc(var(--u) * 3);
+  background: var(--vermelho);
+}
+
+.rodape::before {
+  left: calc(var(--u) * 33.5);
+  width: calc(var(--u) * 354);
+  background:
+    radial-gradient(circle at calc(var(--u) * 9.5) 50%, var(--vermelho) calc(var(--u) * 9.2), transparent calc(var(--u) * 9.8)),
+    linear-gradient(var(--vermelho), var(--vermelho)) calc(var(--u) * 9.5) 50% / 100% calc(var(--u) * 3) no-repeat;
+  top: calc(var(--u) * 976.5);
+  height: calc(var(--u) * 19);
+}
+
+.rodape::after {
+  left: calc(var(--u) * 1054);
+  width: calc(var(--u) * 354);
+}
+
+.rodape p {
+  left: calc(var(--u) * 401.4);
+  top: calc(var(--u) * 977.3);
+  font-size: calc(var(--u) * 14.53);
+  line-height: 1;
+}

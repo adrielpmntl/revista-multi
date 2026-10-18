@@ -1,0 +1,360 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #ecdcc4;
+  --preto: #131211;
+  --vermelho: #c8141a;
+  --tinta: #1d1b19;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.moldura {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  overflow: hidden;
+}
+
+.capa {
+  position: relative;
+  width: calc(var(--u) * 1472);
+  height: calc(var(--u) * 1069);
+  background: var(--papel);
+  overflow: hidden;
+  transform: scale(calc(1440 / 1472), calc(1024 / 1069));
+  transform-origin: 0 0;
+}
+
+.capa > *,
+.titulo > *,
+.cartao > *,
+.cartao h2 span {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.turma {
+  left: calc(var(--u) * 53);
+  top: calc(var(--u) * 36);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 14.3);
+  letter-spacing: 0.166em;
+  line-height: 1;
+  color: var(--preto);
+  z-index: 5;
+}
+
+.turma::after {
+  content: "";
+  position: absolute;
+  left: calc(100% + var(--u) * 16.5);
+  top: calc(var(--u) * 7.5);
+  width: calc(var(--u) * 102);
+  height: calc(var(--u) * 2);
+  background: var(--preto);
+}
+
+.tarja-esquerda {
+  left: calc(var(--u) * 230);
+  top: calc(var(--u) * 715);
+  width: calc(var(--u) * 246);
+  z-index: 1;
+}
+
+.favela {
+  left: 0;
+  top: calc(var(--u) * 858);
+  width: calc(var(--u) * 1170);
+  z-index: 2;
+}
+
+.caveira {
+  left: calc(var(--u) * 440);
+  top: calc(var(--u) * 62);
+  width: calc(var(--u) * 658);
+  z-index: 3;
+}
+
+.titulo {
+  inset: 0;
+  z-index: 4;
+}
+
+.papel-sob {
+  left: calc(var(--u) * 23.5);
+  top: calc(var(--u) * 64.5);
+  width: calc(var(--u) * 443);
+  height: calc(var(--u) * 201);
+  transform: rotate(-4.7deg);
+}
+
+.papel-efeito {
+  left: calc(var(--u) * 26);
+  top: calc(var(--u) * 237);
+  width: calc(var(--u) * 528);
+  height: calc(var(--u) * 206);
+  transform: rotate(-2.8deg);
+}
+
+.titulo h1 {
+  position: absolute;
+  inset: 0;
+  font-weight: 400;
+}
+
+.sob,
+.efeito {
+  position: absolute;
+  display: block;
+  line-height: 1;
+  white-space: nowrap;
+  transform-origin: left top;
+}
+
+.sob {
+  left: calc(var(--u) * 51);
+  top: calc(var(--u) * 59.5);
+  font-family: "Archivo Black", sans-serif;
+  font-size: calc(var(--u) * 214.5);
+  letter-spacing: -0.02em;
+  color: var(--preto);
+  transform: scaleX(0.8);
+}
+
+.efeito {
+  left: calc(var(--u) * 73);
+  top: calc(var(--u) * 246.5);
+  font-family: "Anton", sans-serif;
+  font-size: calc(var(--u) * 207);
+  color: var(--vermelho);
+  transform: scaleX(0.863);
+}
+
+.pincelada {
+  left: calc(var(--u) * 50);
+  top: calc(var(--u) * 518);
+  width: calc(var(--u) * 390);
+}
+
+.subtitulo {
+  left: calc(var(--u) * 50.6);
+  top: calc(var(--u) * 467.2);
+  font-family: "Barlow", sans-serif;
+  font-weight: 600;
+  font-size: calc(var(--u) * 31.4);
+  letter-spacing: 0.215em;
+  line-height: 1.115;
+  white-space: nowrap;
+  color: var(--preto);
+  transform: rotate(-4.24deg);
+  transform-origin: left top;
+}
+
+.subtitulo span {
+  display: block;
+}
+
+.chamada {
+  left: calc(var(--u) * 56);
+  top: calc(var(--u) * 581.2);
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 23.4);
+  line-height: calc(var(--u) * 29);
+  white-space: nowrap;
+  color: var(--tinta);
+  z-index: 5;
+}
+
+.cartao {
+  width: calc(var(--u) * 340);
+  z-index: 5;
+}
+
+.cartao-1 {
+  left: calc(var(--u) * 1100);
+  top: calc(var(--u) * 100);
+  height: calc(var(--u) * 262);
+}
+
+.cartao-2 {
+  left: calc(var(--u) * 1104);
+  top: calc(var(--u) * 404);
+  height: calc(var(--u) * 252);
+}
+
+.cartao-3 {
+  left: calc(var(--u) * 1104);
+  top: calc(var(--u) * 690);
+  height: calc(var(--u) * 262);
+}
+
+.cartao-papel {
+  left: calc(var(--u) * -8);
+  top: calc(var(--u) * -8);
+  width: calc(100% + var(--u) * 16);
+  height: calc(100% + var(--u) * 16);
+}
+
+.cartao h2 {
+  inset: 0;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.cartao h2 span {
+  display: block;
+  transform-origin: left top;
+}
+
+.cartao::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * var(--fio-x));
+  top: calc(var(--u) * var(--fio-y));
+  width: calc(var(--u) * var(--fio-w));
+  height: calc(var(--u) * 2.5);
+  background: var(--preto);
+}
+
+.cartao-1::after {
+  --fio-x: 20;
+  --fio-y: 159;
+  --fio-w: 293;
+}
+
+.cartao-2::after {
+  --fio-x: 24;
+  --fio-y: 154;
+  --fio-w: 291;
+}
+
+.cartao-3::after {
+  --fio-x: 25;
+  --fio-y: 154;
+  --fio-w: 289;
+}
+
+.preto {
+  color: var(--preto);
+}
+
+.vermelho {
+  color: var(--vermelho);
+}
+
+.cartao-1 .preto {
+  left: calc(var(--u) * 17);
+  top: calc(var(--u) * 30.6);
+  font-size: calc(var(--u) * 54.65);
+  transform: scaleX(0.823);
+}
+
+.cartao-1 .vermelho {
+  left: calc(var(--u) * 18);
+  top: calc(var(--u) * 89.4);
+  font-size: calc(var(--u) * 55.8);
+}
+
+.cartao-2 .preto {
+  left: calc(var(--u) * 23);
+  top: calc(var(--u) * 37.9);
+  font-size: calc(var(--u) * 47.7);
+  transform: scaleX(0.94);
+}
+
+.cartao-2 .vermelho {
+  left: calc(var(--u) * 24);
+  top: calc(var(--u) * 94);
+  font-size: calc(var(--u) * 46.5);
+  transform: scaleX(0.942);
+}
+
+.cartao-3 .preto {
+  left: calc(var(--u) * 24);
+  top: calc(var(--u) * 28.8);
+  font-size: calc(var(--u) * 48.8);
+  transform: scaleX(0.962);
+}
+
+.cartao-3 .vermelho {
+  left: calc(var(--u) * 25);
+  top: calc(var(--u) * 85.6);
+  font-size: calc(var(--u) * 52.3);
+  transform: scaleX(1.016);
+}
+
+.cartao p {
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 23.4);
+  line-height: calc(var(--u) * 28.5);
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.cartao-1 p {
+  left: calc(var(--u) * 23);
+  top: calc(var(--u) * 170.4);
+}
+
+.cartao-2 p {
+  left: calc(var(--u) * 24);
+  top: calc(var(--u) * 161.4);
+}
+
+.cartao-3 p {
+  left: calc(var(--u) * 26);
+  top: calc(var(--u) * 164.4);
+}
+
+.fita-preta {
+  left: calc(var(--u) * 1100);
+  top: calc(var(--u) * 88);
+  width: calc(var(--u) * 122);
+  z-index: 6;
+}
+
+.tarjas-1 {
+  left: calc(var(--u) * 1102);
+  top: calc(var(--u) * 356);
+  width: calc(var(--u) * 280);
+  z-index: 6;
+}
+
+.tarjas-2 {
+  left: calc(var(--u) * 1100);
+  top: calc(var(--u) * 645);
+  width: calc(var(--u) * 296);
+  z-index: 6;
+}

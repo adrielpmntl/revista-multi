@@ -1,0 +1,676 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #f4e9da;
+  --preto: #000;
+  --vermelho: #e10404;
+  --vermelho-vivo: #ff1411;
+  --quadrado: #e80606;
+  --tinta: #120f0a;
+  --branco: #fffaf0;
+  --fio: #5c564c;
+  --cab-risco: #e30300;
+  --fundo-dim: #fcf7eb;
+  --fundo-risco: #ffe1da;
+  --fundo-prot: #f2f0e4;
+  --separador: #fffdf8;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.pagina {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  background: var(--papel);
+  overflow: hidden;
+}
+
+.pagina::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 668);
+  top: 0;
+  width: calc(var(--u) * 100);
+  height: 100%;
+  background: linear-gradient(90deg, rgba(40, 28, 15, 0) 0%, rgba(40, 28, 15, 0.02) 8%, rgba(40, 28, 15, 0.05) 14%, rgba(40, 28, 15, 0.08) 20%, rgba(40, 28, 15, 0.13) 26%, rgba(40, 28, 15, 0.17) 32%, rgba(40, 28, 15, 0.23) 38%, rgba(40, 28, 15, 0.36) 44%, rgba(40, 28, 15, 0.49) 50%, rgba(40, 28, 15, 0.35) 56%, rgba(40, 28, 15, 0.17) 62%, rgba(40, 28, 15, 0.09) 68%, rgba(40, 28, 15, 0.035) 74%, rgba(40, 28, 15, 0) 80%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.pagina > *,
+.abertura > *,
+.abertura h1 span,
+.marca span,
+.pagina-num span,
+.coluna > *,
+.coluna h2 span,
+.goffman > *,
+.rotulos li,
+.frase p span,
+.fontes > * {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.linhas {
+  inset: 0;
+  z-index: 1;
+  background:
+    linear-gradient(var(--fio), var(--fio)) calc(var(--u) * 33) calc(var(--u) * 293.4) / calc(var(--u) * 1377) calc(var(--u) * 1.6) no-repeat,
+    linear-gradient(var(--fio), var(--fio)) calc(var(--u) * 32) calc(var(--u) * 567.4) / calc(var(--u) * 1378) calc(var(--u) * 1.8) no-repeat,
+    linear-gradient(var(--fio), var(--fio)) calc(var(--u) * 32) calc(var(--u) * 885.2) / calc(var(--u) * 1378) calc(var(--u) * 1.8) no-repeat,
+    linear-gradient(var(--fio), var(--fio)) calc(var(--u) * 495.3) calc(var(--u) * 309) / calc(var(--u) * 1.8) calc(var(--u) * 249) no-repeat,
+    linear-gradient(var(--fio), var(--fio)) calc(var(--u) * 964.3) calc(var(--u) * 309) / calc(var(--u) * 1.8) calc(var(--u) * 249) no-repeat;
+}
+
+.pagina > img:not(.textura) {
+  z-index: 2;
+}
+
+.pagina > .papel-goffman {
+  z-index: 3;
+}
+
+.pagina > .etiqueta-goffman,
+.pagina > .colagem-goffman {
+  z-index: 4;
+}
+
+.pagina > .etiqueta {
+  z-index: 5;
+}
+
+.colagem-topo {
+  left: calc(var(--u) * 843);
+  top: calc(var(--u) * 7.5);
+  width: calc(var(--u) * 569.5);
+}
+
+.faixa-1 {
+  left: calc(var(--u) * 102);
+  top: calc(var(--u) * 300);
+  width: calc(var(--u) * 214);
+}
+
+.faixa-2 {
+  left: calc(var(--u) * 582);
+  top: calc(var(--u) * 300);
+  width: calc(var(--u) * 212);
+}
+
+.faixa-3 {
+  left: calc(var(--u) * 1050);
+  top: calc(var(--u) * 300);
+  width: calc(var(--u) * 188);
+}
+
+.colagem-1 {
+  left: calc(var(--u) * 338.3);
+  top: calc(var(--u) * 314.9);
+  width: calc(var(--u) * 151.8);
+}
+
+.colagem-2 {
+  left: calc(var(--u) * 768);
+  top: calc(var(--u) * 330);
+  width: calc(var(--u) * 189.5);
+}
+
+.colagem-3 {
+  left: calc(var(--u) * 1271.2);
+  top: calc(var(--u) * 309.3);
+  width: calc(var(--u) * 152.7);
+}
+
+.papel-goffman {
+  left: calc(var(--u) * 782);
+  top: calc(var(--u) * 576);
+  width: calc(var(--u) * 646);
+}
+
+.etiqueta-goffman {
+  left: calc(var(--u) * 790);
+  top: calc(var(--u) * 586);
+  width: calc(var(--u) * 392);
+}
+
+.colagem-goffman {
+  left: calc(var(--u) * 1102.5);
+  top: calc(var(--u) * 584.6);
+  width: calc(var(--u) * 313);
+}
+
+.etiqueta-1 {
+  left: calc(var(--u) * 1217.5);
+  top: calc(var(--u) * 608.2);
+  width: calc(var(--u) * 101.8);
+}
+
+.etiqueta-2 {
+  left: calc(var(--u) * 1291.1);
+  top: calc(var(--u) * 627);
+  width: calc(var(--u) * 99);
+}
+
+.etiqueta-3 {
+  left: calc(var(--u) * 1298.6);
+  top: calc(var(--u) * 683.6);
+  width: calc(var(--u) * 98.1);
+}
+
+.etiqueta-4 {
+  left: calc(var(--u) * 1291.1);
+  top: calc(var(--u) * 740.2);
+  width: calc(var(--u) * 105.6);
+}
+
+.aspas-abre {
+  left: calc(var(--u) * 26);
+  top: calc(var(--u) * 898);
+  width: calc(var(--u) * 48);
+}
+
+.pagina > .sublinhado-frase {
+  left: calc(var(--u) * 872);
+  top: calc(var(--u) * 964);
+  width: calc(var(--u) * 528);
+  z-index: 6;
+}
+
+.abertura,
+.abertura h1,
+.marca,
+.pagina-num,
+.coluna,
+.coluna h2,
+.goffman,
+.rotulos,
+.frase,
+.fontes {
+  inset: 0;
+}
+
+.abertura,
+.coluna {
+  z-index: 3;
+}
+
+.goffman {
+  z-index: 6;
+}
+
+.frase,
+.fontes {
+  z-index: 5;
+}
+
+.marca,
+.pagina-n,
+.abertura h1,
+.coluna h2,
+.g-titulo,
+.frase p,
+.tabela th,
+.tabela .dim span {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.marca span,
+.pagina-num span,
+.abertura h1 span,
+.coluna h2 span,
+.g-titulo,
+.frase p span {
+  display: block;
+  transform-origin: left top;
+}
+
+.marca span {
+  top: calc(var(--u) * 21.1);
+  font-size: calc(var(--u) * 27.6);
+}
+
+.marca-sob {
+  left: calc(var(--u) * 27);
+  color: var(--preto);
+  transform: scaleX(1.007);
+}
+
+.marca-efeito {
+  left: calc(var(--u) * 69);
+  color: var(--vermelho-vivo);
+  transform: scaleX(0.988);
+}
+
+.abertura::before,
+.abertura::after {
+  content: "";
+  position: absolute;
+  background: var(--preto);
+}
+
+.abertura::before {
+  left: calc(var(--u) * 144);
+  top: calc(var(--u) * 34.5);
+  width: calc(var(--u) * 104);
+  height: calc(var(--u) * 1.5);
+}
+
+.abertura::after {
+  left: calc(var(--u) * 1234);
+  top: calc(var(--u) * 36.8);
+  width: calc(var(--u) * 72);
+  height: calc(var(--u) * 2);
+}
+
+.pagina-txt {
+  left: calc(var(--u) * 1319);
+  top: calc(var(--u) * 25);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 18.9);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--preto);
+  transform: scaleX(0.89);
+}
+
+.pagina-n {
+  left: calc(var(--u) * 1380.5);
+  top: calc(var(--u) * 17.6);
+  font-size: calc(var(--u) * 36.8);
+  color: var(--vermelho-vivo);
+  transform: scaleX(0.958);
+}
+
+.t1,
+.t2 {
+  top: calc(var(--u) * 83.3);
+  font-size: calc(var(--u) * 129);
+}
+
+.t1 {
+  left: calc(var(--u) * 37.2);
+  color: var(--preto);
+  transform: scaleX(0.815);
+}
+
+.t2 {
+  left: calc(var(--u) * 467.1);
+  color: var(--vermelho);
+  transform: scaleX(0.783);
+}
+
+.sublinhado {
+  left: calc(var(--u) * 494);
+  top: calc(var(--u) * 203);
+  width: calc(var(--u) * 328);
+}
+
+.subtitulo,
+.texto,
+.g-texto,
+.tabela td,
+.fontes p {
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 400;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.subtitulo {
+  left: calc(var(--u) * 41.5);
+  top: calc(var(--u) * 223.5);
+  font-size: calc(var(--u) * 34.66);
+  line-height: 1;
+}
+
+.coluna h2::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * var(--sq-x));
+  top: calc(var(--u) * 305);
+  width: calc(var(--u) * var(--sq-w));
+  height: calc(var(--u) * 62);
+  background: var(--quadrado);
+  z-index: -1;
+}
+
+.coluna h2 {
+  z-index: 1;
+}
+
+.numero {
+  left: calc(var(--u) * var(--num-x));
+  top: calc(var(--u) * 311.7);
+  font-size: calc(var(--u) * 50);
+  color: var(--branco);
+  transform: scaleX(var(--num-sx));
+}
+
+.titulo {
+  left: calc(var(--u) * var(--tit-x));
+  top: calc(var(--u) * 318.8);
+  font-size: calc(var(--u) * 34);
+  color: var(--branco);
+  transform: scaleX(var(--tit-sx));
+}
+
+.texto {
+  left: calc(var(--u) * var(--col-x));
+  top: calc(var(--u) * 384.3);
+  font-size: calc(var(--u) * 15.8);
+  line-height: calc(var(--u) * 22.7);
+}
+
+.coluna-1 {
+  --sq-x: 32;
+  --sq-w: 73;
+  --num-x: 56.5;
+  --num-sx: 1.16;
+  --tit-x: 129.5;
+  --tit-sx: 1.142;
+  --col-x: 36.2;
+}
+
+.coluna-2 {
+  --sq-x: 514;
+  --sq-w: 71;
+  --num-x: 535;
+  --num-sx: 1.06;
+  --tit-x: 607.5;
+  --tit-sx: 1.114;
+  --col-x: 517.4;
+}
+
+.coluna-3 {
+  --sq-x: 983;
+  --sq-w: 72;
+  --num-x: 1005.5;
+  --num-sx: 1.06;
+  --tit-x: 1079.5;
+  --tit-sx: 1.003;
+  --col-x: 987;
+}
+
+.tabela {
+  left: calc(var(--u) * 33);
+  top: calc(var(--u) * 584);
+  width: calc(var(--u) * 727);
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0;
+  z-index: 3;
+}
+
+.c-dim {
+  width: calc(var(--u) * 182);
+}
+
+.c-risco {
+  width: calc(var(--u) * 265);
+}
+
+.c-prot {
+  width: calc(var(--u) * 280);
+}
+
+.tabela th,
+.tabela td {
+  vertical-align: middle;
+  border-right: calc(var(--u) * 2.4) solid var(--separador);
+}
+
+.tabela th:last-child,
+.tabela td:last-child {
+  border-right: 0;
+}
+
+.tabela thead tr {
+  height: calc(var(--u) * 42);
+}
+
+.tabela th {
+  font-size: calc(var(--u) * 21);
+  letter-spacing: 0.08em;
+  font-weight: 400;
+  text-align: center;
+  color: var(--branco);
+  background: var(--preto);
+}
+
+.tabela .h-risco {
+  background: var(--cab-risco);
+}
+
+.tabela .h-prot {
+  padding-right: calc(var(--u) * 19);
+}
+
+.tabela td {
+  border-top: calc(var(--u) * 2) solid var(--separador);
+  font-size: calc(var(--u) * var(--fs, 15.6));
+  line-height: calc(var(--u) * var(--lh, 22.5));
+}
+
+.tabela .l1 {
+  height: calc(var(--u) * 55);
+}
+
+.tabela .l2 {
+  height: calc(var(--u) * 60);
+}
+
+.tabela .l3 {
+  height: calc(var(--u) * 66);
+}
+
+.tabela .l4 {
+  height: calc(var(--u) * 64);
+}
+
+.tabela .dim {
+  position: relative;
+  padding-left: calc(var(--u) * 86.5);
+  background: var(--fundo-dim);
+}
+
+.tabela .dim img {
+  position: absolute;
+  left: calc(var(--u) * var(--ix));
+  top: calc(var(--u) * var(--iy));
+  width: calc(var(--u) * var(--iw));
+}
+
+.tabela .dim span {
+  font-size: calc(var(--u) * 19.2);
+  color: var(--preto);
+}
+
+.tabela .risco {
+  padding-left: calc(var(--u) * 19.4);
+  background: var(--fundo-risco);
+}
+
+.tabela .prot {
+  padding-left: calc(var(--u) * 18);
+  background: var(--fundo-prot);
+}
+
+.l1 .dim {
+  --ix: 15;
+  --iy: 7;
+  --iw: 53;
+}
+
+.l2 .dim {
+  --ix: 16;
+  --iy: 4;
+  --iw: 48;
+}
+
+.l3 .dim {
+  --ix: 15;
+  --iy: 9;
+  --iw: 49;
+}
+
+.l4 .dim {
+  --ix: 20;
+  --iy: 5;
+  --iw: 37;
+}
+
+.l1 .risco {
+  --fs: 15.1;
+}
+
+.l2 .risco {
+  --fs: 15.1;
+}
+
+.l3 .risco {
+  --fs: 15.8;
+}
+
+.l4 .risco {
+  --fs: 14.8;
+}
+
+.l1 .prot {
+  --fs: 15.2;
+}
+
+.l2 .prot {
+  --fs: 15.8;
+}
+
+.l3 .prot {
+  --fs: 15.8;
+}
+
+.l4 .prot {
+  --fs: 16.3;
+  --lh: 26;
+}
+
+.g-titulo {
+  left: calc(var(--u) * 814.4);
+  top: calc(var(--u) * 605.4);
+  font-size: calc(var(--u) * 32);
+  color: var(--branco);
+  transform: scaleX(0.907);
+}
+
+.g-texto {
+  left: calc(var(--u) * 809.2);
+  top: calc(var(--u) * 684.4);
+  font-size: calc(var(--u) * 17);
+  line-height: calc(var(--u) * 24.4);
+}
+
+.rotulos {
+  position: absolute;
+  list-style: none;
+}
+
+.rotulos li {
+  left: calc(var(--u) * var(--cx));
+  top: calc(var(--u) * var(--cy));
+  font-family: "Special Elite", monospace;
+  font-size: calc(var(--u) * var(--fs));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--tinta);
+  transform: translate(-50%, -50%) rotate(var(--giro)) scaleX(var(--sx));
+  transform-origin: center center;
+}
+
+.r1 {
+  --cx: 1267.5;
+  --cy: 636;
+  --fs: 20;
+  --sx: 0.873;
+  --giro: -17deg;
+}
+
+.r2 {
+  --cx: 1342.8;
+  --cy: 652.5;
+  --fs: 18;
+  --sx: 0.878;
+  --giro: -14deg;
+}
+
+.r3 {
+  --cx: 1357.6;
+  --cy: 707.2;
+  --fs: 18;
+  --sx: 0.762;
+  --giro: -10deg;
+}
+
+.r4 {
+  --cx: 1352.4;
+  --cy: 757.6;
+  --fs: 18;
+  --sx: 0.843;
+  --giro: -2deg;
+}
+
+.frase p span {
+  top: calc(var(--u) * 905.9);
+  font-size: calc(var(--u) * 60.5);
+}
+
+.f-preto {
+  left: calc(var(--u) * 81);
+  color: var(--preto);
+  transform: scaleX(0.794);
+}
+
+.f-vermelho {
+  left: calc(var(--u) * 874);
+  color: var(--vermelho);
+  transform: scaleX(0.808);
+}
+
+.fontes p {
+  right: calc(var(--u) * 46.5);
+  top: calc(var(--u) * 995);
+  font-size: calc(var(--u) * 11.65);
+  line-height: 1;
+}

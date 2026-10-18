@@ -1,0 +1,631 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #f1e8d7;
+  --preto: #131211;
+  --vermelho: #b60303;
+  --vermelho-vivo: #c80d0c;
+  --vermelho-texto: #b2100e;
+  --tinta: #1d1b19;
+  --branco: #f2ede3;
+  --fio: #2e2a24;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.pagina {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  background: var(--papel);
+  overflow: hidden;
+}
+
+.pagina::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 667);
+  top: 0;
+  width: calc(var(--u) * 100);
+  height: 100%;
+  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.38) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.pagina > *,
+.abertura > *,
+.abertura h1 span,
+.marca span,
+.pagina-num span,
+.estudo-1 > *,
+.estudo-1 h2 span,
+.indicador > *,
+.becker > *,
+.becker h2 span,
+.estudo > *,
+.estudo h2 span,
+.frase span,
+.fontes > * {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.justica {
+  left: calc(var(--u) * 682);
+  top: calc(var(--u) * 14);
+  width: calc(var(--u) * 750);
+  z-index: 1;
+}
+
+.classificacao {
+  left: calc(var(--u) * 1186);
+  top: calc(var(--u) * 428);
+  width: calc(var(--u) * 250);
+  z-index: 1;
+}
+
+.decisao {
+  left: calc(var(--u) * 1186);
+  top: calc(var(--u) * 598);
+  width: calc(var(--u) * 244);
+  z-index: 1;
+}
+
+.caixa-becker {
+  left: calc(var(--u) * 12);
+  top: calc(var(--u) * 748);
+  width: calc(var(--u) * 696);
+  z-index: 1;
+}
+
+.papel-frase {
+  left: calc(var(--u) * 742);
+  top: calc(var(--u) * 782);
+  width: calc(var(--u) * 690);
+  z-index: 2;
+}
+
+.abertura,
+.abertura h1,
+.marca,
+.pagina-num,
+.estudo-1,
+.estudo-1 h2,
+.indicador,
+.becker,
+.becker h2,
+.estudo,
+.estudo h2,
+.frase,
+.frase p,
+.fontes {
+  inset: 0;
+}
+
+.abertura,
+.estudo-1,
+.becker,
+.estudo,
+.fontes {
+  z-index: 2;
+}
+
+.frase {
+  z-index: 3;
+}
+
+.marca,
+.pagina-n,
+.abertura h1,
+.estudo-1 h2,
+.numero,
+.becker h2,
+.estudo h2,
+.destaque-num {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.marca span,
+.pagina-num span,
+.abertura h1 span,
+.estudo-1 h2 span,
+.numero,
+.becker h2 span,
+.estudo h2 span {
+  display: block;
+  transform-origin: left top;
+}
+
+.marca span {
+  top: calc(var(--u) * 20.3);
+  font-size: calc(var(--u) * 26.7);
+}
+
+.marca-sob {
+  left: calc(var(--u) * 28);
+  color: var(--preto);
+  transform: scaleX(0.96);
+}
+
+.marca-efeito {
+  left: calc(var(--u) * 68.2);
+  color: var(--vermelho);
+  transform: scaleX(0.97);
+}
+
+.abertura::before,
+.abertura::after {
+  content: "";
+  position: absolute;
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+.abertura::before {
+  left: calc(var(--u) * 139);
+  top: calc(var(--u) * 34.5);
+  width: calc(var(--u) * 109);
+}
+
+.abertura::after {
+  left: calc(var(--u) * 1247);
+  top: calc(var(--u) * 34.5);
+  width: calc(var(--u) * 69);
+}
+
+.pagina-txt {
+  left: calc(var(--u) * 1328.2);
+  top: calc(var(--u) * 24.3);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 16.2);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--preto);
+}
+
+.pagina-n {
+  left: calc(var(--u) * 1393);
+  top: calc(var(--u) * 19.1);
+  font-size: calc(var(--u) * 29);
+  color: var(--vermelho);
+  transform: scaleX(0.7);
+}
+
+.t1 {
+  left: calc(var(--u) * 46.4);
+  top: calc(var(--u) * 70.5);
+  font-size: calc(var(--u) * 84.9);
+  color: var(--preto);
+  transform: scaleX(0.958);
+}
+
+.t2 {
+  left: calc(var(--u) * 45.2);
+  top: calc(var(--u) * 152.1);
+  font-size: calc(var(--u) * 90.7);
+  color: var(--vermelho);
+  transform: scaleX(1.13);
+}
+
+.t3 {
+  left: calc(var(--u) * 45.1);
+  top: calc(var(--u) * 239.9);
+  font-size: calc(var(--u) * 94.2);
+  color: var(--vermelho);
+}
+
+.subtitulo,
+.intro,
+.rotulo,
+.nota,
+.becker p,
+.estudo p,
+.frase p,
+.fontes p {
+  font-family: "Libre Caslon Text", serif;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.subtitulo {
+  left: calc(var(--u) * 57);
+  top: calc(var(--u) * 346.8);
+  font-size: calc(var(--u) * 31.4);
+  line-height: 1;
+}
+
+.estudo-1::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 28);
+  top: calc(var(--u) * 395);
+  width: calc(var(--u) * 669);
+  height: calc(var(--u) * 18);
+  background:
+    radial-gradient(circle at calc(var(--u) * 9) calc(var(--u) * 9), var(--vermelho-vivo) calc(var(--u) * 8.6), transparent calc(var(--u) * 9.2)),
+    linear-gradient(var(--vermelho-vivo), var(--vermelho-vivo)) calc(var(--u) * 9) calc(var(--u) * 8) / 100% calc(var(--u) * 3) no-repeat;
+}
+
+.estudo-1::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 26);
+  top: calc(var(--u) * 427);
+  width: calc(var(--u) * 13);
+  height: calc(var(--u) * 45);
+  background: var(--vermelho-vivo);
+}
+
+.estudo-1 h2 span {
+  top: calc(var(--u) * 426.7);
+  font-size: calc(var(--u) * 36);
+}
+
+.n1 {
+  left: calc(var(--u) * 53);
+  color: var(--vermelho);
+  transform: scaleX(1.2);
+}
+
+.n1-preto {
+  left: calc(var(--u) * 109.3);
+  color: var(--preto);
+  transform: scaleX(0.87);
+}
+
+.n1-vermelho {
+  left: calc(var(--u) * 343);
+  color: var(--vermelho);
+  transform: scaleX(0.848);
+}
+
+.intro {
+  left: calc(var(--u) * 52.4);
+  top: calc(var(--u) * 477.4);
+  font-size: calc(var(--u) * 14.9);
+  line-height: 1;
+}
+
+.indicador-2::before,
+.indicador-3::before,
+.indicador-4::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * var(--divisao));
+  top: calc(var(--u) * 513);
+  width: calc(var(--u) * 1.5);
+  height: calc(var(--u) * 186);
+  background: var(--fio);
+}
+
+.silhueta {
+  left: calc(var(--u) * var(--sil-x));
+  top: calc(var(--u) * var(--sil-y));
+  width: calc(var(--u) * var(--sil-w));
+}
+
+.pincelada {
+  left: calc(var(--u) * var(--pin-x));
+  top: calc(var(--u) * 599);
+  width: calc(var(--u) * 37);
+}
+
+.numero {
+  left: calc(var(--u) * var(--num-x));
+  top: calc(var(--u) * 599.5);
+  font-size: calc(var(--u) * 53.5);
+  color: var(--vermelho-vivo);
+  transform: scaleX(var(--num-sx));
+}
+
+.rotulo {
+  left: calc(var(--u) * var(--rot-x));
+  top: calc(var(--u) * var(--rot-y));
+  font-size: calc(var(--u) * var(--rot-fs));
+  line-height: calc(var(--u) * var(--rot-lh));
+}
+
+.indicador-1 {
+  --sil-x: 32;
+  --sil-y: 512;
+  --sil-w: 94;
+  --pin-x: 28;
+  --num-x: 73.5;
+  --num-sx: 0.75;
+  --rot-x: 75.7;
+  --rot-y: 661.1;
+  --rot-fs: 17.4;
+  --rot-lh: 17.4;
+}
+
+.indicador-2 {
+  --divisao: 177;
+  --sil-x: 186;
+  --sil-y: 509;
+  --sil-w: 98;
+  --pin-x: 186;
+  --num-x: 225.8;
+  --num-sx: 0.764;
+  --rot-x: 231.3;
+  --rot-y: 663.1;
+  --rot-fs: 17.4;
+  --rot-lh: 17.4;
+}
+
+.indicador-3 {
+  --divisao: 359;
+  --sil-x: 367;
+  --sil-y: 507;
+  --sil-w: 91;
+  --pin-x: 371;
+  --num-x: 422.3;
+  --num-sx: 0.669;
+  --rot-x: 423.7;
+  --rot-y: 652.2;
+  --rot-fs: 15.7;
+  --rot-lh: 21.5;
+}
+
+.indicador-4 {
+  --divisao: 536;
+  --sil-x: 544;
+  --sil-y: 503;
+  --sil-w: 135;
+  --pin-x: 547;
+  --num-x: 596.3;
+  --num-sx: 0.696;
+  --rot-x: 592.3;
+  --rot-y: 657.5;
+  --rot-fs: 14.1;
+  --rot-lh: 21;
+}
+
+.nota {
+  left: calc(var(--u) * 31.4);
+  top: calc(var(--u) * 713.8);
+  font-size: calc(var(--u) * 14.66);
+  line-height: 1;
+}
+
+.becker::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 27);
+  top: calc(var(--u) * 744.5);
+  width: calc(var(--u) * 671);
+  height: calc(var(--u) * 1.5);
+  background: var(--fio);
+  z-index: -1;
+}
+
+.becker h2 span {
+  top: calc(var(--u) * 797.1);
+  font-size: calc(var(--u) * 29.1);
+}
+
+.bk-branco {
+  left: calc(var(--u) * 229.1);
+  color: var(--branco);
+  transform: scaleX(0.95);
+}
+
+.bk-vermelho {
+  left: calc(var(--u) * 336.7);
+  color: #cd0a0b;
+  transform: scaleX(0.957);
+}
+
+.becker p {
+  left: calc(var(--u) * 228.2);
+  top: calc(var(--u) * 838.8);
+  font-size: calc(var(--u) * 15.8);
+  line-height: calc(var(--u) * 23);
+  color: var(--branco);
+}
+
+.estudo::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 745);
+  top: calc(var(--u) * var(--barra-y));
+  width: calc(var(--u) * 14);
+  height: calc(var(--u) * var(--barra-h));
+  background: var(--vermelho-vivo);
+}
+
+.estudo::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 747);
+  top: calc(var(--u) * var(--fio-y));
+  width: calc(var(--u) * 671);
+  height: calc(var(--u) * 1.5);
+  background: var(--fio);
+}
+
+.estudo-2 {
+  --barra-y: 390;
+  --barra-h: 59;
+  --fio-y: 581.5;
+}
+
+.estudo-3 {
+  --barra-y: 597;
+  --barra-h: 44;
+  --fio-y: 780;
+}
+
+.estudo h2 span {
+  font-size: calc(var(--u) * 34.9);
+  color: var(--preto);
+}
+
+.estudo-2 h2 span {
+  top: calc(var(--u) * 390.7);
+}
+
+.estudo-3 h2 span {
+  top: calc(var(--u) * 595.7);
+}
+
+.estudo h2 .e-num,
+.estudo h2 .e2b,
+.estudo h2 .e2d,
+.estudo h2 .e3b {
+  color: var(--vermelho);
+}
+
+.estudo-2 .e-num {
+  left: calc(var(--u) * 773.3);
+  transform: scaleX(1.19);
+}
+
+.e2a {
+  left: calc(var(--u) * 835.3);
+  transform: scaleX(0.805);
+}
+
+.e2b {
+  left: calc(var(--u) * 920.3);
+  transform: scaleX(0.907);
+}
+
+.e2c {
+  left: calc(var(--u) * 1087.3);
+  transform: scaleX(0.868);
+}
+
+.e2d {
+  left: calc(var(--u) * 1163);
+  transform: scaleX(0.889);
+}
+
+.estudo-3 .e-num {
+  left: calc(var(--u) * 773.6);
+  transform: scaleX(1.25);
+}
+
+.e3a {
+  left: calc(var(--u) * 840);
+  transform: scaleX(0.867);
+}
+
+.e3b {
+  left: calc(var(--u) * 910);
+  transform: scaleX(0.843);
+}
+
+.estudo p strong {
+  font-weight: 700;
+  color: var(--vermelho-texto);
+}
+
+.estudo-2 p {
+  left: calc(var(--u) * 773.4);
+  top: calc(var(--u) * 438);
+  font-size: calc(var(--u) * 14.5);
+  line-height: calc(var(--u) * 21);
+}
+
+.estudo-3 p {
+  left: calc(var(--u) * 774.4);
+  top: calc(var(--u) * 646.3);
+  font-size: calc(var(--u) * 14.3);
+  line-height: calc(var(--u) * 21.2);
+}
+
+.estudo-3 .destaque-num {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: calc(var(--u) * 20);
+  line-height: 0;
+  color: var(--vermelho-vivo);
+}
+
+.frase p {
+  font-weight: 700;
+}
+
+.frase span {
+  left: calc(var(--u) * (var(--centro) - 400));
+  top: calc(var(--u) * var(--topo));
+  width: calc(var(--u) * 800);
+  font-size: calc(var(--u) * 27.3);
+  line-height: 1;
+  text-align: center;
+  transform: scaleX(0.767);
+  transform-origin: center top;
+}
+
+.f1 {
+  --centro: 1077;
+  --topo: 796.7;
+  color: var(--preto);
+}
+
+.f2 {
+  --centro: 1082;
+  --topo: 825.7;
+  color: var(--preto);
+}
+
+.f3 {
+  --centro: 1084.5;
+  --topo: 853.7;
+  color: #c0201a;
+}
+
+.fontes::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 746);
+  top: calc(var(--u) * 916.5);
+  width: calc(var(--u) * 672);
+  height: calc(var(--u) * 1.5);
+  background: var(--fio);
+}
+
+.fontes p {
+  left: calc(var(--u) * 748);
+  top: calc(var(--u) * 927.4);
+  font-size: calc(var(--u) * 11.6);
+  line-height: calc(var(--u) * 17);
+}
+
+.fontes strong {
+  font-weight: 700;
+}

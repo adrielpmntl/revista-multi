@@ -1,0 +1,751 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #e7ddcc;
+  --preto: #131211;
+  --vermelho: #b3080b;
+  --tinta: #1d1b19;
+  --barra-cinza: #7f7a73;
+  --barra-vermelha: #c31c1e;
+  --eixo: #2e2a24;
+  --fio: #565246;
+  --divisoria: #3c342a;
+  --divisoria-clara: #999286;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.pagina {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  background: var(--papel);
+  overflow: hidden;
+}
+
+.pagina::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 670);
+  top: 0;
+  width: calc(var(--u) * 100);
+  height: 100%;
+  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.3) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.pagina > *,
+.abertura > *,
+.abertura h1 span,
+.bloco > *,
+.coluna > *,
+.fontes > * {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.mapa {
+  left: calc(var(--u) * 830);
+  top: calc(var(--u) * 5);
+  width: calc(var(--u) * 610);
+  z-index: 1;
+}
+
+.folha {
+  left: calc(var(--u) * 5);
+  top: calc(var(--u) * 640);
+  width: calc(var(--u) * 225);
+  z-index: 1;
+}
+
+.placa {
+  left: calc(var(--u) * 1265);
+  top: calc(var(--u) * 820);
+  width: calc(var(--u) * 175);
+  z-index: 1;
+}
+
+.abertura,
+.abertura h1,
+.bloco,
+.coluna,
+.fontes {
+  inset: 0;
+}
+
+.abertura,
+.bloco,
+.fontes {
+  z-index: 2;
+}
+
+.abertura h1,
+.numero,
+.bloco h2,
+.valor,
+.destaque {
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.numero,
+.t2,
+.bloco h2,
+.valor,
+.destaque {
+  font-family: "Anton", sans-serif;
+}
+
+.abertura h1 span,
+.numero,
+.bloco h2,
+.destaque {
+  display: block;
+  transform-origin: left top;
+}
+
+.numero {
+  left: calc(var(--u) * 35);
+  top: calc(var(--u) * 21.5);
+  font-size: calc(var(--u) * 22.7);
+  color: var(--vermelho);
+  transform: scaleX(0.82);
+}
+
+.abertura::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 69);
+  top: calc(var(--u) * 33.5);
+  width: calc(var(--u) * 110);
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+.abertura::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 28);
+  top: calc(var(--u) * 326);
+  width: calc(var(--u) * 832);
+  height: calc(var(--u) * 18);
+  background:
+    radial-gradient(circle at calc(var(--u) * 9) calc(var(--u) * 9), var(--vermelho) calc(var(--u) * 8.6), transparent calc(var(--u) * 9.2)),
+    linear-gradient(var(--vermelho), var(--vermelho)) calc(var(--u) * 9) calc(var(--u) * 8) / 100% calc(var(--u) * 2) no-repeat;
+}
+
+.t1 {
+  left: calc(var(--u) * 26.5);
+  top: calc(var(--u) * 15.3);
+  font-family: "Archivo Black", sans-serif;
+  font-size: calc(var(--u) * 198);
+  color: var(--preto);
+  transform: scaleX(0.651);
+}
+
+.t2 {
+  left: calc(var(--u) * 32.8);
+  top: calc(var(--u) * 188.8);
+  font-size: calc(var(--u) * 97);
+  color: var(--vermelho);
+  transform: scaleX(0.785);
+}
+
+.subtitulo,
+.rotulo,
+.legenda-cinza,
+.legenda-vermelha,
+.nota,
+.intro,
+.cerca,
+.texto,
+.texto-renda,
+.titulo-grafico,
+.interpretar p,
+.fontes p {
+  font-family: "Libre Caslon Text", serif;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.subtitulo {
+  left: calc(var(--u) * 37.2);
+  top: calc(var(--u) * 290.2);
+  font-size: calc(var(--u) * 19.35);
+  line-height: 1;
+}
+
+.bloco h2 {
+  color: var(--preto);
+}
+
+.grafico-1 h2 {
+  left: calc(var(--u) * 37.6);
+  top: calc(var(--u) * 356.7);
+  font-size: calc(var(--u) * 36);
+  transform: scaleX(0.976);
+}
+
+.grafico-2 h2 {
+  left: calc(var(--u) * 39.7);
+  top: calc(var(--u) * 586.8);
+  font-size: calc(var(--u) * 33.7);
+  transform: scaleX(0.984);
+}
+
+.acesso h2 {
+  left: calc(var(--u) * 769.7);
+  top: calc(var(--u) * 588.8);
+  font-size: calc(var(--u) * 33.7);
+  transform: scaleX(0.952);
+}
+
+.renda h2 {
+  left: calc(var(--u) * 38.6);
+  top: calc(var(--u) * 829.8);
+  font-size: calc(var(--u) * 33.7);
+  transform: scaleX(0.925);
+}
+
+.interpretar h2 {
+  left: calc(var(--u) * 806.3);
+  top: calc(var(--u) * 830.8);
+  font-size: calc(var(--u) * 33.7);
+  transform: scaleX(0.959);
+}
+
+.legenda-cinza,
+.legenda-vermelha {
+  line-height: 1;
+}
+
+.legenda-cinza::before,
+.legenda-vermelha::before {
+  content: "";
+  position: absolute;
+}
+
+.legenda-cinza::before {
+  background: var(--barra-cinza);
+}
+
+.legenda-vermelha::before {
+  background: var(--barra-vermelha);
+}
+
+.grafico-1 .legenda-cinza,
+.grafico-1 .legenda-vermelha {
+  top: calc(var(--u) * 373.6);
+  font-size: calc(var(--u) * 12.2);
+}
+
+.grafico-1 .legenda-cinza {
+  left: calc(var(--u) * 505);
+}
+
+.grafico-1 .legenda-vermelha {
+  left: calc(var(--u) * 647);
+}
+
+.grafico-1 .legenda-cinza::before {
+  left: calc(var(--u) * -24);
+  top: calc(var(--u) * -5.6);
+  width: calc(var(--u) * 15.5);
+  height: calc(var(--u) * 17);
+}
+
+.grafico-1 .legenda-vermelha::before {
+  left: calc(var(--u) * -27);
+  top: calc(var(--u) * -7.6);
+  width: calc(var(--u) * 19.5);
+  height: calc(var(--u) * 21.5);
+}
+
+.grafico-2 .legenda-cinza,
+.grafico-2 .legenda-vermelha {
+  top: calc(var(--u) * 638.3);
+  font-size: calc(var(--u) * 11);
+}
+
+.grafico-2 .legenda-cinza {
+  left: calc(var(--u) * 471);
+}
+
+.grafico-2 .legenda-vermelha {
+  left: calc(var(--u) * 613);
+}
+
+.grafico-2 .legenda-cinza::before {
+  left: calc(var(--u) * -22);
+  top: calc(var(--u) * -5.3);
+  width: calc(var(--u) * 14.5);
+  height: calc(var(--u) * 16);
+}
+
+.grafico-2 .legenda-vermelha::before {
+  left: calc(var(--u) * -21);
+  top: calc(var(--u) * -6.3);
+  width: calc(var(--u) * 15);
+  height: calc(var(--u) * 18);
+}
+
+.grafico-1 .rotulo {
+  font-size: calc(var(--u) * 19.25);
+  line-height: calc(var(--u) * 22);
+}
+
+.grafico-1 .rotulo-1 {
+  left: calc(var(--u) * 37.6);
+  top: calc(var(--u) * 421.7);
+}
+
+.grafico-1 .rotulo-2 {
+  left: calc(var(--u) * 38);
+  top: calc(var(--u) * 495.2);
+}
+
+.grafico-2 .rotulo {
+  font-size: calc(var(--u) * 15.2);
+  line-height: calc(var(--u) * 23);
+}
+
+.grafico-2 .rotulo-1 {
+  left: calc(var(--u) * 234.4);
+  top: calc(var(--u) * 664.1);
+}
+
+.grafico-2 .rotulo-2 {
+  left: calc(var(--u) * 235);
+  top: calc(var(--u) * 711.1);
+}
+
+.eixo {
+  width: calc(var(--u) * 2);
+  background: var(--eixo);
+}
+
+.grafico-1 .eixo {
+  left: calc(var(--u) * 166);
+  top: calc(var(--u) * 409);
+  height: calc(var(--u) * 141);
+}
+
+.grafico-2 .eixo {
+  left: calc(var(--u) * 365);
+  top: calc(var(--u) * 656);
+  height: calc(var(--u) * 104);
+}
+
+.renda .eixo {
+  left: calc(var(--u) * 520);
+  top: calc(var(--u) * 862);
+  height: calc(var(--u) * 107);
+}
+
+.barra {
+  display: flex;
+  align-items: center;
+  left: calc(var(--u) * var(--inicio));
+  top: calc(var(--u) * var(--topo));
+  height: calc(var(--u) * var(--altura));
+}
+
+.preenchimento {
+  width: calc(var(--u) * var(--v) * var(--escala));
+  height: 100%;
+}
+
+.cinza .preenchimento {
+  background: var(--barra-cinza);
+}
+
+.vermelha .preenchimento {
+  background: var(--barra-vermelha);
+}
+
+.valor {
+  display: block;
+  margin-left: calc(var(--u) * var(--folga));
+  font-size: calc(var(--u) * var(--fonte));
+  transform: scaleX(var(--compressao));
+  transform-origin: left center;
+}
+
+.cinza .valor {
+  color: var(--preto);
+}
+
+.vermelha .valor {
+  color: var(--vermelho);
+}
+
+.grafico-1 {
+  --escala: 23.85;
+  --inicio: 168;
+  --folga: 13;
+}
+
+.grafico-1 .cinza {
+  --fonte: 24.4;
+  --compressao: 0.86;
+}
+
+.grafico-1 .vermelha {
+  --fonte: 36;
+  --compressao: 0.86;
+}
+
+.g1-a {
+  --v: 10.3;
+  --topo: 414;
+  --altura: 26;
+}
+
+.g1-b {
+  --v: 18.7;
+  --topo: 444;
+  --altura: 28.5;
+}
+
+.g1-c {
+  --v: 4.5;
+  --topo: 488;
+  --altura: 26;
+}
+
+.g1-d {
+  --v: 8.1;
+  --topo: 518;
+  --altura: 27.5;
+}
+
+.grafico-2 {
+  --escala: 14.4;
+  --inicio: 367;
+  --folga: 11;
+}
+
+.grafico-2 .cinza {
+  --fonte: 18.6;
+  --compressao: 0.887;
+}
+
+.grafico-2 .vermelha {
+  --fonte: 24.4;
+  --compressao: 0.87;
+}
+
+.g2-a {
+  --v: 6.2;
+  --topo: 660;
+  --altura: 18;
+}
+
+.g2-b {
+  --v: 15;
+  --topo: 680;
+  --altura: 19;
+}
+
+.g2-c {
+  --v: 2.8;
+  --topo: 714;
+  --altura: 20;
+}
+
+.g2-d {
+  --v: 6;
+  --topo: 736;
+  --altura: 21;
+}
+
+.renda {
+  --escala: 8.8;
+  --inicio: 522;
+  --folga: 10.5;
+}
+
+.renda .cinza {
+  --fonte: 23.3;
+  --compressao: 0.76;
+}
+
+.renda .vermelha {
+  --fonte: 31.4;
+  --compressao: 0.81;
+}
+
+.g3-a {
+  --v: 11.4;
+  --topo: 870;
+  --altura: 35;
+}
+
+.g3-b {
+  --v: 18.3;
+  --topo: 918;
+  --altura: 37;
+}
+
+.nota {
+  left: calc(var(--u) * 220.4);
+  top: calc(var(--u) * 772.6);
+  font-size: calc(var(--u) * 13.3);
+  line-height: calc(var(--u) * 18);
+}
+
+.nota strong,
+.texto-renda strong {
+  font-weight: 700;
+  color: var(--vermelho);
+}
+
+.grafico-1::after,
+.grafico-2::after,
+.acesso::before,
+.acesso::after,
+.coluna-4::before,
+.renda::before,
+.renda::after,
+.fontes::before {
+  content: "";
+  position: absolute;
+}
+
+.grafico-1::after {
+  left: calc(var(--u) * 41);
+  top: calc(var(--u) * 571);
+  width: calc(var(--u) * 1359);
+  height: calc(var(--u) * 1);
+  background: var(--fio);
+}
+
+.grafico-2::after {
+  left: calc(var(--u) * 746);
+  top: calc(var(--u) * 588);
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 211);
+  background: var(--divisoria);
+}
+
+.acesso::before {
+  left: calc(var(--u) * 919);
+  top: calc(var(--u) * 647);
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 131);
+  background: var(--divisoria-clara);
+}
+
+.acesso::after {
+  left: calc(var(--u) * 1081);
+  top: calc(var(--u) * 635);
+  width: calc(var(--u) * 1.5);
+  height: calc(var(--u) * 162);
+  background: repeating-linear-gradient(180deg, var(--divisoria-clara) 0, var(--divisoria-clara) calc(var(--u) * 5), transparent calc(var(--u) * 5), transparent calc(var(--u) * 9));
+}
+
+.coluna-4::before {
+  left: calc(var(--u) * 1258);
+  top: calc(var(--u) * 636);
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 161);
+  background: var(--divisoria-clara);
+}
+
+.intro,
+.cerca {
+  font-size: calc(var(--u) * 12.5);
+  line-height: 1;
+}
+
+.intro {
+  left: calc(var(--u) * 770.5);
+  top: calc(var(--u) * 636.9);
+}
+
+.coluna-3 .cerca {
+  left: calc(var(--u) * 1100.4);
+  top: calc(var(--u) * 637.9);
+}
+
+.coluna-4 .cerca {
+  left: calc(var(--u) * 1273.4);
+  top: calc(var(--u) * 637.9);
+}
+
+.destaque {
+  color: var(--vermelho);
+}
+
+.coluna-1 .destaque,
+.coluna-2 .destaque {
+  top: calc(var(--u) * 670.7);
+  font-size: calc(var(--u) * 52.3);
+}
+
+.coluna-1 .destaque {
+  left: calc(var(--u) * 769.7);
+  transform: scaleX(0.823);
+}
+
+.coluna-2 .destaque {
+  left: calc(var(--u) * 937.6);
+  transform: scaleX(0.796);
+}
+
+.coluna-3 .destaque,
+.coluna-4 .destaque {
+  font-size: calc(var(--u) * 31.5);
+}
+
+.coluna-3 .destaque {
+  left: calc(var(--u) * 1099.3);
+  top: calc(var(--u) * 656.9);
+  transform: scaleX(0.727);
+}
+
+.coluna-4 .destaque {
+  left: calc(var(--u) * 1273.3);
+  top: calc(var(--u) * 652.9);
+  transform: scaleX(0.88);
+}
+
+.coluna-1 .texto,
+.coluna-2 .texto {
+  top: calc(var(--u) * 722.8);
+  font-size: calc(var(--u) * 14.65);
+  line-height: calc(var(--u) * 20);
+}
+
+.coluna-1 .texto {
+  left: calc(var(--u) * 770.7);
+}
+
+.coluna-2 .texto {
+  left: calc(var(--u) * 937.7);
+}
+
+.coluna-3 .texto,
+.coluna-4 .texto {
+  top: calc(var(--u) * 698.6);
+  font-size: calc(var(--u) * 14.2);
+  line-height: calc(var(--u) * 18.5);
+}
+
+.coluna-3 .texto {
+  left: calc(var(--u) * 1100.7);
+}
+
+.coluna-4 .texto {
+  left: calc(var(--u) * 1274.4);
+}
+
+.renda::before {
+  left: calc(var(--u) * 40);
+  top: calc(var(--u) * 817);
+  width: calc(var(--u) * 1359);
+  height: calc(var(--u) * 2);
+  background: var(--fio);
+}
+
+.renda::after {
+  left: calc(var(--u) * 783);
+  top: calc(var(--u) * 830);
+  width: calc(var(--u) * 1);
+  height: calc(var(--u) * 145);
+  background: var(--divisoria);
+}
+
+.texto-renda {
+  left: calc(var(--u) * 41.4);
+  top: calc(var(--u) * 872.7);
+  font-size: calc(var(--u) * 14.2);
+  line-height: calc(var(--u) * 20.5);
+}
+
+.titulo-grafico {
+  left: calc(var(--u) * 520);
+  top: calc(var(--u) * 824);
+  width: calc(var(--u) * 201);
+  font-size: calc(var(--u) * 11.2);
+  line-height: calc(var(--u) * 17);
+  text-align: center;
+}
+
+.titulo-grafico strong {
+  font-weight: 700;
+}
+
+.renda .rotulo {
+  left: calc(var(--u) * 433.5);
+  width: calc(var(--u) * 100);
+  font-size: calc(var(--u) * 12);
+  text-align: center;
+}
+
+.renda .rotulo-1 {
+  top: calc(var(--u) * 859.9);
+  line-height: calc(var(--u) * 15.75);
+}
+
+.renda .rotulo-2 {
+  top: calc(var(--u) * 917);
+  line-height: calc(var(--u) * 15.5);
+}
+
+.interpretar p {
+  left: calc(var(--u) * 809.6);
+  top: calc(var(--u) * 876.7);
+  font-size: calc(var(--u) * 13.4);
+  line-height: calc(var(--u) * 19.75);
+}
+
+.fontes::before {
+  left: calc(var(--u) * 37);
+  top: calc(var(--u) * 986);
+  width: calc(var(--u) * 760);
+  height: calc(var(--u) * 1);
+  background: var(--fio);
+}
+
+.fontes p {
+  left: calc(var(--u) * 36.7);
+  top: calc(var(--u) * 994.1);
+  font-size: calc(var(--u) * 10.81);
+  line-height: 1;
+}
+
+.fontes strong {
+  font-weight: 700;
+}

@@ -1,0 +1,359 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #ece0d0;
+  --preto: #131211;
+  --vermelho: #ab0b0b;
+  --tinta: #1d1b19;
+  --fio: #5e5852;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.pagina {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  background: var(--papel);
+  overflow: hidden;
+}
+
+.pagina > *,
+.apresentacao > *,
+.sumario > *,
+h1 span,
+.membro > *,
+.indice li > *,
+.rodape > * {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.tarja-topo {
+  left: 0;
+  top: calc(var(--u) * 26);
+  width: calc(var(--u) * 200);
+  z-index: 2;
+}
+
+.faixa {
+  left: calc(var(--u) * 470);
+  top: 0;
+  width: calc(var(--u) * 318);
+  height: calc(var(--u) * 1024);
+  z-index: 1;
+}
+
+.apresentacao,
+.sumario {
+  inset: 0;
+  z-index: 3;
+}
+
+.apresentacao h1 {
+  inset: 0;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+h1 span {
+  display: block;
+  transform-origin: left top;
+}
+
+.linha-1 {
+  left: calc(var(--u) * 48.9);
+  top: calc(var(--u) * 78.6);
+  font-size: calc(var(--u) * 82.6);
+  color: var(--preto);
+  transform: scaleX(0.656);
+}
+
+.linha-2a {
+  left: calc(var(--u) * 49);
+  top: calc(var(--u) * 162.9);
+  font-size: calc(var(--u) * 77.9);
+  color: var(--preto);
+  transform: scaleX(0.659);
+}
+
+.linha-2b {
+  left: calc(var(--u) * 179.5);
+  top: calc(var(--u) * 162.9);
+  font-size: calc(var(--u) * 77.9);
+  color: var(--vermelho);
+  transform: scaleX(0.637);
+}
+
+.par-1,
+.par-2 {
+  left: calc(var(--u) * 54.4);
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 18.88);
+  line-height: calc(var(--u) * 26);
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.par-1 {
+  top: calc(var(--u) * 257.6);
+}
+
+.par-2 {
+  top: calc(var(--u) * 401.6);
+}
+
+.apresentacao::before,
+.apresentacao::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 54);
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+.apresentacao::before {
+  top: calc(var(--u) * 528.5);
+  width: calc(var(--u) * 494);
+}
+
+.apresentacao::after {
+  top: calc(var(--u) * 921.5);
+  width: calc(var(--u) * 455);
+}
+
+.rotulo {
+  left: calc(var(--u) * 54);
+  top: calc(var(--u) * 538);
+  width: calc(var(--u) * 85);
+  height: calc(var(--u) * 36);
+  padding-left: calc(var(--u) * 10);
+  padding-top: calc(var(--u) * 6.4);
+  background: var(--vermelho);
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: calc(var(--u) * 24.4);
+  line-height: 1;
+  color: #fff;
+}
+
+.equipe {
+  inset: 0;
+  list-style: none;
+}
+
+.membro {
+  position: absolute;
+  width: calc(var(--u) * 121);
+  height: calc(var(--u) * 121);
+}
+
+.membro-1,
+.membro-4 {
+  left: calc(var(--u) * 62.5);
+}
+
+.membro-2,
+.membro-5 {
+  left: calc(var(--u) * 228.5);
+}
+
+.membro-3,
+.membro-6 {
+  left: calc(var(--u) * 391.5);
+}
+
+.membro-1,
+.membro-2,
+.membro-3 {
+  top: calc(var(--u) * 579.5);
+}
+
+.membro-4,
+.membro-5,
+.membro-6 {
+  top: calc(var(--u) * 740.5);
+}
+
+.membro img {
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.membro p {
+  left: calc(var(--u) * -30);
+  top: calc(var(--u) * 118.9);
+  width: calc(var(--u) * 181);
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 13);
+  line-height: calc(var(--u) * 18);
+  text-align: center;
+  color: var(--tinta);
+}
+
+.membro-4 p,
+.membro-5 p,
+.membro-6 p {
+  top: calc(var(--u) * 120.9);
+}
+
+.membro p span {
+  display: block;
+}
+
+.turma {
+  left: calc(var(--u) * 54.7);
+  top: calc(var(--u) * 935.5);
+  font-family: "Libre Caslon Text", serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 17);
+  line-height: 1;
+  color: var(--preto);
+}
+
+.disciplinas {
+  left: calc(var(--u) * 55.3);
+  top: calc(var(--u) * 960.8);
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 13.8);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.sumario-titulo {
+  left: calc(var(--u) * 790);
+  top: calc(var(--u) * 32.1);
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: calc(var(--u) * 167.5);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--preto);
+  transform: scaleX(0.637);
+  transform-origin: left top;
+}
+
+.sumario::before,
+.sumario::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 797);
+  width: calc(var(--u) * 594);
+  height: calc(var(--u) * 2);
+  background: var(--preto);
+}
+
+.sumario::before {
+  top: calc(var(--u) * 198);
+}
+
+.sumario::after {
+  top: calc(var(--u) * 940);
+}
+
+.indice {
+  left: calc(var(--u) * 866);
+  top: calc(var(--u) * 200.82);
+  width: calc(var(--u) * 524);
+  list-style: none;
+}
+
+.indice li {
+  position: relative;
+  height: calc(var(--u) * 39.18);
+  border-bottom: calc(var(--u) * 1) solid var(--fio);
+}
+
+.num {
+  left: calc(var(--u) * -70.3);
+  top: calc(var(--u) * 3.84);
+  font-family: "Anton", sans-serif;
+  font-size: calc(var(--u) * 36);
+  line-height: 1;
+  color: var(--vermelho);
+  transform: scaleX(0.88);
+  transform-origin: left top;
+}
+
+.item {
+  left: calc(var(--u) * 2);
+  top: calc(var(--u) * 11.99);
+  font-family: "Libre Caslon Text", serif;
+  font-size: calc(var(--u) * 18);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.rodape {
+  inset: 0;
+  font-family: "Anton", sans-serif;
+  font-size: calc(var(--u) * 20.9);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.rodape > * {
+  transform-origin: left top;
+}
+
+.marca {
+  left: calc(var(--u) * 797);
+  top: calc(var(--u) * 956.6);
+  color: var(--preto);
+  transform: scaleX(0.97);
+}
+
+.voltar {
+  left: calc(var(--u) * 1248);
+  top: calc(var(--u) * 954.6);
+  color: var(--vermelho);
+  transform: scaleX(0.85);
+}
+
+.seta {
+  display: inline-block;
+  font-weight: 700;
+  transform: scaleY(1.35);
+  transform-origin: left center;
+}
+
+.folio {
+  left: calc(var(--u) * 1375);
+  top: calc(var(--u) * 956.6);
+  color: var(--preto);
+  transform: scaleX(0.78);
+}

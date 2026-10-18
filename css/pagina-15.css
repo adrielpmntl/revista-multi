@@ -1,0 +1,765 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
+  --papel: #f4e7d7;
+  --preto: #131211;
+  --vermelho: #c60403;
+  --quadrado: #d1080b;
+  --vermelho-barra: #c70102;
+  --coral: #fb4951;
+  --cinza: #aca8a3;
+  --cinza-claro: #bbb9b5;
+  --caixa: #e5ddd2;
+  --tinta: #1d1b19;
+  --branco: #f7f7f7;
+  --fio: #2e2a24;
+}
+
+html,
+body {
+  min-height: 100%;
+  background: #000;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.pagina {
+  position: relative;
+  width: calc(var(--u) * 1440);
+  height: calc(var(--u) * 1024);
+  background: var(--papel);
+  overflow: hidden;
+}
+
+.pagina::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 670);
+  top: 0;
+  width: calc(var(--u) * 100);
+  height: 100%;
+  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.36) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 11;
+}
+
+.pagina > *,
+.abertura > *,
+.abertura h1 span,
+.marca span,
+.pagina-num span,
+.bloco > *,
+.bloco h2 span,
+.fonte > * {
+  position: absolute;
+}
+
+.textura {
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.9;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.linhas {
+  inset: 0;
+  z-index: 1;
+}
+
+.linhas::before,
+.linhas::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 29);
+  width: calc(var(--u) * 1386);
+  height: calc(var(--u) * 1.5);
+  background: linear-gradient(90deg, var(--fio) 0, var(--fio) 48.05%, transparent 48.05%, transparent 52.02%, var(--fio) 52.02%, var(--fio) 100%);
+}
+
+.linhas::before {
+  top: calc(var(--u) * 356.5);
+}
+
+.linhas::after {
+  top: calc(var(--u) * 694.5);
+}
+
+.pagina > img:not(.textura) {
+  z-index: 2;
+}
+
+.colagem-topo {
+  left: calc(var(--u) * 828);
+  top: calc(var(--u) * 12);
+  width: calc(var(--u) * 608);
+}
+
+.faixa-1 {
+  left: calc(var(--u) * 95);
+  top: calc(var(--u) * 368);
+  width: calc(var(--u) * 505);
+}
+
+.faixa-2 {
+  left: calc(var(--u) * 815);
+  top: calc(var(--u) * 368);
+  width: calc(var(--u) * 365);
+}
+
+.faixa-3 {
+  left: calc(var(--u) * 95);
+  top: calc(var(--u) * 708);
+  width: calc(var(--u) * 465);
+}
+
+.faixa-4 {
+  left: calc(var(--u) * 815);
+  top: calc(var(--u) * 708);
+  width: calc(var(--u) * 300);
+}
+
+.garrafas {
+  left: calc(var(--u) * 510);
+  top: calc(var(--u) * 392);
+  width: calc(var(--u) * 218);
+}
+
+.simbolos {
+  left: calc(var(--u) * 1245);
+  top: calc(var(--u) * 405);
+  width: calc(var(--u) * 190);
+}
+
+.mochila {
+  left: calc(var(--u) * 535);
+  top: calc(var(--u) * 740);
+  width: calc(var(--u) * 183);
+}
+
+.carteira {
+  left: calc(var(--u) * 1105);
+  top: calc(var(--u) * 722);
+  width: calc(var(--u) * 330);
+}
+
+.abertura,
+.abertura h1,
+.marca,
+.pagina-num,
+.bloco,
+.bloco h2,
+.fonte {
+  inset: 0;
+}
+
+.abertura,
+.bloco,
+.fonte {
+  z-index: 3;
+}
+
+.marca,
+.pagina-n,
+.abertura h1,
+.bloco h2,
+.valor {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.marca span,
+.pagina-num span,
+.abertura h1 span,
+.bloco h2 span,
+.valor {
+  display: block;
+  transform-origin: left top;
+}
+
+.marca span {
+  top: calc(var(--u) * 22);
+  font-size: calc(var(--u) * 30.2);
+}
+
+.marca-sob {
+  left: calc(var(--u) * 28);
+  color: var(--preto);
+  transform: scaleX(0.847);
+}
+
+.marca-efeito {
+  left: calc(var(--u) * 69);
+  color: var(--vermelho);
+  transform: scaleX(0.859);
+}
+
+.abertura::before,
+.abertura::after {
+  content: "";
+  position: absolute;
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+.abertura::before {
+  left: calc(var(--u) * 140);
+  top: calc(var(--u) * 37.5);
+  width: calc(var(--u) * 106);
+}
+
+.abertura::after {
+  left: calc(var(--u) * 1235);
+  top: calc(var(--u) * 38);
+  width: calc(var(--u) * 70);
+}
+
+.pagina-txt {
+  left: calc(var(--u) * 1321);
+  top: calc(var(--u) * 25.7);
+  font-family: "Barlow", sans-serif;
+  font-weight: 700;
+  font-size: calc(var(--u) * 21.4);
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--preto);
+  transform: scaleX(0.74);
+}
+
+.pagina-n {
+  left: calc(var(--u) * 1381);
+  top: calc(var(--u) * 20.8);
+  font-size: calc(var(--u) * 33.7);
+  color: var(--vermelho);
+  transform: scaleX(0.95);
+}
+
+.t1 {
+  left: calc(var(--u) * 38);
+  top: calc(var(--u) * 88.9);
+  font-size: calc(var(--u) * 102.3);
+  color: var(--preto);
+  transform: scaleX(0.949);
+}
+
+.t2 {
+  left: calc(var(--u) * 40);
+  top: calc(var(--u) * 188.3);
+  font-size: calc(var(--u) * 103.5);
+  color: var(--vermelho);
+  transform: scaleX(0.925);
+}
+
+.sublinhado {
+  left: calc(var(--u) * 585);
+  top: calc(var(--u) * 282);
+  width: calc(var(--u) * 245);
+}
+
+.subtitulo,
+.rotulo,
+.grupo,
+.categoria,
+.texto,
+.nota,
+.fonte p {
+  font-family: "Libre Caslon Text", serif;
+  white-space: nowrap;
+  color: var(--tinta);
+}
+
+.subtitulo {
+  left: calc(var(--u) * 41.5);
+  top: calc(var(--u) * 304.4);
+  font-size: calc(var(--u) * 25.18);
+  line-height: 1;
+}
+
+.bloco h2::before {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * var(--sq-x));
+  top: calc(var(--u) * var(--sq-y));
+  width: calc(var(--u) * 71);
+  height: calc(var(--u) * var(--sq-h));
+  background: var(--quadrado);
+}
+
+.numero {
+  left: calc(var(--u) * var(--num-x));
+  top: calc(var(--u) * var(--num-y));
+  font-size: calc(var(--u) * var(--num-fs));
+  color: var(--branco);
+  transform: scaleX(var(--num-sx));
+}
+
+.titulo {
+  left: calc(var(--u) * var(--tit-x));
+  top: calc(var(--u) * var(--tit-y));
+  font-size: calc(var(--u) * 27.9);
+  color: var(--branco);
+  transform: scaleX(var(--tit-sx));
+}
+
+.bloco-1 {
+  --sq-x: 30;
+  --sq-y: 368;
+  --sq-h: 66;
+  --num-x: 53;
+  --num-y: 374.5;
+  --num-fs: 53.5;
+  --num-sx: 1.08;
+  --tit-x: 124;
+  --tit-y: 384.2;
+  --tit-sx: 1.078;
+}
+
+.bloco-2 {
+  --sq-x: 751;
+  --sq-y: 368;
+  --sq-h: 66;
+  --num-x: 773;
+  --num-y: 373.5;
+  --num-fs: 53.5;
+  --num-sx: 1;
+  --tit-x: 843;
+  --tit-y: 385.2;
+  --tit-sx: 1.107;
+}
+
+.bloco-3 {
+  --sq-x: 34;
+  --sq-y: 710;
+  --sq-h: 67;
+  --num-x: 56;
+  --num-y: 715.3;
+  --num-fs: 57;
+  --num-sx: 1;
+  --tit-x: 127;
+  --tit-y: 726.2;
+  --tit-sx: 1.085;
+}
+
+.bloco-4 {
+  --sq-x: 751;
+  --sq-y: 711;
+  --sq-h: 69;
+  --num-x: 772;
+  --num-y: 717.3;
+  --num-fs: 57;
+  --num-sx: 1.04;
+  --tit-x: 854;
+  --tit-y: 727.2;
+  --tit-sx: 1.015;
+}
+
+.rotulo {
+  left: calc(var(--u) * 49.5);
+  font-weight: 700;
+  font-size: calc(var(--u) * 16.4);
+  line-height: 1;
+}
+
+.r1a {
+  top: calc(var(--u) * 473.6);
+}
+
+.r1b {
+  top: calc(var(--u) * 524.6);
+}
+
+.barra {
+  left: calc(var(--u) * var(--x));
+  top: calc(var(--u) * var(--y));
+  width: calc(var(--u) * var(--w));
+  height: calc(var(--u) * var(--h));
+  background: var(--cor);
+}
+
+.valor {
+  left: calc(var(--u) * var(--x));
+  top: calc(var(--u) * var(--y));
+  font-size: calc(var(--u) * var(--fs));
+  color: var(--preto);
+  transform: scaleX(var(--sx));
+}
+
+.b1a {
+  --x: 154;
+  --y: 462;
+  --w: 182;
+  --h: 39;
+  --cor: var(--cinza-claro);
+}
+
+.b1b {
+  --x: 156;
+  --y: 514;
+  --w: 262;
+  --h: 38;
+  --cor: var(--vermelho-barra);
+}
+
+.v1a,
+.v1b {
+  --fs: 31.4;
+  --sx: 0.855;
+}
+
+.v1a {
+  --x: 350;
+  --y: 463;
+}
+
+.v1b {
+  --x: 431;
+  --y: 512;
+}
+
+.texto {
+  left: calc(var(--u) * var(--tx-x));
+  top: calc(var(--u) * var(--tx-y));
+  font-size: calc(var(--u) * var(--tx-fs));
+  line-height: calc(var(--u) * var(--tx-lh));
+}
+
+.bloco-1 .texto {
+  --tx-x: 41;
+  --tx-y: 573.8;
+  --tx-fs: 19.3;
+  --tx-lh: 26.5;
+}
+
+.caixa {
+  left: calc(var(--u) * var(--x));
+  top: calc(var(--u) * var(--y));
+  width: calc(var(--u) * var(--w));
+  height: calc(var(--u) * var(--h));
+  background: var(--caixa);
+}
+
+.caixa-2a {
+  --x: 760;
+  --y: 452;
+  --w: 136;
+  --h: 74;
+}
+
+.caixa-2b {
+  --x: 760;
+  --y: 548;
+  --w: 136;
+  --h: 75;
+}
+
+.caixa-3a {
+  --x: 40;
+  --y: 787;
+  --w: 160;
+  --h: 70;
+}
+
+.caixa-3b {
+  --x: 40;
+  --y: 871;
+  --w: 160;
+  --h: 75;
+}
+
+.icone {
+  left: calc(var(--u) * var(--x));
+  top: calc(var(--u) * var(--y));
+  width: calc(var(--u) * var(--w));
+}
+
+.caneca {
+  --x: 772;
+  --y: 460;
+  --w: 48;
+}
+
+.vape-a {
+  --x: 776;
+  --y: 556;
+  --w: 34;
+}
+
+.folha {
+  --x: 44;
+  --y: 793;
+  --w: 62;
+}
+
+.vape-b {
+  --x: 56;
+  --y: 876;
+  --w: 38;
+}
+
+.grupo {
+  left: calc(var(--u) * var(--x));
+  top: calc(var(--u) * var(--y));
+  font-weight: 700;
+  font-size: calc(var(--u) * var(--fs));
+  line-height: calc(var(--u) * 24);
+  transform: scaleX(var(--sx));
+  transform-origin: left top;
+}
+
+.g-alcool {
+  --x: 831.5;
+  --y: 480.4;
+  --fs: 19;
+  --sx: 0.8;
+}
+
+.g-vape-a {
+  --x: 834.5;
+  --y: 572.4;
+  --fs: 19;
+  --sx: 0.82;
+}
+
+.g-drogas {
+  --x: 116.5;
+  --y: 795.4;
+  --fs: 18.4;
+  --sx: 0.87;
+}
+
+.g-vape-b {
+  --x: 116.5;
+  --y: 895.4;
+  --fs: 18.4;
+  --sx: 0.83;
+}
+
+.categoria {
+  left: calc(var(--u) * var(--x));
+  top: calc(var(--u) * var(--y));
+  font-size: calc(var(--u) * var(--fs));
+  line-height: 1;
+}
+
+.c2a,
+.c2b,
+.c2c,
+.c2d {
+  --x: 917.4;
+  --fs: 15.6;
+}
+
+.c2a {
+  --y: 461.7;
+}
+
+.c2b {
+  --y: 498.7;
+}
+
+.c2c {
+  --y: 554.7;
+}
+
+.c2d {
+  --y: 592.7;
+}
+
+.b2a {
+  --x: 996;
+  --y: 457;
+  --w: 169;
+  --h: 28;
+  --cor: var(--coral);
+}
+
+.b2b {
+  --x: 997;
+  --y: 493;
+  --w: 141;
+  --h: 28;
+  --cor: var(--cinza);
+}
+
+.b2c {
+  --x: 996;
+  --y: 547;
+  --w: 105;
+  --h: 29;
+  --cor: var(--coral);
+}
+
+.b2d {
+  --x: 996;
+  --y: 588;
+  --w: 91;
+  --h: 28;
+  --cor: var(--cinza);
+}
+
+.v2a,
+.v2b,
+.v2c,
+.v2d {
+  --fs: 25.6;
+  --sx: 0.81;
+}
+
+.v2a {
+  --x: 1178;
+  --y: 458.3;
+}
+
+.v2b {
+  --x: 1152;
+  --y: 494.3;
+}
+
+.v2c {
+  --x: 1112;
+  --y: 549.3;
+}
+
+.v2d {
+  --x: 1103;
+  --y: 588.3;
+}
+
+.nota {
+  left: calc(var(--u) * var(--x));
+  top: calc(var(--u) * var(--y));
+  font-size: calc(var(--u) * var(--fs));
+  line-height: calc(var(--u) * var(--lh));
+}
+
+.bloco-2 .nota {
+  --x: 761.5;
+  --y: 648.4;
+  --fs: 19;
+  --lh: 24;
+}
+
+.c3a,
+.c3b,
+.c3c,
+.c3d {
+  --x: 215.4;
+  --fs: 15;
+}
+
+.c3a {
+  --y: 797.7;
+}
+
+.c3b {
+  --y: 831.7;
+}
+
+.c3c {
+  --y: 881.7;
+}
+
+.c3d {
+  --y: 915.7;
+}
+
+.b3a {
+  --x: 289;
+  --y: 791;
+  --w: 50;
+  --h: 29;
+  --cor: var(--vermelho-barra);
+}
+
+.b3b {
+  --x: 289;
+  --y: 826;
+  --w: 31;
+  --h: 28;
+  --cor: var(--cinza);
+}
+
+.b3c {
+  --x: 289;
+  --y: 875;
+  --w: 156;
+  --h: 29;
+  --cor: var(--vermelho-barra);
+}
+
+.b3d {
+  --x: 289;
+  --y: 910;
+  --w: 121;
+  --h: 28;
+  --cor: var(--cinza);
+}
+
+.v3a,
+.v3b,
+.v3c,
+.v3d {
+  --fs: 24.4;
+  --sx: 0.81;
+}
+
+.v3a {
+  --x: 349;
+  --y: 791.4;
+}
+
+.v3b {
+  --x: 342;
+  --y: 827.4;
+}
+
+.v3c {
+  --x: 455;
+  --y: 875.4;
+  --sx: 0.835;
+}
+
+.v3d {
+  --x: 422;
+  --y: 911.4;
+  --sx: 0.835;
+}
+
+.bloco-3 .nota {
+  --x: 42.2;
+  --y: 958.5;
+  --fs: 19.5;
+  --lh: 27.3;
+}
+
+.bloco-4 .texto {
+  --tx-x: 764.5;
+  --tx-y: 794.6;
+  --tx-fs: 19.2;
+  --tx-lh: 28.8;
+}
+
+.fonte p {
+  left: calc(var(--u) * 971.5);
+  top: calc(var(--u) * 982.6);
+  font-size: calc(var(--u) * 13.45);
+  line-height: calc(var(--u) * 20);
+}
