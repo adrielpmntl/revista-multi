@@ -7,24 +7,21 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #e8dfcf;
-  --preto: #131211;
-  --vermelho: #af0303;
-  --vermelho-vivo: #cf1b1f;
-  --vermelho-faixa: #e41627;
-  --barra: #cd1017;
-  --trilha: #d2cdc1;
-  --tinta: #1d1b19;
-  --branco: #f4f0e8;
-  --fio: #2e2a24;
-  --caixa: #dad1c3;
+  --papel: color-mix(in srgb, var(--neutro-1) 5%, var(--creme));
+  --vermelho-vivo: color-mix(in srgb, var(--vermelho) 90%, var(--creme));
+  --vermelho-faixa: color-mix(in srgb, var(--vermelho) 90%, var(--creme));
+  --barra: color-mix(in srgb, var(--vermelho) 95%, var(--creme));
+  --trilha: color-mix(in srgb, var(--neutro-1) 15%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --branco: var(--creme);
+  --fio: var(--neutro-1);
+  --caixa: color-mix(in srgb, var(--preto) 10%, var(--creme));
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -49,7 +46,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.33) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--neutro-1) 8%, transparent) 30%, color-mix(in srgb, var(--preto) 33%, transparent) 50%, color-mix(in srgb, var(--neutro-1) 10%, transparent) 70%, transparent 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -113,14 +110,14 @@ body {
 .anos,
 .p20,
 .p34 {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
 }
 
 .t1,
 .n331,
 .milhoes {
-  font-family: "Archivo Black", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
 }
 
@@ -140,7 +137,7 @@ body {
 .numero {
   left: calc(var(--u) * 36.8);
   top: calc(var(--u) * 49.5);
-  font-size: calc(var(--u) * 23.3);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   color: var(--vermelho);
   transform: scaleX(1.01);
 }
@@ -171,7 +168,7 @@ body {
 .t1 {
   left: calc(var(--u) * 42.8);
   top: calc(var(--u) * 66.8);
-  font-size: calc(var(--u) * 118.8);
+  font-size: calc(var(--u) * var(--tam-numero));
   color: var(--preto);
   transform: scaleX(0.62);
 }
@@ -179,7 +176,7 @@ body {
 .t2 {
   left: calc(var(--u) * 48);
   top: calc(var(--u) * 174.6);
-  font-size: calc(var(--u) * 83.7);
+  font-size: calc(var(--u) * var(--tam-titulo-xl-pequeno));
   color: var(--vermelho);
   transform: scaleX(0.923);
 }
@@ -192,7 +189,7 @@ body {
 .aumento,
 .coluna p,
 .coluna-2 li {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   white-space: nowrap;
   color: var(--tinta);
 }
@@ -200,7 +197,7 @@ body {
 .subtitulo {
   left: calc(var(--u) * 49);
   top: calc(var(--u) * 265.1);
-  font-size: calc(var(--u) * 25.39);
+  font-size: calc(var(--u) * var(--tam-intertitulo));
   line-height: 1;
 }
 
@@ -213,7 +210,7 @@ body {
 .n331 {
   left: calc(var(--u) * 54.2);
   top: calc(var(--u) * 326.3);
-  font-size: calc(var(--u) * 121.7);
+  font-size: calc(var(--u) * var(--tam-numero));
   transform: scaleX(0.757);
 }
 
@@ -227,28 +224,28 @@ body {
 .texto-331 {
   left: calc(var(--u) * 58.2);
   top: calc(var(--u) * 504);
-  font-size: calc(var(--u) * 20.1);
+  font-size: calc(var(--u) * var(--tam-corpo-pequeno));
   line-height: calc(var(--u) * 27.5);
 }
 
 .n62 {
   left: calc(var(--u) * 442.1);
   top: calc(var(--u) * 347.9);
-  font-size: calc(var(--u) * 95.3);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
   transform: scaleX(0.986);
 }
 
 .texto-62 {
   left: calc(var(--u) * 420.2);
   top: calc(var(--u) * 472.4);
-  font-size: calc(var(--u) * 19.65);
+  font-size: calc(var(--u) * var(--tam-corpo-pequeno));
   line-height: calc(var(--u) * 27.5);
 }
 
 .destaque-62 {
   left: calc(var(--u) * 420.5);
   top: calc(var(--u) * 563.7);
-  font-size: calc(var(--u) * 15.4);
+  font-size: calc(var(--u) * var(--tam-rodape));
   line-height: 1;
 }
 
@@ -291,7 +288,7 @@ body {
 .g-t1 {
   left: calc(var(--u) * 821.4);
   top: calc(var(--u) * 346.1);
-  font-size: calc(var(--u) * 29.1);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
   color: var(--preto);
   transform: scaleX(1.049);
 }
@@ -299,7 +296,7 @@ body {
 .g-t2 {
   left: calc(var(--u) * 821.5);
   top: calc(var(--u) * 376.4);
-  font-size: calc(var(--u) * 24.4);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   color: var(--vermelho);
   transform: scaleX(1.007);
 }
@@ -338,7 +335,7 @@ body {
 .nome {
   left: calc(var(--u) * 825);
   top: calc(var(--u) * -1);
-  font-size: calc(var(--u) * 19.55);
+  font-size: calc(var(--u) * var(--tam-legenda));
   line-height: calc(var(--u) * 22);
 }
 
@@ -362,7 +359,7 @@ body {
 .valor {
   left: calc(var(--u) * 1321.5);
   top: 0;
-  font-size: calc(var(--u) * 25.6);
+  font-size: calc(var(--u) * var(--tam-intertitulo));
   line-height: calc(var(--u) * 22);
   color: var(--vermelho-vivo);
   transform: scaleX(0.92);
@@ -385,7 +382,7 @@ body {
 
 .anos span {
   top: calc(var(--u) * 632);
-  font-size: calc(var(--u) * 46.5);
+  font-size: calc(var(--u) * var(--tam-titulo-medio-pequeno));
 }
 
 .a2014,
@@ -412,9 +409,9 @@ body {
 .anos .seta {
   left: calc(var(--u) * 352);
   top: calc(var(--u) * 617);
-  font-family: sans-serif;
+  font-family: var(--fonte-corpo);
   font-weight: 700;
-  font-size: calc(var(--u) * 72);
+  font-size: calc(var(--u) * var(--tam-titulo-grande));
   transform: scaleX(1.05);
 }
 
@@ -431,7 +428,7 @@ body {
 .aumento {
   left: calc(var(--u) * 834.6);
   top: calc(var(--u) * 619.9);
-  font-size: calc(var(--u) * 20.7);
+  font-size: calc(var(--u) * var(--tam-corpo));
   line-height: calc(var(--u) * 27.5);
 }
 
@@ -441,16 +438,16 @@ body {
 }
 
 .p20 {
-  font-size: calc(var(--u) * 28.5);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
 }
 
 .p34 {
-  font-size: calc(var(--u) * 23.5);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
 }
 
 .coluna h2 span {
   top: calc(var(--u) * var(--titulo-y));
-  font-size: calc(var(--u) * 30.2);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
 }
 
 .c-preto {
@@ -490,7 +487,7 @@ body {
 .coluna-1 p {
   left: calc(var(--u) * 48.2);
   top: calc(var(--u) * 806.4);
-  font-size: calc(var(--u) * 20.9);
+  font-size: calc(var(--u) * var(--tam-corpo));
   line-height: calc(var(--u) * 26.5);
 }
 
@@ -502,7 +499,7 @@ body {
 }
 
 .coluna-2 h2 span {
-  font-size: calc(var(--u) * 29.1);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
 }
 
 .coluna-2 .c-preto {
@@ -524,7 +521,7 @@ body {
 
 .coluna-2 li {
   left: calc(var(--u) * 453.4);
-  font-size: calc(var(--u) * 16.9);
+  font-size: calc(var(--u) * var(--tam-legenda-pequena));
   line-height: calc(var(--u) * 21.7);
 }
 
@@ -558,7 +555,7 @@ body {
   height: calc(var(--u) * 256);
   border-radius: calc(var(--u) * 8);
   background: var(--caixa);
-  box-shadow: 0 calc(var(--u) * 1) calc(var(--u) * 4) rgba(0, 0, 0, 0.25);
+  box-shadow: 0 calc(var(--u) * 1) calc(var(--u) * 4) color-mix(in srgb, var(--preto) 25%, transparent);
 }
 
 .coluna-3::after {
@@ -569,7 +566,7 @@ body {
 }
 
 .coluna-3 h2 span {
-  font-size: calc(var(--u) * 29.1);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
 }
 
 .coluna-3 .c-preto {
@@ -587,14 +584,14 @@ body {
 .texto-caixa {
   left: calc(var(--u) * 807.3);
   top: calc(var(--u) * 778.5);
-  font-size: calc(var(--u) * 18.2);
+  font-size: calc(var(--u) * var(--tam-legenda));
   line-height: calc(var(--u) * 26);
 }
 
 .conclusao {
   left: calc(var(--u) * 808.5);
   top: calc(var(--u) * 929.2);
-  font-size: calc(var(--u) * 15.6);
+  font-size: calc(var(--u) * var(--tam-rodape));
   line-height: calc(var(--u) * 24.5);
 }
 
@@ -613,7 +610,7 @@ body {
 }
 
 .coluna-4 h2 span {
-  font-size: calc(var(--u) * 29.1);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
 }
 
 .coluna-4 .c-preto {
@@ -630,7 +627,7 @@ body {
 .texto-equipe {
   left: calc(var(--u) * 1133);
   top: calc(var(--u) * 776.4);
-  font-size: calc(var(--u) * 18);
+  font-size: calc(var(--u) * var(--tam-legenda));
   line-height: calc(var(--u) * 26.2);
 }
 
@@ -639,4 +636,20 @@ body {
   top: calc(var(--u) * 960.8);
   font-size: calc(var(--u) * 8.9);
   line-height: calc(var(--u) * 16);
+}
+
+html body .t1.t1 {
+  transform: none;
+}
+
+html body .n331.n331 {
+  top: calc(var(--u) * 340);
+  font-size: calc(var(--u) * var(--tam-titulo-xl-pequeno));
+  transform: none;
+}
+
+html body .milhoes.milhoes {
+  top: calc(var(--u) * 430);
+  font-size: calc(var(--u) * var(--tam-titulo-grande-pequeno));
+  transform: none;
 }

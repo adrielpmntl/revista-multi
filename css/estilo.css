@@ -7,17 +7,14 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #ecdcc4;
-  --preto: #131211;
-  --vermelho: #c8141a;
-  --tinta: #1d1b19;
+  --papel: color-mix(in srgb, var(--vermelho) 5%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -31,7 +28,8 @@ body {
   position: relative;
   width: calc(var(--u) * 1440);
   height: calc(var(--u) * 1024);
-  overflow: hidden;
+
+  background: var(--creme);  overflow: hidden;
 }
 
 .capa {
@@ -40,7 +38,7 @@ body {
   height: calc(var(--u) * 1069);
   background: var(--papel);
   overflow: hidden;
-  transform: scale(calc(1440 / 1472), calc(1024 / 1069));
+  transform: translateX(calc(var(--u) * 15)) scale(calc(1024 / 1069));
   transform-origin: 0 0;
 }
 
@@ -65,9 +63,9 @@ body {
 .turma {
   left: calc(var(--u) * 53);
   top: calc(var(--u) * 36);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 14.3);
+  font-size: calc(var(--u) * var(--tam-nota));
   letter-spacing: 0.166em;
   line-height: 1;
   color: var(--preto);
@@ -144,8 +142,8 @@ body {
 .sob {
   left: calc(var(--u) * 51);
   top: calc(var(--u) * 59.5);
-  font-family: "Archivo Black", sans-serif;
-  font-size: calc(var(--u) * 214.5);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-capa-grande));
   letter-spacing: -0.02em;
   color: var(--preto);
   transform: scaleX(0.8);
@@ -154,8 +152,8 @@ body {
 .efeito {
   left: calc(var(--u) * 73);
   top: calc(var(--u) * 246.5);
-  font-family: "Anton", sans-serif;
-  font-size: calc(var(--u) * 207);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-capa-grande));
   color: var(--vermelho);
   transform: scaleX(0.863);
 }
@@ -169,9 +167,9 @@ body {
 .subtitulo {
   left: calc(var(--u) * 50.6);
   top: calc(var(--u) * 467.2);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 600;
-  font-size: calc(var(--u) * 31.4);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
   letter-spacing: 0.215em;
   line-height: 1.115;
   white-space: nowrap;
@@ -187,8 +185,8 @@ body {
 .chamada {
   left: calc(var(--u) * 56);
   top: calc(var(--u) * 581.2);
-  font-family: "Libre Caslon Text", serif;
-  font-size: calc(var(--u) * 23.4);
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   line-height: calc(var(--u) * 29);
   white-space: nowrap;
   color: var(--tinta);
@@ -227,7 +225,7 @@ body {
 
 .cartao h2 {
   inset: 0;
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -277,34 +275,34 @@ body {
 .cartao-1 .preto {
   left: calc(var(--u) * 17);
   top: calc(var(--u) * 30.6);
-  font-size: calc(var(--u) * 54.65);
+  font-size: calc(var(--u) * var(--tam-titulo-secao));
   transform: scaleX(0.823);
 }
 
 .cartao-1 .vermelho {
   left: calc(var(--u) * 18);
   top: calc(var(--u) * 89.4);
-  font-size: calc(var(--u) * 55.8);
+  font-size: calc(var(--u) * var(--tam-titulo-secao));
 }
 
 .cartao-2 .preto {
   left: calc(var(--u) * 23);
   top: calc(var(--u) * 37.9);
-  font-size: calc(var(--u) * 47.7);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
   transform: scaleX(0.94);
 }
 
 .cartao-2 .vermelho {
   left: calc(var(--u) * 24);
   top: calc(var(--u) * 94);
-  font-size: calc(var(--u) * 46.5);
+  font-size: calc(var(--u) * var(--tam-titulo-medio-pequeno));
   transform: scaleX(0.942);
 }
 
 .cartao-3 .preto {
   left: calc(var(--u) * 24);
   top: calc(var(--u) * 28.8);
-  font-size: calc(var(--u) * 48.8);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
   transform: scaleX(0.962);
 }
 
@@ -316,8 +314,8 @@ body {
 }
 
 .cartao p {
-  font-family: "Libre Caslon Text", serif;
-  font-size: calc(var(--u) * 23.4);
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   line-height: calc(var(--u) * 28.5);
   white-space: nowrap;
   color: var(--tinta);
@@ -357,4 +355,13 @@ body {
   top: calc(var(--u) * 645);
   width: calc(var(--u) * 296);
   z-index: 6;
+}
+
+html body .sob.sob {
+  transform: none;
+}
+
+img[src$="papel-titulo-sob.png"],
+img[src$="papel-titulo-efeito.png"] {
+  object-fit: contain;
 }

@@ -7,23 +7,20 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #e7ddcc;
-  --preto: #131211;
-  --vermelho: #b3080b;
-  --tinta: #1d1b19;
-  --barra-cinza: #7f7a73;
-  --barra-vermelha: #c31c1e;
-  --eixo: #2e2a24;
-  --fio: #565246;
-  --divisoria: #3c342a;
-  --divisoria-clara: #999286;
+  --papel: color-mix(in srgb, var(--preto) 5%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --barra-cinza: color-mix(in srgb, var(--preto) 50%, var(--creme));
+  --barra-vermelha: color-mix(in srgb, var(--vermelho) 90%, var(--creme));
+  --eixo: var(--neutro-1);
+  --fio: color-mix(in srgb, var(--neutro-1) 80%, var(--creme));
+  --divisoria: color-mix(in srgb, var(--neutro-1) 95%, var(--creme));
+  --divisoria-clara: color-mix(in srgb, var(--neutro-1) 45%, var(--creme));
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -48,7 +45,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.3) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--neutro-1) 8%, transparent) 30%, color-mix(in srgb, var(--preto) 30%, transparent) 50%, color-mix(in srgb, var(--neutro-1) 10%, transparent) 70%, transparent 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -124,7 +121,7 @@ body {
 .bloco h2,
 .valor,
 .destaque {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
 }
 
 .abertura h1 span,
@@ -138,7 +135,7 @@ body {
 .numero {
   left: calc(var(--u) * 35);
   top: calc(var(--u) * 21.5);
-  font-size: calc(var(--u) * 22.7);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   color: var(--vermelho);
   transform: scaleX(0.82);
 }
@@ -168,7 +165,7 @@ body {
 .t1 {
   left: calc(var(--u) * 26.5);
   top: calc(var(--u) * 15.3);
-  font-family: "Archivo Black", sans-serif;
+  font-family: var(--fonte-titulo);
   font-size: calc(var(--u) * 198);
   color: var(--preto);
   transform: scaleX(0.651);
@@ -177,7 +174,7 @@ body {
 .t2 {
   left: calc(var(--u) * 32.8);
   top: calc(var(--u) * 188.8);
-  font-size: calc(var(--u) * 97);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
   color: var(--vermelho);
   transform: scaleX(0.785);
 }
@@ -194,7 +191,7 @@ body {
 .titulo-grafico,
 .interpretar p,
 .fontes p {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   white-space: nowrap;
   color: var(--tinta);
 }
@@ -202,7 +199,7 @@ body {
 .subtitulo {
   left: calc(var(--u) * 37.2);
   top: calc(var(--u) * 290.2);
-  font-size: calc(var(--u) * 19.35);
+  font-size: calc(var(--u) * var(--tam-legenda));
   line-height: 1;
 }
 
@@ -213,35 +210,35 @@ body {
 .grafico-1 h2 {
   left: calc(var(--u) * 37.6);
   top: calc(var(--u) * 356.7);
-  font-size: calc(var(--u) * 36);
+  font-size: calc(var(--u) * var(--tam-destaque));
   transform: scaleX(0.976);
 }
 
 .grafico-2 h2 {
   left: calc(var(--u) * 39.7);
   top: calc(var(--u) * 586.8);
-  font-size: calc(var(--u) * 33.7);
+  font-size: calc(var(--u) * var(--tam-destaque));
   transform: scaleX(0.984);
 }
 
 .acesso h2 {
   left: calc(var(--u) * 769.7);
   top: calc(var(--u) * 588.8);
-  font-size: calc(var(--u) * 33.7);
+  font-size: calc(var(--u) * var(--tam-destaque));
   transform: scaleX(0.952);
 }
 
 .renda h2 {
   left: calc(var(--u) * 38.6);
   top: calc(var(--u) * 829.8);
-  font-size: calc(var(--u) * 33.7);
+  font-size: calc(var(--u) * var(--tam-destaque));
   transform: scaleX(0.925);
 }
 
 .interpretar h2 {
   left: calc(var(--u) * 806.3);
   top: calc(var(--u) * 830.8);
-  font-size: calc(var(--u) * 33.7);
+  font-size: calc(var(--u) * var(--tam-destaque));
   transform: scaleX(0.959);
 }
 
@@ -267,7 +264,7 @@ body {
 .grafico-1 .legenda-cinza,
 .grafico-1 .legenda-vermelha {
   top: calc(var(--u) * 373.6);
-  font-size: calc(var(--u) * 12.2);
+  font-size: calc(var(--u) * var(--tam-micro));
 }
 
 .grafico-1 .legenda-cinza {
@@ -321,7 +318,7 @@ body {
 }
 
 .grafico-1 .rotulo {
-  font-size: calc(var(--u) * 19.25);
+  font-size: calc(var(--u) * var(--tam-legenda));
   line-height: calc(var(--u) * 22);
 }
 
@@ -336,7 +333,7 @@ body {
 }
 
 .grafico-2 .rotulo {
-  font-size: calc(var(--u) * 15.2);
+  font-size: calc(var(--u) * var(--tam-rodape));
   line-height: calc(var(--u) * 23);
 }
 
@@ -521,7 +518,7 @@ body {
 .nota {
   left: calc(var(--u) * 220.4);
   top: calc(var(--u) * 772.6);
-  font-size: calc(var(--u) * 13.3);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 18);
 }
 
@@ -585,7 +582,7 @@ body {
 
 .intro,
 .cerca {
-  font-size: calc(var(--u) * 12.5);
+  font-size: calc(var(--u) * var(--tam-micro));
   line-height: 1;
 }
 
@@ -626,7 +623,7 @@ body {
 
 .coluna-3 .destaque,
 .coluna-4 .destaque {
-  font-size: calc(var(--u) * 31.5);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
 }
 
 .coluna-3 .destaque {
@@ -644,7 +641,7 @@ body {
 .coluna-1 .texto,
 .coluna-2 .texto {
   top: calc(var(--u) * 722.8);
-  font-size: calc(var(--u) * 14.65);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 20);
 }
 
@@ -659,7 +656,7 @@ body {
 .coluna-3 .texto,
 .coluna-4 .texto {
   top: calc(var(--u) * 698.6);
-  font-size: calc(var(--u) * 14.2);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 18.5);
 }
 
@@ -690,7 +687,7 @@ body {
 .texto-renda {
   left: calc(var(--u) * 41.4);
   top: calc(var(--u) * 872.7);
-  font-size: calc(var(--u) * 14.2);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 20.5);
 }
 
@@ -710,7 +707,7 @@ body {
 .renda .rotulo {
   left: calc(var(--u) * 433.5);
   width: calc(var(--u) * 100);
-  font-size: calc(var(--u) * 12);
+  font-size: calc(var(--u) * var(--tam-micro));
   text-align: center;
 }
 
@@ -727,7 +724,7 @@ body {
 .interpretar p {
   left: calc(var(--u) * 809.6);
   top: calc(var(--u) * 876.7);
-  font-size: calc(var(--u) * 13.4);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 19.75);
 }
 
@@ -748,4 +745,10 @@ body {
 
 .fontes strong {
   font-weight: 700;
+}
+
+html body .t1.t1 {
+  top: calc(var(--u) * 58);
+  font-size: calc(var(--u) * var(--tam-numero-grande));
+  transform: none;
 }

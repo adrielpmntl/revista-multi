@@ -1,0 +1,449 @@
+:where(.c-marca) {
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+}
+
+:where(.c-pagina-num) {
+  font-family: var(--fonte-titulo);
+  color: var(--preto);
+}
+
+:where(.c-titulo-numerado) {
+  font-family: var(--fonte-titulo);
+  text-transform: uppercase;
+}
+
+:where(.c-titulo-numerado) :where(.numero) {
+  background: var(--vermelho);
+  color: var(--creme);
+}
+
+:where(.c-titulo-numerado) :where(.titulo) {
+  background: var(--preto);
+  color: var(--creme);
+}
+
+:where(.c-barra) {
+  display: block;
+  max-width: 100%;
+}
+
+:where(.c-citacao) {
+  font-family: var(--fonte-titulo);
+}
+
+:where(.c-fontes) {
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-rodape));
+  color: var(--neutro-1);
+}
+
+.indice a,
+a.voltar {
+  color: inherit;
+  text-decoration: none;
+}
+
+.indice a {
+  display: contents;
+}
+
+.indice a:hover .item,
+.indice a:focus-visible .item {
+  color: var(--vermelho);
+}
+
+.c-nav a {
+  position: fixed;
+  top: 50%;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: var(--nav);
+  height: 96px;
+  margin-top: -48px;
+  color: var(--creme);
+  font-family: var(--fonte-titulo);
+  font-size: 40px;
+  line-height: 1;
+  text-decoration: none;
+  opacity: 0.7;
+}
+
+.c-nav a span {
+  margin-top: 6px;
+  font-family: var(--fonte-corpo);
+  font-size: 11px;
+  letter-spacing: 0.05em;
+}
+
+.c-nav a:hover,
+.c-nav a:focus-visible {
+  color: var(--vermelho);
+  opacity: 1;
+}
+
+.c-nav-anterior {
+  left: 0;
+}
+
+.c-nav-proxima {
+  right: 0;
+}
+
+html body header > .numero.numero {
+  left: calc(var(--u) * 36);
+  top: calc(var(--u) * 26);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  color: var(--vermelho);
+  transform: none;
+}
+
+html body header:has(> .numero)::before,
+html body header:has(> .numero)::after {
+  content: none;
+}
+
+html body header > .numero.numero::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--u) * 36);
+  top: calc(var(--u) * 11.5);
+  width: calc(var(--u) * 105);
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+html body .c-marca.c-marca {
+  inset: auto;
+  left: calc(var(--u) * 28);
+  top: calc(var(--u) * 22);
+  margin: 0;
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  transform: none;
+}
+
+html body .c-marca.c-marca span {
+  position: static;
+  display: inline;
+  font-family: var(--fonte-titulo);
+  font-size: inherit;
+  line-height: 1;
+  letter-spacing: 0;
+  transform: none;
+}
+
+html body .c-marca.c-marca .marca-sob {
+  color: var(--preto);
+}
+
+html body .c-marca.c-marca .marca-efeito {
+  color: var(--vermelho);
+}
+
+html body .c-marca.c-marca::after {
+  content: "";
+  position: absolute;
+  left: calc(100% + var(--u) * 12);
+  top: calc(var(--u) * 14.5);
+  width: calc(var(--u) * 105);
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+html body .c-pagina-num.c-pagina-num {
+  inset: auto;
+  right: calc(var(--u) * 36);
+  top: calc(var(--u) * 19);
+  margin: 0;
+  line-height: 1;
+  white-space: nowrap;
+  transform: none;
+}
+
+html body .c-pagina-num.c-pagina-num span {
+  position: static;
+  display: inline-block;
+  vertical-align: middle;
+  font-family: var(--fonte-titulo);
+  line-height: 1;
+  letter-spacing: 0;
+  transform: none;
+}
+
+html body .c-pagina-num.c-pagina-num .pagina-txt {
+  font-size: calc(var(--u) * var(--tam-legenda));
+  color: var(--preto);
+}
+
+html body .c-pagina-num.c-pagina-num .pagina-n {
+  margin-left: calc(var(--u) * 8);
+  font-size: calc(var(--u) * var(--tam-destaque));
+  color: var(--vermelho);
+}
+
+html body .c-pagina-num.c-pagina-num::before {
+  content: "";
+  position: absolute;
+  right: calc(100% + var(--u) * 12);
+  top: calc(var(--u) * 17.5);
+  width: calc(var(--u) * 70);
+  height: calc(var(--u) * 1.5);
+  background: var(--preto);
+}
+
+html body header:has(> .c-pagina-num)::before,
+html body header:has(> .c-pagina-num)::after,
+html body header:has(> .numero ~ .c-marca)::before,
+html body header:has(> .numero ~ .c-marca)::after {
+  content: none;
+}
+
+html body header > .numero ~ .c-marca.c-marca {
+  left: auto;
+  right: calc(var(--u) * 36);
+}
+
+html body header > .numero ~ .c-marca.c-marca::after {
+  content: none;
+}
+
+@media (max-width: 900px), (max-height: 600px) {
+  .c-nav a {
+    font-size: 28px;
+  }
+
+  .c-nav a span {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  .c-nav a {
+    top: auto;
+    bottom: 0;
+    flex-direction: row;
+    box-sizing: border-box;
+    width: 50%;
+    height: var(--nav);
+    margin-top: 0;
+    gap: 8px;
+    font-size: 30px;
+    opacity: 1;
+    background: var(--preto);
+  }
+
+  .c-nav a span {
+    display: inline;
+    margin-top: 0;
+    font-size: 13px;
+  }
+
+  .c-nav-anterior {
+    justify-content: flex-start;
+    padding-left: 20px;
+  }
+
+  .c-nav-proxima {
+    justify-content: flex-end;
+    padding-right: 20px;
+  }
+}
+
+.c-player {
+  position: relative;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas: "info info" "tempo relogio";
+  align-content: center;
+  column-gap: calc(var(--u) * 10);
+  row-gap: calc(var(--u) * 6);
+  height: calc(var(--u) * 66);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14) 0 calc(var(--u) * 70);
+  color: var(--creme);
+  background: var(--preto);
+  clip-path: polygon(0 0, 97% 3%, 100% 0, 99% 35%, 100% 70%, 98% 100%, 60% 97%, 30% 100%, 0 100%);
+}
+
+.c-player .botao-play {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: calc(var(--u) * 58);
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: var(--vermelho);
+  cursor: pointer;
+}
+
+.c-player .botao-play::before {
+  content: "";
+  display: block;
+  width: calc(var(--u) * 18);
+  height: calc(var(--u) * 22);
+  margin-left: calc(var(--u) * 4);
+  background: var(--creme);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.c-player .botao-play.tocando::before {
+  width: calc(var(--u) * 17);
+  height: calc(var(--u) * 21);
+  margin-left: 0;
+  background: linear-gradient(to right, var(--creme) 0 35%, transparent 35% 65%, var(--creme) 65% 100%);
+  clip-path: none;
+}
+
+.c-player .botao-play:hover,
+.c-player .botao-play:focus-visible {
+  background: color-mix(in srgb, var(--vermelho) 80%, var(--preto));
+  outline: none;
+}
+
+.c-player .player-info {
+  grid-area: info;
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--u) * 3);
+  min-width: 0;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.c-player .player-titulo {
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-legenda));
+  line-height: 1;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.c-player .player-artista {
+  overflow: hidden;
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-nota));
+  font-style: italic;
+  line-height: 1;
+  text-overflow: ellipsis;
+  color: color-mix(in srgb, var(--creme) 80%, transparent);
+}
+
+.c-player .player-relogio {
+  grid-area: relogio;
+  margin: 0;
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-micro));
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  color: color-mix(in srgb, var(--creme) 80%, transparent);
+}
+
+.c-player .player-tempo {
+  grid-area: tempo;
+  align-self: center;
+  width: 100%;
+  height: calc(var(--u) * 14);
+  margin: 0;
+  background: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.c-player .player-tempo::-webkit-slider-runnable-track {
+  height: calc(var(--u) * 4);
+  background: linear-gradient(to right, var(--vermelho) var(--p, 0%), color-mix(in srgb, var(--creme) 30%, transparent) var(--p, 0%));
+}
+
+.c-player .player-tempo::-webkit-slider-thumb {
+  width: calc(var(--u) * 12);
+  height: calc(var(--u) * 12);
+  margin-top: calc(var(--u) * -4);
+  border: 0;
+  border-radius: 50%;
+  background: var(--creme);
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.c-player .player-tempo::-moz-range-track {
+  height: calc(var(--u) * 4);
+  background: color-mix(in srgb, var(--creme) 30%, transparent);
+}
+
+.c-player .player-tempo::-moz-range-progress {
+  height: calc(var(--u) * 4);
+  background: var(--vermelho);
+}
+
+.c-player .player-tempo::-moz-range-thumb {
+  width: calc(var(--u) * 12);
+  height: calc(var(--u) * 12);
+  border: 0;
+  border-radius: 50%;
+  background: var(--creme);
+}
+
+.c-player .player-tempo:focus-visible {
+  outline: 1px solid var(--creme);
+  outline-offset: 2px;
+}
+
+a.c-link {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+a.c-link:hover .preto,
+a.c-link:focus-visible .preto {
+  color: var(--vermelho);
+}
+
+a.c-link:focus-visible {
+  outline: none;
+}
+
+a.c-ref {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--vermelho);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+
+a.c-ref:hover,
+a.c-ref:focus-visible {
+  color: var(--vermelho);
+  outline: none;
+}
+
+.c-barra {
+  transition: filter 0.2s ease;
+}
+
+.c-barra:hover {
+  filter: brightness(1.2) saturate(1.1);
+}
+
+.pagina :is(section, article, header, footer, aside, div, h1, h2, h3, blockquote, ul, ol, table, tbody, thead, tr, img) {
+  pointer-events: none;
+}
+
+.pagina :is(p, span, li, td, th, strong, b, em, u, a, button, input, label) {
+  pointer-events: auto;
+}

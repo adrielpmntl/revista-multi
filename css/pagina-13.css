@@ -7,22 +7,19 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #f8ecdb;
-  --preto: #131211;
-  --vermelho: #c60403;
-  --vermelho-vivo: #e40301;
-  --vermelho-citacao: #c6211a;
-  --vermelho-final: #d81d23;
-  --tinta: #1d1b19;
-  --branco: #f7f7f7;
-  --fio: #2e2a24;
+  --papel: var(--creme);
+  --vermelho-vivo: var(--vermelho);
+  --vermelho-citacao: color-mix(in srgb, var(--vermelho) 90%, var(--creme));
+  --vermelho-final: color-mix(in srgb, var(--vermelho) 90%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --branco: var(--creme);
+  --fio: var(--neutro-1);
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -47,7 +44,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.36) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--neutro-1) 8%, transparent) 30%, color-mix(in srgb, var(--preto) 36%, transparent) 50%, color-mix(in srgb, var(--neutro-1) 10%, transparent) 70%, transparent 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -138,12 +135,14 @@ body {
   left: calc(var(--u) * 362);
   top: calc(var(--u) * 368);
   width: calc(var(--u) * 338);
+  clip-path: polygon(0 8%, 45% 8%, 45% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .colagem-cachimbo {
   left: calc(var(--u) * 1082);
   top: calc(var(--u) * 402);
   width: calc(var(--u) * 352);
+  clip-path: polygon(0 3%, 58% 3%, 58% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .faixa-final {
@@ -180,7 +179,7 @@ body {
 .pagina-n,
 .abertura h1,
 .musica h2 {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -196,7 +195,7 @@ body {
 
 .marca span {
   top: calc(var(--u) * 21);
-  font-size: calc(var(--u) * 30.2);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
 }
 
 .marca-sob {
@@ -234,9 +233,9 @@ body {
 .pagina-txt {
   left: calc(var(--u) * 1301);
   top: calc(var(--u) * 24.9);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 20.7);
+  font-size: calc(var(--u) * var(--tam-corpo));
   line-height: 1;
   white-space: nowrap;
   color: var(--preto);
@@ -247,7 +246,7 @@ body {
 .pagina-n {
   left: calc(var(--u) * 1383);
   top: calc(var(--u) * 18.7);
-  font-size: calc(var(--u) * 34.9);
+  font-size: calc(var(--u) * var(--tam-destaque));
   color: var(--vermelho);
   transform: scaleX(0.85);
 }
@@ -255,24 +254,24 @@ body {
 .t1 {
   left: calc(var(--u) * 37);
   top: calc(var(--u) * 65.4);
-  font-size: calc(var(--u) * 116.3);
+  font-size: calc(var(--u) * var(--tam-numero));
   color: var(--preto);
   transform: scaleX(0.978);
 }
 
 .t2 {
   left: calc(var(--u) * 39);
-  top: calc(var(--u) * 179.9);
-  font-size: calc(var(--u) * 94.2);
+  top: calc(var(--u) * 197);
+  font-size: calc(var(--u) * var(--tam-titulo-xl-pequeno));
   color: var(--vermelho);
-  transform: scaleX(0.879);
+  transform: scaleX(0.985);
 }
 
 .etiquetas li {
   left: calc(var(--u) * (var(--cx) - 100));
   top: calc(var(--u) * (var(--cy) - var(--fs) * 0.55));
   width: calc(var(--u) * 200);
-  font-family: "Special Elite", monospace;
+  font-family: var(--fonte-corpo);
   font-size: calc(var(--u) * var(--fs));
   line-height: 1;
   text-align: center;
@@ -285,28 +284,28 @@ body {
 .et-1 {
   --cx: 1307.4;
   --cy: 99.8;
-  --fs: 18.5;
+  --fs: var(--tam-legenda);
   --giro: -10deg;
 }
 
 .et-2 {
   --cx: 1331.8;
   --cy: 143.1;
-  --fs: 18.5;
+  --fs: var(--tam-legenda);
   --giro: -7deg;
 }
 
 .et-3 {
   --cx: 1341.8;
   --cy: 180.2;
-  --fs: 18.3;
+  --fs: var(--tam-legenda);
   --giro: -8deg;
 }
 
 .et-4 {
   --cx: 1348.8;
   --cy: 221;
-  --fs: 16.3;
+  --fs: var(--tam-rodape);
   --giro: -9deg;
 }
 
@@ -323,7 +322,7 @@ body {
 .numero {
   left: calc(var(--u) * var(--num-x));
   top: calc(var(--u) * 344.8);
-  font-size: calc(var(--u) * 65);
+  font-size: calc(var(--u) * var(--tam-titulo-grande-pequeno));
   color: var(--branco);
   transform: scaleX(var(--num-sx));
 }
@@ -345,14 +344,69 @@ body {
   background: var(--vermelho-vivo);
 }
 
-.play::after {
-  content: "";
+.marca,
+.pagina-num,
+.etiquetas,
+.musica,
+.musica h2,
+.citacao,
+.fechamento,
+.fechamento p,
+.linhas {
+  pointer-events: none;
+}
+
+.marca span,
+.pagina-num span,
+.etiquetas li,
+.musica h2 span,
+.citacao span,
+.fechamento span,
+.musica .artista,
+.musica .texto-1,
+.musica .texto-2,
+.musica .play {
+  pointer-events: auto;
+}
+
+.play .botao-play {
   position: absolute;
-  left: calc(var(--u) * 18);
-  top: calc(var(--u) * 13);
-  border-top: calc(var(--u) * 9.5) solid transparent;
-  border-bottom: calc(var(--u) * 9.5) solid transparent;
-  border-left: calc(var(--u) * 16) solid var(--branco);
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: inherit;
+  background: transparent;
+  cursor: pointer;
+}
+
+.play .botao-play::before {
+  content: "";
+  display: block;
+  width: calc(var(--u) * 16);
+  height: calc(var(--u) * 19);
+  margin-left: calc(var(--u) * 4);
+  background: var(--branco);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.play .botao-play.tocando::before {
+  width: calc(var(--u) * 15);
+  height: calc(var(--u) * 18);
+  margin-left: 0;
+  background: linear-gradient(to right, var(--branco) 0 35%, transparent 35% 65%, var(--branco) 65% 100%);
+  clip-path: none;
+}
+
+.play .botao-play:hover,
+.play .botao-play:focus-visible {
+  background: color-mix(in srgb, var(--preto) 18%, transparent);
+  outline: none;
 }
 
 .artista,
@@ -360,7 +414,7 @@ body {
 .texto-1,
 .texto-2,
 .fechamento p {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   white-space: nowrap;
   color: var(--tinta);
 }
@@ -379,7 +433,7 @@ body {
 .citacao span {
   display: block;
   font-weight: 700;
-  font-size: calc(var(--u) * 35.8);
+  font-size: calc(var(--u) * var(--tam-destaque));
   line-height: 1;
   color: var(--vermelho-citacao);
   transform: scaleX(0.763);
@@ -399,7 +453,7 @@ body {
 .texto-1 strong {
   display: inline-block;
   font-weight: 700;
-  font-size: calc(var(--u) * 24.5);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   line-height: calc(var(--u) * 29.5);
   color: var(--vermelho-citacao);
   transform: scaleX(0.857);
@@ -416,7 +470,7 @@ body {
   --tit-y: 348.5;
   --tit-fs: 53.5;
   --tit-sx: 1.174;
-  --play-x: 461;
+  --play-x: 400;
   --art-x: 116.4;
   --art-y: 419.4;
   --art-fs: 24;
@@ -436,7 +490,7 @@ body {
   --tit-y: 350.6;
   --tit-fs: 52.3;
   --tit-sx: 1.178;
-  --play-x: 1304;
+  --play-x: 1211;
   --art-x: 854.4;
   --art-y: 419.5;
   --art-fs: 25;
@@ -450,21 +504,21 @@ body {
 .musica-1 .texto-1 {
   left: calc(var(--u) * 38.6);
   top: calc(var(--u) * 548.75);
-  font-size: calc(var(--u) * 20);
+  font-size: calc(var(--u) * var(--tam-corpo-pequeno));
   line-height: calc(var(--u) * 27.3);
 }
 
 .musica-1 .texto-2 {
   left: calc(var(--u) * 37);
-  top: calc(var(--u) * 777.4);
-  font-size: calc(var(--u) * 19.7);
-  line-height: calc(var(--u) * 25.3);
+  top: calc(var(--u) * 773);
+  font-size: calc(var(--u) * var(--tam-corpo-pequeno));
+  line-height: calc(var(--u) * 22.5);
 }
 
 .musica-2 .texto-1 {
   left: calc(var(--u) * 761);
   top: calc(var(--u) * 563);
-  font-size: calc(var(--u) * 21);
+  font-size: calc(var(--u) * var(--tam-corpo));
   transform: scaleX(0.91);
   transform-origin: left top;
   line-height: calc(var(--u) * 26.9);
@@ -473,7 +527,7 @@ body {
 .musica-2 .texto-2 {
   left: calc(var(--u) * 761);
   top: calc(var(--u) * 738);
-  font-size: calc(var(--u) * 21);
+  font-size: calc(var(--u) * var(--tam-corpo));
   transform: scaleX(0.91);
   transform-origin: left top;
   line-height: calc(var(--u) * 27.3);
@@ -486,7 +540,7 @@ body {
 .fechamento span {
   display: block;
   width: calc(var(--u) * 1000);
-  font-size: calc(var(--u) * 51);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
   line-height: 1;
   text-align: center;
   transform-origin: center top;
@@ -504,4 +558,166 @@ body {
   top: calc(var(--u) * 939.7);
   color: var(--vermelho-final);
   transform: scaleX(0.809);
+}
+
+html body .et-1.et-1 {
+  transform: rotate(-10deg);
+}
+
+html body .et-2.et-2 {
+  transform: rotate(-7deg);
+}
+
+html body .et-3.et-3 {
+  transform: rotate(-8deg);
+}
+
+html body .et-4.et-4 {
+  transform: rotate(-9deg);
+}
+
+.play .botao-play::after {
+  content: "";
+  position: absolute;
+  inset: -12px;
+}
+
+html body .pagina img.faixa-titulo-1,
+html body .pagina img.faixa-titulo-2 {
+  display: none;
+}
+
+html body .musica-1 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .musica-1 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 30);
+  top: calc(var(--u) * 340);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 80);
+  height: calc(var(--u) * 74);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-grande-pequeno));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .musica-1 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 116);
+  top: calc(var(--u) * 348);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 58);
+  margin: 0;
+  padding: 0 calc(var(--u) * 20);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .musica-2 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .musica-2 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 751);
+  top: calc(var(--u) * 340);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 80);
+  height: calc(var(--u) * 74);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-grande-pequeno));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .musica-2 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 837);
+  top: calc(var(--u) * 348);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 58);
+  margin: 0;
+  padding: 0 calc(var(--u) * 20);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+.musica .player,
+.musica .player * {
+  pointer-events: auto;
+}
+
+.musica-1 .player {
+  left: calc(var(--u) * 30);
+  top: calc(var(--u) * 414);
+  width: calc(var(--u) * 325);
+}
+
+.musica-2 .player {
+  left: calc(var(--u) * 751);
+  top: calc(var(--u) * 414);
+  width: calc(var(--u) * 325);
+}
+
+html body .musica .citacao span,
+html body .pagina .papel-citacao-1,
+html body .pagina .papel-citacao-2 {
+  margin-top: calc(var(--u) * 28);
+}
+
+html body .musica-1 .texto-1.texto-1 {
+  top: calc(var(--u) * 577);
+  line-height: calc(var(--u) * 25);
+}
+
+html body .musica-1 .texto-2.texto-2 {
+  top: calc(var(--u) * 781);
+  line-height: calc(var(--u) * 21.5);
+}
+
+html body .musica-2 .texto-1.texto-1 {
+  top: calc(var(--u) * 591);
+  line-height: calc(var(--u) * 25);
+}
+
+html body .musica-2 .texto-2.texto-2 {
+  top: calc(var(--u) * 755);
+  line-height: calc(var(--u) * 26);
+}
+
+html body .musica-1 .texto-1.texto-1 strong {
+  line-height: calc(var(--u) * 25);
 }

@@ -6,7 +6,9 @@
   <title>Sob Efeito. Tirar da vista é resolver?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
   <link rel="stylesheet" href="css/pagina-10.css">
 </head>
 <body>
@@ -17,8 +19,8 @@
     <img class="papel-frase" src="assets/p10-papel-frase.png" alt="">
 
     <header class="abertura">
-      <p class="marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
-      <p class="pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">10</span></p>
+      <p class="marca c-marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
+      <p class="pagina-num c-pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">10</span></p>
       <h1>
         <span class="t1">TIRAR DA VISTA</span>
         <span class="t2">É RESOLVER?</span>
@@ -29,32 +31,32 @@
       <h2><span class="g-preto">POR QUE FREQUENTAR A CENA?</span> <span class="g-vermelho">— LECUCA 2024</span></h2>
       <div class="linha linha-1">
         <p class="rotulo">Facilidade de acesso<br>à droga</p>
-        <span class="trilha"><span class="barra"></span></span>
+        <span class="trilha"><span class="barra c-barra"></span></span>
         <span class="valor">54,7%</span>
       </div>
       <div class="linha linha-2">
         <p class="rotulo">Menor preço</p>
-        <span class="trilha"><span class="barra"></span></span>
+        <span class="trilha"><span class="barra c-barra"></span></span>
         <span class="valor">34,3%</span>
       </div>
       <div class="linha linha-3">
         <p class="rotulo">Acesso a serviços<br>de saúde</p>
-        <span class="trilha"><span class="barra"></span></span>
+        <span class="trilha"><span class="barra c-barra"></span></span>
         <span class="valor">18,7%</span>
       </div>
       <div class="linha linha-4">
         <p class="rotulo">Local considerado<br>mais seguro para usar</p>
-        <span class="trilha"><span class="barra"></span></span>
+        <span class="trilha"><span class="barra c-barra"></span></span>
         <span class="valor">18,0%</span>
       </div>
       <div class="linha linha-5">
         <p class="rotulo">Anonimato</p>
-        <span class="trilha"><span class="barra"></span></span>
+        <span class="trilha"><span class="barra c-barra"></span></span>
         <span class="valor">13,6%</span>
       </div>
       <div class="linha linha-6">
         <p class="rotulo">Alimentação / moradia</p>
-        <span class="trilha"><span class="barra"></span></span>
+        <span class="trilha"><span class="barra c-barra"></span></span>
         <span class="valor">12,1%</span>
       </div>
       <p class="nota">As pessoas podiam indicar mais de um motivo. Esses percentuais não são categorias exclusivas.</p>
@@ -70,7 +72,7 @@
       <p>Em 2017, a Visão Mundial analisou um recorte de 22 crianças<br>e adolescentes de 3 a 17 anos em situação de rua no centro de São Paulo.<br>Houve brincadeiras e interação na Sé e no Anhangabaú, mas não foi<br>possível realizar essa interação dentro do fluxo da Cracolândia. O estudo<br>revela uma limitação de acesso e escuta, não a prevalência de uso<br>entre crianças do Brasil.</p>
     </section>
 
-    <blockquote class="frase">
+    <blockquote class="frase c-citacao">
       <p>
         <span class="f1">Uma rua menos ocupada é um</span>
         <span class="f2">resultado espacial.</span>
@@ -79,10 +81,15 @@
       </p>
     </blockquote>
 
-    <footer class="fontes">
+    <footer class="fontes c-fontes">
       <p><strong>Fontes:</strong> Prefeitura de São Paulo, Cenas abertas de uso de drogas (2025), resultados LECUCA 2024;<br>Visão Mundial Brasil (2017).</p>
       <p class="nota-estudos">LECUCA (2024, adultos) e Visão Mundial (2017, crianças e adolescentes) são estudos de anos e populações diferentes.</p>
     </footer>
   </main>
+  <nav class="c-nav" aria-label="Navegação entre páginas">
+    <a class="c-nav-anterior" href="pagina-09.html" aria-label="Página anterior">‹<span>anterior</span></a>
+    <a class="c-nav-proxima" href="pagina-11.html" aria-label="Próxima página">›<span>próxima</span></a>
+  </nav>
+  <script src="js/navegacao.js"></script>
 </body>
 </html>

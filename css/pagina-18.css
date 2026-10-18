@@ -7,22 +7,19 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #f4e9da;
-  --preto: #000;
-  --vermelho: #dd0505;
-  --vermelho-vivo: #ff1411;
-  --quadrado: #dc0a0a;
-  --tinta: #120f0a;
-  --branco: #f7f7f7;
-  --fio: #bdb6a5;
-  --fio-escuro: #7a7364;
+  --papel: var(--creme);
+  --vermelho-vivo: color-mix(in srgb, var(--vermelho) 95%, var(--creme));
+  --quadrado: var(--vermelho);
+  --tinta: var(--preto);
+  --branco: var(--creme);
+  --fio: color-mix(in srgb, var(--neutro-2) 55%, var(--creme));
+  --fio-escuro: color-mix(in srgb, var(--preto) 55%, var(--creme));
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -47,7 +44,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(40, 28, 15, 0) 0%, rgba(40, 28, 15, 0.05) 18%, rgba(40, 28, 15, 0.11) 26%, rgba(40, 28, 15, 0.17) 34%, rgba(40, 28, 15, 0.35) 42%, rgba(40, 28, 15, 0.61) 50%, rgba(40, 28, 15, 0.28) 58%, rgba(40, 28, 15, 0.11) 66%, rgba(40, 28, 15, 0.03) 74%, rgba(40, 28, 15, 0) 82%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--preto) 5%, transparent) 18%, color-mix(in srgb, var(--preto) 11%, transparent) 26%, color-mix(in srgb, var(--preto) 17%, transparent) 34%, color-mix(in srgb, var(--preto) 35%, transparent) 42%, color-mix(in srgb, var(--preto) 61%, transparent) 50%, color-mix(in srgb, var(--preto) 28%, transparent) 58%, color-mix(in srgb, var(--preto) 11%, transparent) 66%, color-mix(in srgb, var(--preto) 3%, transparent) 74%, transparent 82%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -200,7 +197,7 @@ body {
 .coluna h2,
 .rotulo,
 .citacao blockquote {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -221,7 +218,7 @@ body {
 
 .marca span {
   top: calc(var(--u) * 18.98);
-  font-size: calc(var(--u) * 31.1);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
 }
 
 .marca-sob {
@@ -260,9 +257,9 @@ body {
 .pagina-txt {
   left: calc(var(--u) * 1325);
   top: calc(var(--u) * 21.3);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 26.5);
+  font-size: calc(var(--u) * var(--tam-intertitulo));
   line-height: 1;
   white-space: nowrap;
   color: var(--preto);
@@ -304,7 +301,7 @@ body {
 .subtitulo,
 .texto,
 .frase {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   font-weight: 400;
   white-space: nowrap;
   color: var(--tinta);
@@ -313,7 +310,7 @@ body {
 .subtitulo {
   left: calc(var(--u) * 32.7);
   top: calc(var(--u) * 225.4);
-  font-size: calc(var(--u) * 25.65);
+  font-size: calc(var(--u) * var(--tam-intertitulo));
   line-height: calc(var(--u) * 35.5);
 }
 
@@ -335,7 +332,7 @@ body {
 .numero {
   left: calc(var(--u) * var(--num-x));
   top: calc(var(--u) * 355);
-  font-size: calc(var(--u) * 45.3);
+  font-size: calc(var(--u) * var(--tam-titulo-medio-pequeno));
   color: var(--branco);
   transform: scaleX(var(--num-sx));
 }
@@ -350,7 +347,7 @@ body {
 
 .texto {
   left: calc(var(--u) * var(--col-x));
-  font-size: calc(var(--u) * 15.2);
+  font-size: calc(var(--u) * var(--tam-rodape));
   transform: scaleX(var(--col-sx, 1));
 }
 
@@ -445,9 +442,9 @@ body {
 .rotulo {
   left: calc(var(--u) * var(--ro-x));
   top: calc(var(--u) * 827.4);
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: calc(var(--u) * 40.2);
+  font-size: calc(var(--u) * var(--tam-titulo-pequeno));
   line-height: 1;
   white-space: nowrap;
   color: var(--branco);
@@ -519,7 +516,7 @@ body {
 }
 
 .citacao blockquote p {
-  font-size: calc(var(--u) * 33.7);
+  font-size: calc(var(--u) * var(--tam-destaque));
   white-space: nowrap;
 }
 
@@ -550,9 +547,9 @@ body {
 .assinatura {
   left: calc(var(--u) * 1161.7);
   top: calc(var(--u) * 947.9);
-  font-family: "Caveat", cursive;
+  font-family: var(--fonte-corpo); font-style: italic;
   font-weight: 600;
-  font-size: calc(var(--u) * 47.5);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
   line-height: 1;
   white-space: nowrap;
   color: var(--tinta);
@@ -563,4 +560,147 @@ body {
   left: calc(var(--u) * 1219);
   top: calc(var(--u) * 982);
   width: calc(var(--u) * 159);
+}
+
+html body .assinatura.assinatura {
+  font-size: calc(var(--u) * var(--tam-subtitulo));
+  transform: none;
+}
+
+html body .pagina img.faixa.faixa-1,
+html body .pagina img.faixa.faixa-2,
+html body .pagina img.faixa.faixa-3 {
+  display: none;
+}
+
+html body .coluna-1 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .coluna-1 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 31);
+  top: calc(var(--u) * 349);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .coluna-1 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 103);
+  top: calc(var(--u) * 358);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .coluna-2 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .coluna-2 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 477);
+  top: calc(var(--u) * 349);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .coluna-2 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 549);
+  top: calc(var(--u) * 358);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .coluna-3 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .coluna-3 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 958);
+  top: calc(var(--u) * 349);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .coluna-3 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 1030);
+  top: calc(var(--u) * 358);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
 }

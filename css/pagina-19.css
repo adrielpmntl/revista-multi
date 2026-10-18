@@ -7,22 +7,20 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #f4e9da;
-  --preto: #000;
-  --vermelho-vivo: #ff1411;
-  --quadrado: #f40606;
-  --marcador: #ff0a12;
-  --tinta: #120f0a;
-  --branco: #fffaf0;
-  --fio: #55524a;
-  --sublinhado: #6a665c;
+  --papel: var(--creme);
+  --vermelho-vivo: color-mix(in srgb, var(--vermelho) 95%, var(--creme));
+  --quadrado: var(--vermelho);
+  --marcador: color-mix(in srgb, var(--vermelho) 95%, var(--creme));
+  --tinta: var(--preto);
+  --branco: var(--creme);
+  --fio: color-mix(in srgb, var(--preto) 70%, var(--creme));
+  --sublinhado: color-mix(in srgb, var(--neutro-1) 70%, var(--creme));
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -47,7 +45,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(40, 28, 15, 0) 0%, rgba(40, 28, 15, 0.02) 9%, rgba(40, 28, 15, 0.08) 21%, rgba(40, 28, 15, 0.13) 33%, rgba(40, 28, 15, 0.23) 41%, rgba(40, 28, 15, 0.34) 45%, rgba(40, 28, 15, 0.47) 49%, rgba(40, 28, 15, 0.42) 53%, rgba(40, 28, 15, 0.28) 57%, rgba(40, 28, 15, 0.19) 61%, rgba(40, 28, 15, 0.08) 69%, rgba(40, 28, 15, 0.02) 77%, rgba(40, 28, 15, 0) 83%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--preto) 2%, transparent) 9%, color-mix(in srgb, var(--preto) 8%, transparent) 21%, color-mix(in srgb, var(--preto) 13%, transparent) 33%, color-mix(in srgb, var(--preto) 23%, transparent) 41%, color-mix(in srgb, var(--preto) 34%, transparent) 45%, color-mix(in srgb, var(--preto) 47%, transparent) 49%, color-mix(in srgb, var(--preto) 42%, transparent) 53%, color-mix(in srgb, var(--preto) 28%, transparent) 57%, color-mix(in srgb, var(--preto) 19%, transparent) 61%, color-mix(in srgb, var(--preto) 8%, transparent) 69%, color-mix(in srgb, var(--preto) 2%, transparent) 77%, transparent 83%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -147,7 +145,7 @@ body {
 .pagina-n,
 .abertura h1,
 .secao h2 {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -163,7 +161,7 @@ body {
 
 .marca span {
   top: calc(var(--u) * 22.06);
-  font-size: calc(var(--u) * 29.9);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
 }
 
 .marca-sob {
@@ -200,9 +198,9 @@ body {
 .pagina-txt {
   left: calc(var(--u) * 1320);
   top: calc(var(--u) * 27);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 18.9);
+  font-size: calc(var(--u) * var(--tam-legenda));
   line-height: 1;
   white-space: nowrap;
   color: var(--preto);
@@ -212,7 +210,7 @@ body {
 .pagina-n {
   left: calc(var(--u) * 1381.5);
   top: calc(var(--u) * 19.6);
-  font-size: calc(var(--u) * 36.8);
+  font-size: calc(var(--u) * var(--tam-destaque));
   color: var(--vermelho-vivo);
   transform: scaleX(0.992);
 }
@@ -220,13 +218,13 @@ body {
 .t1,
 .t1b,
 .t2 {
-  font-family: "Archivo Black", sans-serif;
+  font-family: var(--fonte-titulo);
 }
 
 .t1,
 .t1b {
   top: calc(var(--u) * 37.3);
-  font-size: calc(var(--u) * 119.3);
+  font-size: calc(var(--u) * var(--tam-numero));
   color: var(--preto);
 }
 
@@ -243,14 +241,14 @@ body {
 .t2 {
   left: calc(var(--u) * 90.3);
   top: calc(var(--u) * 127.3);
-  font-size: calc(var(--u) * 117.3);
+  font-size: calc(var(--u) * var(--tam-numero));
   color: var(--branco);
   transform: scaleX(0.668);
 }
 
 .subtitulo,
 .refs li {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   font-weight: 400;
   white-space: nowrap;
 }
@@ -258,7 +256,7 @@ body {
 .subtitulo {
   left: calc(var(--u) * 40.1);
   top: calc(var(--u) * 246.3);
-  font-size: calc(var(--u) * 25.96);
+  font-size: calc(var(--u) * var(--tam-intertitulo));
   line-height: 1;
   color: var(--tinta);
 }
@@ -346,7 +344,7 @@ body {
   --txt-x: 89.2;
   --bul-x: 61.5;
   --bul-off: 5.5;
-  --fs: 19.4;
+  --fs: var(--tam-legenda);
   --sx: 0.946;
   --sub: 3;
   --dy: 2;
@@ -378,7 +376,7 @@ body {
   --txt-x: 93.3;
   --bul-x: 63;
   --bul-off: 5.5;
-  --fs: 18;
+  --fs: var(--tam-legenda);
   --sx: 0.975;
   --sub: 3;
   --dy: 1;
@@ -413,7 +411,7 @@ body {
   --txt-x: 828.2;
   --bul-x: 796;
   --bul-off: 5;
-  --fs: 19.4;
+  --fs: var(--tam-legenda);
   --sx: 0.976;
   --sub: 4;
   --dy: 2;
@@ -429,3 +427,160 @@ body {
 .secao-3 li:nth-child(8) { --b: 623; }
 .secao-3 li:nth-child(9) { --b: 657; }
 .secao-3 li:nth-child(10) { --b: 691; }
+
+html body .t1.t1 {
+  top: calc(var(--u) * 47);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
+  transform: scaleX(1.47);
+}
+
+html body .t1b.t1b {
+  top: calc(var(--u) * 47);
+  left: calc(var(--u) * 413);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
+  transform: scaleX(1.42);
+}
+
+html body .t2.t2 {
+  top: calc(var(--u) * 143);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
+  transform: scaleX(1.4);
+}
+
+html body .pagina img.faixa-secao.faixa-secao-1,
+html body .pagina img.faixa-secao.faixa-secao-2,
+html body .pagina img.faixa-secao.faixa-secao-3 {
+  display: none;
+}
+
+html body .secao-1 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .secao-1 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 31);
+  top: calc(var(--u) * 295);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .secao-1 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 103);
+  top: calc(var(--u) * 304);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .secao-3 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .secao-3 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 753);
+  top: calc(var(--u) * 295);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .secao-3 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 825);
+  top: calc(var(--u) * 304);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .secao-2 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .secao-2 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 32);
+  top: calc(var(--u) * 686);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .secao-2 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 104);
+  top: calc(var(--u) * 695);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}

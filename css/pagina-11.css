@@ -7,21 +7,18 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #f1e8d7;
-  --preto: #131211;
-  --vermelho: #b60303;
-  --vermelho-vivo: #c80d0c;
-  --vermelho-texto: #b2100e;
-  --tinta: #1d1b19;
-  --branco: #f2ede3;
-  --fio: #2e2a24;
+  --papel: var(--creme);
+  --vermelho-vivo: var(--vermelho);
+  --vermelho-texto: var(--vermelho);
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --branco: var(--creme);
+  --fio: var(--neutro-1);
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -46,7 +43,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.38) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--neutro-1) 8%, transparent) 30%, color-mix(in srgb, var(--preto) 38%, transparent) 50%, color-mix(in srgb, var(--neutro-1) 10%, transparent) 70%, transparent 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -152,7 +149,7 @@ body {
 .becker h2,
 .estudo h2,
 .destaque-num {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -171,7 +168,7 @@ body {
 
 .marca span {
   top: calc(var(--u) * 20.3);
-  font-size: calc(var(--u) * 26.7);
+  font-size: calc(var(--u) * var(--tam-intertitulo));
 }
 
 .marca-sob {
@@ -209,9 +206,9 @@ body {
 .pagina-txt {
   left: calc(var(--u) * 1328.2);
   top: calc(var(--u) * 24.3);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 16.2);
+  font-size: calc(var(--u) * var(--tam-rodape));
   line-height: 1;
   white-space: nowrap;
   color: var(--preto);
@@ -220,7 +217,7 @@ body {
 .pagina-n {
   left: calc(var(--u) * 1393);
   top: calc(var(--u) * 19.1);
-  font-size: calc(var(--u) * 29);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
   color: var(--vermelho);
   transform: scaleX(0.7);
 }
@@ -228,7 +225,7 @@ body {
 .t1 {
   left: calc(var(--u) * 46.4);
   top: calc(var(--u) * 70.5);
-  font-size: calc(var(--u) * 84.9);
+  font-size: calc(var(--u) * var(--tam-titulo-xl-pequeno));
   color: var(--preto);
   transform: scaleX(0.958);
 }
@@ -236,7 +233,7 @@ body {
 .t2 {
   left: calc(var(--u) * 45.2);
   top: calc(var(--u) * 152.1);
-  font-size: calc(var(--u) * 90.7);
+  font-size: calc(var(--u) * var(--tam-titulo-xl-pequeno));
   color: var(--vermelho);
   transform: scaleX(1.13);
 }
@@ -244,7 +241,7 @@ body {
 .t3 {
   left: calc(var(--u) * 45.1);
   top: calc(var(--u) * 239.9);
-  font-size: calc(var(--u) * 94.2);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
   color: var(--vermelho);
 }
 
@@ -256,7 +253,7 @@ body {
 .estudo p,
 .frase p,
 .fontes p {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   white-space: nowrap;
   color: var(--tinta);
 }
@@ -264,7 +261,7 @@ body {
 .subtitulo {
   left: calc(var(--u) * 57);
   top: calc(var(--u) * 346.8);
-  font-size: calc(var(--u) * 31.4);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
   line-height: 1;
 }
 
@@ -292,7 +289,7 @@ body {
 
 .estudo-1 h2 span {
   top: calc(var(--u) * 426.7);
-  font-size: calc(var(--u) * 36);
+  font-size: calc(var(--u) * var(--tam-destaque));
 }
 
 .n1 {
@@ -316,7 +313,7 @@ body {
 .intro {
   left: calc(var(--u) * 52.4);
   top: calc(var(--u) * 477.4);
-  font-size: calc(var(--u) * 14.9);
+  font-size: calc(var(--u) * var(--tam-rodape));
   line-height: 1;
 }
 
@@ -417,7 +414,7 @@ body {
 .nota {
   left: calc(var(--u) * 31.4);
   top: calc(var(--u) * 713.8);
-  font-size: calc(var(--u) * 14.66);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: 1;
 }
 
@@ -434,7 +431,7 @@ body {
 
 .becker h2 span {
   top: calc(var(--u) * 797.1);
-  font-size: calc(var(--u) * 29.1);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
 }
 
 .bk-branco {
@@ -445,14 +442,14 @@ body {
 
 .bk-vermelho {
   left: calc(var(--u) * 336.7);
-  color: #cd0a0b;
+  color: var(--vermelho);
   transform: scaleX(0.957);
 }
 
 .becker p {
   left: calc(var(--u) * 228.2);
   top: calc(var(--u) * 838.8);
-  font-size: calc(var(--u) * 15.8);
+  font-size: calc(var(--u) * var(--tam-rodape));
   line-height: calc(var(--u) * 23);
   color: var(--branco);
 }
@@ -490,7 +487,7 @@ body {
 }
 
 .estudo h2 span {
-  font-size: calc(var(--u) * 34.9);
+  font-size: calc(var(--u) * var(--tam-destaque));
   color: var(--preto);
 }
 
@@ -557,21 +554,21 @@ body {
 .estudo-2 p {
   left: calc(var(--u) * 773.4);
   top: calc(var(--u) * 438);
-  font-size: calc(var(--u) * 14.5);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 21);
 }
 
 .estudo-3 p {
   left: calc(var(--u) * 774.4);
   top: calc(var(--u) * 646.3);
-  font-size: calc(var(--u) * 14.3);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 21.2);
 }
 
 .estudo-3 .destaque-num {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: calc(var(--u) * 20);
+  font-size: calc(var(--u) * var(--tam-corpo-pequeno));
   line-height: 0;
   color: var(--vermelho-vivo);
 }
@@ -606,7 +603,7 @@ body {
 .f3 {
   --centro: 1084.5;
   --topo: 853.7;
-  color: #c0201a;
+  color: color-mix(in srgb, var(--vermelho) 95%, var(--creme));
 }
 
 .fontes::before {
@@ -628,11 +625,19 @@ body {
 
 .fontes .ressalva {
   top: calc(var(--u) * 968);
-  font-size: calc(var(--u) * 13.5);
+  font-size: calc(var(--u) * var(--tam-nota));
   font-style: italic;
   line-height: 1;
 }
 
 .fontes strong {
   font-weight: 700;
+}
+
+html body .t2.t2 {
+  margin-top: calc(var(--u) * 4);
+}
+
+html body .t3.t3 {
+  margin-top: calc(var(--u) * 10);
 }

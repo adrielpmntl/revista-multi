@@ -6,7 +6,9 @@
   <title>Sob Efeito. Sob efeito de quê?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@700&family=Caveat:wght@600&family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
   <link rel="stylesheet" href="css/pagina-18.css">
 </head>
 <body>
@@ -25,8 +27,8 @@
     <img class="papel-citacao" src="assets/p18-papel-citacao.png" alt="">
 
     <header class="abertura">
-      <p class="marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
-      <p class="pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">18</span></p>
+      <p class="marca c-marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
+      <p class="pagina-num c-pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">18</span></p>
       <h1>
         <span class="t1">SOB EFEITO</span>
         <span class="t2">DE QUÊ?</span>
@@ -36,18 +38,18 @@
     </header>
 
     <section class="coluna coluna-1">
-      <h2><span class="numero">1</span><span class="titulo">TENDÊNCIAS E DESIGUALDADES</span></h2>
+      <h2 class="c-titulo-numerado"><span class="numero">1</span><span class="titulo">TENDÊNCIAS E DESIGUALDADES</span></h2>
       <p class="texto p1">Não encontramos um único movimento<br>chamado “aumento das drogas”. Globalmente,<br>cresceram o número de usuários e a prevalência<br>anual. No Brasil, o LENAD registrou expansão<br>dos indicadores de drogas ilícitas, com destaque<br>para a cannabis. Entre estudantes, a PeNSE<br>mostrou tendências diferentes: a experimentação<br>de álcool, cigarro convencional e drogas ilícitas<br>diminuiu entre os indicadores selecionados,<br>enquanto a de cigarros eletrônicos aumentou.</p>
     </section>
 
     <section class="coluna coluna-2">
-      <h2><span class="numero">2</span><span class="titulo">HISTÓRIA, CONTEXTO E RESPONSABILIDADE</span></h2>
+      <h2 class="c-titulo-numerado"><span class="numero">2</span><span class="titulo">HISTÓRIA, CONTEXTO E RESPONSABILIDADE</span></h2>
       <p class="texto p1">A história também importou. Mercados reorganizam<br>a oferta; leis e instituições diferenciam categorias;<br>espaços urbanos concentram desigualdades e recursos.<br><u>Nada</u> disso elimina os efeitos das <u>substâncias</u> ou a<br>responsabilidade individual. Explica por que a escolha<br>ocorre em condições desiguais e por que danos e<br>punições não têm distribuição idêntica.</p>
       <p class="texto p2">Durkheim ajuda a pensar normas e punição;<br>Bourdieu, gostos e distinção; Becker, rotulação;<br>Goffman, estigma; Foucault, normalização;<br>Wacquant, marginalidade urbana. São lentes de<br>interpretação, não substitutos das pesquisas.</p>
     </section>
 
     <section class="coluna coluna-3">
-      <h2><span class="numero">3</span><span class="titulo">JUVENTUDE, CUIDADO E POLÍTICAS</span></h2>
+      <h2 class="c-titulo-numerado"><span class="numero">3</span><span class="titulo">JUVENTUDE, CUIDADO E POLÍTICAS</span></h2>
       <p class="texto p1">Na adolescência, compreender essa complexidade é essencial.<br>Experimentar não determina dependência, e um indicador médio<br>não descreve toda juventude. Escola, família, amizade, serviços<br>e territórios interferem nas possibilidades de cuidado e proteção.</p>
       <p class="texto p2">Defendemos políticas que informem, previnam, acolham, fiscalizem<br>mercados e avaliem também a atuação do Estado. Um bom resultado<br>não é apenas tirar o problema do campo de visão: é ampliar direitos,<br>saúde e oportunidades reais.</p>
     </section>
@@ -87,5 +89,10 @@
       <img class="sublinhado-assinatura" src="assets/p18-sublinhado-assinatura.png" alt="">
     </footer>
   </main>
+  <nav class="c-nav" aria-label="Navegação entre páginas">
+    <a class="c-nav-anterior" href="pagina-17.html" aria-label="Página anterior">‹<span>anterior</span></a>
+    <a class="c-nav-proxima" href="pagina-19.html" aria-label="Próxima página">›<span>próxima</span></a>
+  </nav>
+  <script src="js/navegacao.js"></script>
 </body>
 </html>

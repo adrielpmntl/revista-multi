@@ -7,21 +7,18 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #e6dccd;
-  --preto: #131211;
-  --vermelho: #b20c0c;
-  --tinta: #1d1b19;
-  --borda: #2e281b;
-  --fio-coluna: #6c6356;
-  --fio-linha: #a39b88;
-  --fio-padrao: #8e8574;
+  --papel: color-mix(in srgb, var(--preto) 5%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --borda: var(--neutro-1);
+  --fio-coluna: color-mix(in srgb, var(--neutro-1) 70%, var(--creme));
+  --fio-linha: color-mix(in srgb, var(--neutro-2) 80%, var(--creme));
+  --fio-padrao: var(--neutro-2);
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -46,7 +43,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.1) 30%, rgba(40, 28, 15, 0.42) 50%, rgba(70, 50, 30, 0.12) 70%, rgba(70, 50, 30, 0) 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--neutro-1) 10%, transparent) 30%, color-mix(in srgb, var(--preto) 42%, transparent) 50%, color-mix(in srgb, var(--neutro-1) 12%, transparent) 70%, transparent 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -102,9 +99,9 @@ h1 span,
 }
 
 .capitulo {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 17.1);
+  font-size: calc(var(--u) * var(--tam-legenda-pequena));
   line-height: 1;
   white-space: nowrap;
 }
@@ -134,7 +131,7 @@ h1 span,
 }
 
 .abertura h1 {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -148,7 +145,7 @@ h1 span {
 .t1 {
   left: calc(var(--u) * 50.2);
   top: calc(var(--u) * 60.9);
-  font-size: calc(var(--u) * 96);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
   color: var(--preto);
   transform: scaleX(0.948);
 }
@@ -156,7 +153,7 @@ h1 span {
 .t2 {
   left: calc(var(--u) * 48.4);
   top: calc(var(--u) * 160.2);
-  font-size: calc(var(--u) * 89.5);
+  font-size: calc(var(--u) * var(--tam-titulo-xl-pequeno));
   color: var(--preto);
   transform: scaleX(0.896);
 }
@@ -164,7 +161,7 @@ h1 span {
 .t3 {
   left: calc(var(--u) * 487.8);
   top: calc(var(--u) * 160.2);
-  font-size: calc(var(--u) * 89.5);
+  font-size: calc(var(--u) * var(--tam-titulo-xl-pequeno));
   color: var(--vermelho);
   transform: scaleX(0.825);
 }
@@ -175,7 +172,7 @@ h1 span {
 .padrao p,
 .definicoes,
 .nota {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   white-space: nowrap;
   color: var(--tinta);
 }
@@ -183,7 +180,7 @@ h1 span {
 .intro {
   left: calc(var(--u) * 50.2);
   top: calc(var(--u) * 252.4);
-  font-size: calc(var(--u) * 20.24);
+  font-size: calc(var(--u) * var(--tam-corpo-pequeno));
   line-height: calc(var(--u) * 23.75);
 }
 
@@ -205,12 +202,12 @@ h1 span {
   padding-left: calc(var(--u) * 18.3);
   padding-top: calc(var(--u) * 3.4);
   background: var(--vermelho);
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 600;
-  font-size: calc(var(--u) * 24);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   letter-spacing: 0.11em;
   line-height: 1;
-  color: #fff;
+  color: var(--creme);
 }
 
 .cabeca {
@@ -222,7 +219,7 @@ h1 span {
 .conceito-texto {
   left: calc(var(--u) * 218.3);
   top: calc(var(--u) * 420.9);
-  font-size: calc(var(--u) * 17.55);
+  font-size: calc(var(--u) * var(--tam-legenda-pequena));
   line-height: calc(var(--u) * 22);
 }
 
@@ -236,7 +233,7 @@ h1 span {
 .padroes-nota {
   left: calc(var(--u) * 755);
   top: calc(var(--u) * 539);
-  font-size: calc(var(--u) * 14);
+  font-size: calc(var(--u) * var(--tam-nota));
   font-style: italic;
   line-height: 1;
 }
@@ -250,12 +247,12 @@ h1 span {
 .padroes-titulo {
   left: calc(var(--u) * 770.1);
   top: calc(var(--u) * 265.5);
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: calc(var(--u) * 27.9);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
   line-height: 1;
   white-space: nowrap;
-  color: #fff;
+  color: var(--creme);
   transform: scaleX(1.097);
   transform-origin: left top;
 }
@@ -269,9 +266,9 @@ h1 span {
 .padrao h3 {
   left: calc(var(--u) * var(--titulo));
   top: calc(var(--u) * 399.4);
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: calc(var(--u) * 20.6);
+  font-size: calc(var(--u) * var(--tam-corpo));
   line-height: 1;
   white-space: nowrap;
   color: var(--vermelho);
@@ -282,7 +279,7 @@ h1 span {
 .padrao p {
   left: calc(var(--u) * var(--texto));
   top: calc(var(--u) * 429.6);
-  font-size: calc(var(--u) * 13.5);
+  font-size: calc(var(--u) * var(--tam-nota));
   letter-spacing: -0.02em;
   line-height: calc(var(--u) * 20.6);
 }
@@ -351,15 +348,15 @@ h1 span {
 
 .grupos th {
   background: var(--vermelho);
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: calc(var(--u) * 22.1);
-  color: #fff;
+  font-size: calc(var(--u) * var(--tam-corpo));
+  color: var(--creme);
   text-align: center;
 }
 
 .grupos th + th {
-  border-left: calc(var(--u) * 1) solid rgba(255, 255, 255, 0.45);
+  border-left: calc(var(--u) * 1) solid color-mix(in srgb, var(--creme) 45%, transparent);
 }
 
 .grupos th span {
@@ -397,8 +394,8 @@ h1 span {
 }
 
 .grupos td {
-  font-family: "Libre Caslon Text", serif;
-  font-size: calc(var(--u) * 15.5);
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-rodape));
   color: var(--tinta);
 }
 
@@ -408,9 +405,9 @@ h1 span {
 
 .grupos td:nth-child(1) {
   padding-left: calc(var(--u) * 28);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 18.6);
+  font-size: calc(var(--u) * var(--tam-legenda));
   color: var(--preto);
 }
 
@@ -431,12 +428,12 @@ h1 span {
 .leitura h2 {
   position: absolute;
   inset: 0;
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: calc(var(--u) * 36);
+  font-size: calc(var(--u) * var(--tam-destaque));
   line-height: 1;
   white-space: nowrap;
-  color: #fff;
+  color: var(--creme);
 }
 
 .leitura h2 span {
@@ -477,21 +474,21 @@ h1 span {
 .definicoes {
   left: calc(var(--u) * 404.5);
   top: calc(var(--u) * 875.75);
-  font-size: calc(var(--u) * 16.05);
+  font-size: calc(var(--u) * var(--tam-rodape));
   line-height: calc(var(--u) * 25);
 }
 
 .nota {
   left: calc(var(--u) * 1121.5);
   top: calc(var(--u) * 882);
-  font-size: calc(var(--u) * 13.3);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 18.5);
 }
 
 .rodape {
-  font-family: "Barlow Condensed", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 17.1);
+  font-size: calc(var(--u) * var(--tam-legenda-pequena));
   letter-spacing: 0.063em;
   line-height: 1;
   white-space: nowrap;

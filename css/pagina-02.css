@@ -7,18 +7,15 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #ece0d0;
-  --preto: #131211;
-  --vermelho: #ab0b0b;
-  --tinta: #1d1b19;
-  --fio: #5e5852;
+  --papel: color-mix(in srgb, var(--neutro-2) 5%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --fio: color-mix(in srgb, var(--neutro-1) 75%, var(--creme));
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -42,6 +39,7 @@ body {
 h1 span,
 .membro > *,
 .indice li > *,
+.indice li > a > *,
 .rodape > * {
   position: absolute;
 }
@@ -80,7 +78,7 @@ h1 span,
 
 .apresentacao h1 {
   inset: 0;
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -94,7 +92,7 @@ h1 span {
 .linha-1 {
   left: calc(var(--u) * 48.9);
   top: calc(var(--u) * 78.6);
-  font-size: calc(var(--u) * 82.6);
+  font-size: calc(var(--u) * var(--tam-titulo-xl-pequeno));
   color: var(--preto);
   transform: scaleX(0.656);
 }
@@ -102,7 +100,7 @@ h1 span {
 .linha-2a {
   left: calc(var(--u) * 49);
   top: calc(var(--u) * 162.9);
-  font-size: calc(var(--u) * 77.9);
+  font-size: calc(var(--u) * var(--tam-titulo-grande));
   color: var(--preto);
   transform: scaleX(0.659);
 }
@@ -110,7 +108,7 @@ h1 span {
 .linha-2b {
   left: calc(var(--u) * 179.5);
   top: calc(var(--u) * 162.9);
-  font-size: calc(var(--u) * 77.9);
+  font-size: calc(var(--u) * var(--tam-titulo-grande));
   color: var(--vermelho);
   transform: scaleX(0.637);
 }
@@ -118,8 +116,8 @@ h1 span {
 .par-1,
 .par-2 {
   left: calc(var(--u) * 54.4);
-  font-family: "Libre Caslon Text", serif;
-  font-size: calc(var(--u) * 18.88);
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-legenda));
   line-height: calc(var(--u) * 26);
   white-space: nowrap;
   color: var(--tinta);
@@ -160,11 +158,11 @@ h1 span {
   padding-left: calc(var(--u) * 10);
   padding-top: calc(var(--u) * 6.4);
   background: var(--vermelho);
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: calc(var(--u) * 24.4);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   line-height: 1;
-  color: #fff;
+  color: var(--creme);
 }
 
 .equipe {
@@ -216,8 +214,8 @@ h1 span {
   left: calc(var(--u) * -30);
   top: calc(var(--u) * 118.9);
   width: calc(var(--u) * 181);
-  font-family: "Libre Caslon Text", serif;
-  font-size: calc(var(--u) * 13);
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-micro));
   line-height: calc(var(--u) * 18);
   text-align: center;
   color: var(--tinta);
@@ -236,9 +234,9 @@ h1 span {
 .turma {
   left: calc(var(--u) * 54.7);
   top: calc(var(--u) * 935.5);
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   font-weight: 700;
-  font-size: calc(var(--u) * 17);
+  font-size: calc(var(--u) * var(--tam-legenda-pequena));
   line-height: 1;
   color: var(--preto);
 }
@@ -246,8 +244,8 @@ h1 span {
 .disciplinas {
   left: calc(var(--u) * 55.3);
   top: calc(var(--u) * 960.8);
-  font-family: "Libre Caslon Text", serif;
-  font-size: calc(var(--u) * 13.8);
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: 1;
   white-space: nowrap;
   color: var(--tinta);
@@ -256,9 +254,9 @@ h1 span {
 .sumario-titulo {
   left: calc(var(--u) * 790);
   top: calc(var(--u) * 32.1);
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: calc(var(--u) * 167.5);
+  font-size: calc(var(--u) * var(--tam-capa));
   line-height: 1;
   white-space: nowrap;
   color: var(--preto);
@@ -300,8 +298,8 @@ h1 span {
 .num {
   left: calc(var(--u) * -70.3);
   top: calc(var(--u) * 2.7);
-  font-family: "Anton", sans-serif;
-  font-size: calc(var(--u) * 36);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-destaque));
   line-height: 1;
   color: var(--vermelho);
   transform: scaleX(0.88);
@@ -311,8 +309,8 @@ h1 span {
 .item {
   left: calc(var(--u) * 2);
   top: calc(var(--u) * 10.85);
-  font-family: "Libre Caslon Text", serif;
-  font-size: calc(var(--u) * 18);
+  font-family: var(--fonte-corpo);
+  font-size: calc(var(--u) * var(--tam-legenda));
   line-height: 1;
   white-space: nowrap;
   color: var(--tinta);
@@ -320,8 +318,8 @@ h1 span {
 
 .rodape {
   inset: 0;
-  font-family: "Anton", sans-serif;
-  font-size: calc(var(--u) * 20.9);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo));
   line-height: 1;
   white-space: nowrap;
 }
@@ -356,4 +354,9 @@ h1 span {
   top: calc(var(--u) * 956.6);
   color: var(--preto);
   transform: scaleX(0.78);
+}
+
+html body .linha-2a.linha-2a,
+html body .linha-2b.linha-2b {
+  margin-top: calc(var(--u) * 6);
 }

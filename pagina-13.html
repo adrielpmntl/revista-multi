@@ -6,7 +6,9 @@
   <title>Sob Efeito. Duas músicas, uma pergunta incômoda</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@700&family=Libre+Caslon+Text:wght@400;700&family=Special+Elite&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
   <link rel="stylesheet" href="css/pagina-13.css">
 </head>
 <body>
@@ -24,8 +26,8 @@
     <img class="faixa-final" src="assets/p13-faixa-final.png" alt="">
 
     <header class="abertura">
-      <p class="marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
-      <p class="pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">13</span></p>
+      <p class="marca c-marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
+      <p class="pagina-num c-pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">13</span></p>
       <h1>
         <span class="t1">DUAS MÚSICAS,</span>
         <span class="t2">UMA PERGUNTA INCÔMODA</span>
@@ -39,18 +41,16 @@
     </header>
 
     <section class="musica musica-1">
-      <h2><span class="numero">1</span><span class="titulo">CIDADE 2000</span></h2>
-      <span class="play"></span>
-      <p class="artista">Matuê</p>
+      <h2 class="c-titulo-numerado"><span class="numero">1</span><span class="titulo">CIDADE 2000</span></h2>
+      <div class="player c-player" data-faixa="musica-1"><button class="botao-play" type="button" aria-controls="musica-1" aria-pressed="false" aria-label="Tocar Cidade 2000, de Matuê"></button><p class="player-info"><span class="player-titulo">Cidade 2000</span><span class="player-artista">Matuê</span></p><input class="player-tempo" type="range" min="0" max="234" step="1" value="0" aria-label="Posição em Cidade 2000"><p class="player-relogio"><span class="player-atual">0:00</span> / <span class="player-total">3:54</span></p><audio id="musica-1" preload="metadata" src="assets/p13-cidade-2000.mp3"></audio></div>
       <blockquote class="citacao"><span class="c1">“Se fosse preto e pobre</span><span class="c2">era pra detenção”</span></blockquote>
       <p class="texto-1">A canção contrasta a experiência<br>de um jovem privilegiado com a<br>punição imaginada para uma<br>pessoa preta e pobre. A mudança<br>da identidade social provoca a<br>pergunta: <strong>será que apenas a</strong><br><strong>conduta determina o</strong><br><strong>julgamento?</strong></p>
-      <p class="texto-2">Nossa leitura dialoga com a pesquisa<br>sobre classificação policial apresentada<br>na pág. 11, mas a arte não substitui<br>evidência estatística.</p>
+      <p class="texto-2">Nossa leitura dialoga com a pesquisa<br>sobre classificação policial apresentada<br>na <a class="c-ref" href="pagina-11.html">pág. 11</a>, mas a arte não substitui<br>evidência estatística.</p>
     </section>
 
     <section class="musica musica-2">
-      <h2><span class="numero">2</span><span class="titulo">CACHIMBO DA PAZ</span></h2>
-      <span class="play"></span>
-      <p class="artista">Gabriel O Pensador com Lulu Santos</p>
+      <h2 class="c-titulo-numerado"><span class="numero">2</span><span class="titulo">CACHIMBO DA PAZ</span></h2>
+      <div class="player c-player" data-faixa="musica-2"><button class="botao-play" type="button" aria-controls="musica-2" aria-pressed="false" aria-label="Tocar Cachimbo da Paz, de Gabriel O Pensador com Lulu Santos"></button><p class="player-info"><span class="player-titulo">Cachimbo da Paz</span><span class="player-artista">Gabriel O Pensador com Lulu Santos</span></p><input class="player-tempo" type="range" min="0" max="362" step="1" value="0" aria-label="Posição em Cachimbo da Paz"><p class="player-relogio"><span class="player-atual">0:00</span> / <span class="player-total">6:02</span></p><audio id="musica-2" preload="metadata" src="assets/p13-cachimbo-da-paz.mp3"></audio></div>
       <blockquote class="citacao"><span class="c1">“Porque só o seu</span><span class="c2">cachimbo é proibido?”</span></blockquote>
       <p class="texto-1">A música usa ironia para expor<br>tolerâncias diferentes. A cena de<br>quem representa a norma e também<br>fuma convida a discutir por que<br>algumas práticas são normalizadas<br>e outras recebem punição.</p>
       <p class="texto-2">A canção não demonstra que todas<br>as drogas têm o mesmo risco. Ela<br>questiona como regras, cultura e<br>julgamento moral se relacionam.</p>
@@ -60,5 +60,11 @@
       <p><span class="f1">A arte provoca. A pesquisa fundamenta.</span><span class="f2">A Sociologia conecta as perguntas.</span></p>
     </footer>
   </main>
+  <nav class="c-nav" aria-label="Navegação entre páginas">
+    <a class="c-nav-anterior" href="pagina-12.html" aria-label="Página anterior">‹<span>anterior</span></a>
+    <a class="c-nav-proxima" href="pagina-14.html" aria-label="Próxima página">›<span>próxima</span></a>
+  </nav>
+  <script src="js/musica.js"></script>
+  <script src="js/navegacao.js"></script>
 </body>
 </html>

@@ -6,7 +6,9 @@
   <title>Sob Efeito. Fontes e referências</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Archivo+Black&family=Barlow:wght@700&family=Libre+Caslon+Text:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
   <link rel="stylesheet" href="css/pagina-19.css">
 </head>
 <body>
@@ -22,8 +24,8 @@
     <img class="colagem-base" src="assets/p19-colagem-base-sem-caixa.png" alt="Colagem com folha de cannabis, papéis rasgados, tarjas vermelhas e pretas, pontilhado e foto em tons de cinza">
 
     <header class="abertura">
-      <p class="marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
-      <p class="pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">19</span></p>
+      <p class="marca c-marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
+      <p class="pagina-num c-pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">19</span></p>
       <h1>
         <span class="t1">FONTES</span>
         <span class="t1b">E</span>
@@ -33,7 +35,7 @@
     </header>
 
     <section class="secao secao-1">
-      <h2><span class="numero">1</span><span class="titulo">SAÚDE, CONSUMO E ESTATÍSTICA</span></h2>
+      <h2 class="c-titulo-numerado"><span class="numero">1</span><span class="titulo">SAÚDE, CONSUMO E ESTATÍSTICA</span></h2>
       <ul class="refs">
         <li><span><b>OMS</b> · <u>Drugs (psychoactive); Alcohol (2024).</u></span></li>
         <li><span><b>UNODC</b> · <u>World Drug Report 2026</u> — <u>estimativas de 2024.</u></span></li>
@@ -48,7 +50,7 @@
     </section>
 
     <section class="secao secao-2">
-      <h2><span class="numero">2</span><span class="titulo">HISTÓRIA, TERRITÓRIO E JUSTIÇA</span></h2>
+      <h2 class="c-titulo-numerado"><span class="numero">2</span><span class="titulo">HISTÓRIA, TERRITÓRIO E JUSTIÇA</span></h2>
       <ul class="refs">
         <li><span><b>SILVA; ZILLI; SOUZA</b> · <u>Proibicionismo no Brasil</u>. <u>Direito GV (2024).</u></span></li>
         <li><span><b>ALVES; PEREIRA</b> · <u>Cracolândia como problema público</u>. <u>Dilemas (2021).</u></span></li>
@@ -62,7 +64,7 @@
     </section>
 
     <section class="secao secao-3">
-      <h2><span class="numero">3</span><span class="titulo">SOCIOLOGIA, NORMAS E POLÍTICAS</span></h2>
+      <h2 class="c-titulo-numerado"><span class="numero">3</span><span class="titulo">SOCIOLOGIA, NORMAS E POLÍTICAS</span></h2>
       <ul class="refs">
         <li><span><b>DURKHEIM</b> · <u>O Suicídio</u>; <u>Da divisão do trabalho social.</u></span></li>
         <li><span><b>BOURDIEU</b> · <u>A distinção.</u></span></li>
@@ -77,5 +79,10 @@
       </ul>
     </section>
   </main>
+  <nav class="c-nav" aria-label="Navegação entre páginas">
+    <a class="c-nav-anterior" href="pagina-18.html" aria-label="Página anterior">‹<span>anterior</span></a>
+    <a class="c-nav-proxima" href="contracapa.html" aria-label="Próxima página">›<span>próxima</span></a>
+  </nav>
+  <script src="js/navegacao.js"></script>
 </body>
 </html>

@@ -1,0 +1,64 @@
+:root {
+  --preto: #131211;
+  --creme: #f1e8d7;
+  --vermelho: #c00d0d;
+  --neutro-1: #2e2a24;
+  --neutro-2: #8f877b;
+  --fonte-titulo: "Anton", sans-serif;
+  --fonte-corpo: "Libre Caslon Text", serif;
+  --tam-micro: 12;
+  --tam-nota: 13.5;
+  --tam-rodape: 15;
+  --tam-legenda-pequena: 17;
+  --tam-legenda: 18;
+  --tam-corpo-pequeno: 20;
+  --tam-corpo: 21;
+  --tam-corpo-grande: 23;
+  --tam-intertitulo: 25;
+  --tam-intertitulo-grande: 28;
+  --tam-subtitulo: 30;
+  --tam-destaque: 34;
+  --tam-titulo-pequeno: 39;
+  --tam-titulo-medio-pequeno: 45;
+  --tam-titulo-medio: 48;
+  --tam-titulo-secao: 55;
+  --tam-titulo-grande-pequeno: 65;
+  --tam-titulo-grande: 72;
+  --tam-titulo-xl-pequeno: 84;
+  --tam-titulo-xl: 93;
+  --tam-numero-pequeno: 103;
+  --tam-numero: 117;
+  --tam-numero-grande: 135;
+  --tam-capa: 155;
+  --tam-capa-grande: 210;
+  --tam-capa-xl: 250;
+  --nav: 64px;
+  --u: min(1px, calc((100vw - 2 * var(--nav)) / 1440), calc(100vh / 1024));
+}
+
+html,
+body {
+  background: var(--preto);
+}
+
+:root {
+  --u: min(1px, calc((100vw - 2 * var(--nav)) / 1440), calc(100dvh / 1024));
+}
+
+@media (max-width: 900px), (max-height: 600px) {
+  :root {
+    --nav: 40px;
+  }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+  :root {
+    --nav: 56px;
+    --u: min(1px, calc(100vw / 1440), calc((100dvh - var(--nav)) / 1024));
+  }
+
+  body {
+    box-sizing: border-box;
+    padding-bottom: var(--nav);
+  }
+}

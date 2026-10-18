@@ -6,7 +6,9 @@
   <title>Sob Efeito. Quem usa, quem é classificado, quem é punido?</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow:wght@700&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
   <link rel="stylesheet" href="css/pagina-11.css">
 </head>
 <body>
@@ -19,8 +21,8 @@
     <img class="papel-frase" src="assets/p11-papel-frase.png" alt="">
 
     <header class="abertura">
-      <p class="marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
-      <p class="pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">11</span></p>
+      <p class="marca c-marca"><span class="marca-sob">SOB</span> <span class="marca-efeito">EFEITO</span></p>
+      <p class="pagina-num c-pagina-num"><span class="pagina-txt">PÁGINA</span> <span class="pagina-n">11</span></p>
       <h1>
         <span class="t1">QUEM USA, QUEM É</span>
         <span class="t2">CLASSIFICADO,</span>
@@ -76,7 +78,7 @@
       <p>Em estudo com <strong class="destaque-num">4.606</strong> réus, o Ipea encontrou associações<br>entre prisão preventiva, características processuais, drogas,<br>desvantagem socioeconômica do território e <strong>resultados</strong><br><strong>mais punitivos.</strong> A raça não apresentou efeito direto<br>estatisticamente significativo sobre a sentença nos modelos<br>examinados. Isso não prova igualdade nas etapas anteriores.</p>
     </section>
 
-    <blockquote class="frase">
+    <blockquote class="frase c-citacao">
       <p>
         <span class="f1">Um sistema não é necessariamente igualitário</span>
         <span class="f2">apenas porque suas regras são gerais.</span>
@@ -84,10 +86,15 @@
       </p>
     </blockquote>
 
-    <footer class="fontes">
+    <footer class="fontes c-fontes">
       <p><strong>Fontes:</strong> Ipea/CNPCP, perfil dos processados (2023/2024–2027); Duque, França e Santos (2024);<br>Coelho, Maciel e Martinez, Ipea (2025); Becker.</p>
       <p class="ressalva">Os três estudos usam bases diferentes e não acompanham necessariamente as mesmas pessoas.</p>
     </footer>
   </main>
+  <nav class="c-nav" aria-label="Navegação entre páginas">
+    <a class="c-nav-anterior" href="pagina-10.html" aria-label="Página anterior">‹<span>anterior</span></a>
+    <a class="c-nav-proxima" href="pagina-12.html" aria-label="Próxima página">›<span>próxima</span></a>
+  </nav>
+  <script src="js/navegacao.js"></script>
 </body>
 </html>

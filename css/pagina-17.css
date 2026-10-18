@@ -7,21 +7,18 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #f4e9da;
-  --preto: #131211;
-  --vermelho: #c60403;
-  --quadrado: #d40d10;
-  --rotulo: #c8141a;
-  --tinta: #1d1b19;
-  --branco: #f7f7f7;
-  --fio: #2e2a24;
+  --papel: var(--creme);
+  --quadrado: var(--vermelho);
+  --rotulo: color-mix(in srgb, var(--vermelho) 95%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --branco: var(--creme);
+  --fio: var(--neutro-1);
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -46,7 +43,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.34) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--neutro-1) 8%, transparent) 30%, color-mix(in srgb, var(--preto) 34%, transparent) 50%, color-mix(in srgb, var(--neutro-1) 10%, transparent) 70%, transparent 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -80,9 +77,9 @@ body {
   inset: 0;
   z-index: 1;
   background:
-    linear-gradient(#6f685e, #6f685e) calc(var(--u) * 372) calc(var(--u) * 334) / calc(var(--u) * 1.5) calc(var(--u) * 492) no-repeat,
-    linear-gradient(#6f685e, #6f685e) calc(var(--u) * 721) calc(var(--u) * 334) / calc(var(--u) * 1.5) calc(var(--u) * 492) no-repeat,
-    linear-gradient(#8f877b, #8f877b) calc(var(--u) * 1067) calc(var(--u) * 334) / calc(var(--u) * 1.5) calc(var(--u) * 492) no-repeat;
+    linear-gradient(color-mix(in srgb, var(--preto) 60%, var(--creme)), color-mix(in srgb, var(--preto) 60%, var(--creme))) calc(var(--u) * 372) calc(var(--u) * 334) / calc(var(--u) * 1.5) calc(var(--u) * 492) no-repeat,
+    linear-gradient(color-mix(in srgb, var(--preto) 60%, var(--creme)), color-mix(in srgb, var(--preto) 60%, var(--creme))) calc(var(--u) * 721) calc(var(--u) * 334) / calc(var(--u) * 1.5) calc(var(--u) * 492) no-repeat,
+    linear-gradient(var(--neutro-2), var(--neutro-2)) calc(var(--u) * 1067) calc(var(--u) * 334) / calc(var(--u) * 1.5) calc(var(--u) * 492) no-repeat;
 }
 
 .linhas::before,
@@ -111,6 +108,7 @@ body {
   left: calc(var(--u) * 820);
   top: calc(var(--u) * 35);
   width: calc(var(--u) * 608);
+  clip-path: inset(0 0 0 calc(var(--u) * 60));
 }
 
 .faixa-1 {
@@ -197,7 +195,7 @@ body {
 .proposta h2,
 .etq,
 .grande {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -215,7 +213,7 @@ body {
 
 .marca span {
   top: calc(var(--u) * 19.1);
-  font-size: calc(var(--u) * 29.1);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
 }
 
 .marca-sob {
@@ -253,9 +251,9 @@ body {
 .pagina-txt {
   left: calc(var(--u) * 1325);
   top: calc(var(--u) * 22.4);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 22.9);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   line-height: 1;
   white-space: nowrap;
   color: var(--preto);
@@ -273,9 +271,9 @@ body {
 .t1 {
   left: calc(var(--u) * 34);
   top: calc(var(--u) * 75);
-  font-size: calc(var(--u) * 91.9);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
   color: var(--preto);
-  transform: scaleX(0.863);
+  transform: scaleX(0.82);
 }
 
 .t2 {
@@ -296,7 +294,7 @@ body {
   left: calc(var(--u) * (var(--cx) - 80));
   top: calc(var(--u) * (var(--cy) - var(--fs) * 0.6));
   width: calc(var(--u) * 160);
-  font-family: "Permanent Marker", cursive;
+  font-family: var(--fonte-titulo);
   font-size: calc(var(--u) * var(--fs));
   line-height: 1;
   text-align: center;
@@ -309,32 +307,32 @@ body {
 .a1 {
   --cx: 1317.7;
   --cy: 73.3;
-  --fs: 14.6;
+  --fs: var(--tam-nota);
 }
 
 .a2 {
   --cx: 1325;
   --cy: 95;
-  --fs: 14.6;
+  --fs: var(--tam-nota);
 }
 
 .a3 {
   --cx: 1341.7;
   --cy: 113.3;
-  --fs: 14.6;
+  --fs: var(--tam-nota);
 }
 
 .a4 {
   --cx: 1366.7;
   --cy: 133.3;
-  --fs: 12.6;
+  --fs: var(--tam-micro);
 }
 
 .subtitulo,
 .campo,
 .texto,
 .fontes p {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   white-space: nowrap;
   color: var(--tinta);
 }
@@ -342,7 +340,7 @@ body {
 .subtitulo {
   left: calc(var(--u) * 32);
   top: calc(var(--u) * 279.3);
-  font-size: calc(var(--u) * 30.9);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
   line-height: 1;
 }
 
@@ -359,7 +357,7 @@ body {
 .numero {
   left: calc(var(--u) * var(--num-x));
   top: calc(var(--u) * var(--num-y));
-  font-size: calc(var(--u) * 47.7);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
   color: var(--branco);
   transform: scaleX(var(--num-sx));
 }
@@ -374,7 +372,7 @@ body {
 
 .t-a,
 .t-b {
-  font-size: calc(var(--u) * 24.4);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
 }
 
 .t-a {
@@ -391,14 +389,14 @@ body {
 
 .campo {
   left: calc(var(--u) * var(--col-x));
-  font-size: calc(var(--u) * 15.9);
+  font-size: calc(var(--u) * var(--tam-rodape));
   line-height: calc(var(--u) * 22.8);
 }
 
 .campo b {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
-  font-size: calc(var(--u) * 18.6);
+  font-size: calc(var(--u) * var(--tam-legenda));
   letter-spacing: 0.075em;
   line-height: 0;
   color: var(--rotulo);
@@ -483,28 +481,28 @@ body {
 .etq-1 {
   left: calc(var(--u) * 50);
   top: calc(var(--u) * 849.1);
-  font-size: calc(var(--u) * 29);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
   transform: scaleX(0.98);
 }
 
 .etq-2 {
   left: calc(var(--u) * 596);
   top: calc(var(--u) * 858.4);
-  font-size: calc(var(--u) * 24.5);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   transform: scaleX(1.02);
 }
 
 .etq-3 {
   left: calc(var(--u) * 1139);
   top: calc(var(--u) * 854.4);
-  font-size: calc(var(--u) * 24.4);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   transform: scaleX(1.15);
 }
 
 .grande {
   left: calc(var(--u) * 60);
   top: calc(var(--u) * 884.4);
-  font-size: calc(var(--u) * 86);
+  font-size: calc(var(--u) * var(--tam-titulo-xl-pequeno));
   color: var(--branco);
   transform: scaleX(0.763);
 }
@@ -519,21 +517,21 @@ body {
 .texto-1 {
   --x: 253;
   --y: 889;
-  --fs: 14.05;
+  --fs: var(--tam-nota);
   --lh: 18.5;
 }
 
 .texto-2 {
   --x: 660;
   --y: 895.7;
-  --fs: 14.9;
+  --fs: var(--tam-rodape);
   --lh: 22.5;
 }
 
 .texto-3 {
   --x: 1114.5;
   --y: 894.4;
-  --fs: 14.8;
+  --fs: var(--tam-rodape);
   --lh: 22;
 }
 
@@ -542,4 +540,207 @@ body {
   top: calc(var(--u) * 996);
   font-size: calc(var(--u) * 10.94);
   line-height: 1;
+}
+
+html body .pagina img.faixa.faixa-1,
+html body .pagina img.faixa.faixa-2,
+html body .pagina img.faixa.faixa-3,
+html body .pagina img.faixa.faixa-4 {
+  display: none;
+}
+
+html body .proposta-1 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .proposta-1 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 30);
+  top: calc(var(--u) * 338);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .proposta-1 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 102);
+  top: calc(var(--u) * 347);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .proposta-2 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .proposta-2 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 381);
+  top: calc(var(--u) * 338);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .proposta-2 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 453);
+  top: calc(var(--u) * 347);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .proposta-3 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .proposta-3 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 730);
+  top: calc(var(--u) * 338);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .proposta-3 > .c-titulo-numerado .titulo.t-a {
+  position: absolute;
+  left: calc(var(--u) * 802);
+  top: calc(var(--u) * 339);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 27);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .proposta-3 > .c-titulo-numerado .titulo.t-b {
+  position: absolute;
+  left: calc(var(--u) * 802);
+  top: calc(var(--u) * 370);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 27);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .proposta-4 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .proposta-4 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 1077);
+  top: calc(var(--u) * 338);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .proposta-4 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 1149);
+  top: calc(var(--u) * 347);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
 }

@@ -7,25 +7,22 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #f4e7d7;
-  --preto: #131211;
-  --vermelho: #c60403;
-  --quadrado: #d1080b;
-  --vermelho-barra: #c70102;
-  --coral: #fb4951;
-  --cinza: #aca8a3;
-  --cinza-claro: #bbb9b5;
-  --caixa: #e5ddd2;
-  --tinta: #1d1b19;
-  --branco: #f7f7f7;
-  --fio: #2e2a24;
+  --papel: var(--creme);
+  --quadrado: var(--vermelho);
+  --vermelho-barra: var(--vermelho);
+  --coral: color-mix(in srgb, var(--vermelho) 65%, var(--creme));
+  --cinza: color-mix(in srgb, var(--preto) 30%, var(--creme));
+  --cinza-claro: color-mix(in srgb, var(--preto) 20%, var(--creme));
+  --caixa: color-mix(in srgb, var(--neutro-1) 5%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --branco: var(--creme);
+  --fio: var(--neutro-1);
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -50,7 +47,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.36) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--neutro-1) 8%, transparent) 30%, color-mix(in srgb, var(--preto) 36%, transparent) 50%, color-mix(in srgb, var(--neutro-1) 10%, transparent) 70%, transparent 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -139,6 +136,7 @@ body {
   left: calc(var(--u) * 510);
   top: calc(var(--u) * 392);
   width: calc(var(--u) * 218);
+  clip-path: polygon(0 9%, 30% 9%, 30% 0, 100% 0, 100% 100%, 0 100%);
 }
 
 .simbolos {
@@ -180,7 +178,7 @@ body {
 .abertura h1,
 .bloco h2,
 .valor {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -197,7 +195,7 @@ body {
 
 .marca span {
   top: calc(var(--u) * 22);
-  font-size: calc(var(--u) * 30.2);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
 }
 
 .marca-sob {
@@ -235,9 +233,9 @@ body {
 .pagina-txt {
   left: calc(var(--u) * 1321);
   top: calc(var(--u) * 25.7);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 21.4);
+  font-size: calc(var(--u) * var(--tam-corpo));
   line-height: 1;
   white-space: nowrap;
   color: var(--preto);
@@ -247,7 +245,7 @@ body {
 .pagina-n {
   left: calc(var(--u) * 1381);
   top: calc(var(--u) * 20.8);
-  font-size: calc(var(--u) * 33.7);
+  font-size: calc(var(--u) * var(--tam-destaque));
   color: var(--vermelho);
   transform: scaleX(0.95);
 }
@@ -255,7 +253,7 @@ body {
 .t1 {
   left: calc(var(--u) * 38);
   top: calc(var(--u) * 88.9);
-  font-size: calc(var(--u) * 102.3);
+  font-size: calc(var(--u) * var(--tam-numero-pequeno));
   color: var(--preto);
   transform: scaleX(0.949);
 }
@@ -263,7 +261,7 @@ body {
 .t2 {
   left: calc(var(--u) * 40);
   top: calc(var(--u) * 188.3);
-  font-size: calc(var(--u) * 103.5);
+  font-size: calc(var(--u) * var(--tam-numero-pequeno));
   color: var(--vermelho);
   transform: scaleX(0.925);
 }
@@ -281,7 +279,7 @@ body {
 .texto,
 .nota,
 .fonte p {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   white-space: nowrap;
   color: var(--tinta);
 }
@@ -289,7 +287,7 @@ body {
 .subtitulo {
   left: calc(var(--u) * 41.5);
   top: calc(var(--u) * 306.9);
-  font-size: calc(var(--u) * 22.1);
+  font-size: calc(var(--u) * var(--tam-corpo));
   line-height: 1;
 }
 
@@ -314,7 +312,7 @@ body {
 .titulo {
   left: calc(var(--u) * var(--tit-x));
   top: calc(var(--u) * var(--tit-y));
-  font-size: calc(var(--u) * 27.9);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
   color: var(--branco);
   transform: scaleX(var(--tit-sx));
 }
@@ -420,7 +418,7 @@ body {
 
 .v1a,
 .v1b {
-  --fs: 31.4;
+  --fs: var(--tam-subtitulo);
   --sx: 0.855;
 }
 
@@ -527,28 +525,28 @@ body {
 .g-alcool {
   --x: 831.5;
   --y: 480.4;
-  --fs: 19;
+  --fs: var(--tam-legenda);
   --sx: 0.8;
 }
 
 .g-vape-a {
   --x: 834.5;
   --y: 572.4;
-  --fs: 19;
+  --fs: var(--tam-legenda);
   --sx: 0.82;
 }
 
 .g-drogas {
   --x: 116.5;
   --y: 795.4;
-  --fs: 18.4;
+  --fs: var(--tam-legenda);
   --sx: 0.87;
 }
 
 .g-vape-b {
   --x: 116.5;
   --y: 895.4;
-  --fs: 18.4;
+  --fs: var(--tam-legenda);
   --sx: 0.83;
 }
 
@@ -564,7 +562,7 @@ body {
 .c2c,
 .c2d {
   --x: 917.4;
-  --fs: 15.6;
+  --fs: var(--tam-rodape);
 }
 
 .c2a {
@@ -619,7 +617,7 @@ body {
 .v2b,
 .v2c,
 .v2d {
-  --fs: 25.6;
+  --fs: var(--tam-intertitulo);
   --sx: 0.81;
 }
 
@@ -653,7 +651,7 @@ body {
 .bloco-2 .nota {
   --x: 761.5;
   --y: 648.4;
-  --fs: 19;
+  --fs: var(--tam-legenda);
   --lh: 24;
 }
 
@@ -662,7 +660,7 @@ body {
 .c3c,
 .c3d {
   --x: 215.4;
-  --fs: 15;
+  --fs: var(--tam-rodape);
 }
 
 .c3a {
@@ -717,7 +715,7 @@ body {
 .v3b,
 .v3c,
 .v3d {
-  --fs: 24.4;
+  --fs: var(--tam-corpo-grande);
   --sx: 0.81;
 }
 
@@ -746,7 +744,7 @@ body {
 .bloco-3 .nota {
   --x: 42.2;
   --y: 958.5;
-  --fs: 19.5;
+  --fs: var(--tam-legenda);
   --lh: 27.3;
 }
 
@@ -760,6 +758,197 @@ body {
 .fonte p {
   left: calc(var(--u) * 971.5);
   top: calc(var(--u) * 982.6);
-  font-size: calc(var(--u) * 13.45);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 20);
+}
+
+html body .t2.t2 {
+  margin-top: calc(var(--u) * 10);
+}
+
+html body .sublinhado.sublinhado {
+  margin-top: calc(var(--u) * 10);
+}
+
+html body .pagina img.faixa.faixa-1,
+html body .pagina img.faixa.faixa-2,
+html body .pagina img.faixa.faixa-3,
+html body .pagina img.faixa.faixa-4 {
+  display: none;
+}
+
+html body .bloco-1 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .bloco-1 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 30);
+  top: calc(var(--u) * 368);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .bloco-1 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 102);
+  top: calc(var(--u) * 377);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .bloco-2 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .bloco-2 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 751);
+  top: calc(var(--u) * 368);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .bloco-2 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 823);
+  top: calc(var(--u) * 377);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .bloco-3 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .bloco-3 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 34);
+  top: calc(var(--u) * 711);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .bloco-3 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 106);
+  top: calc(var(--u) * 720);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
+}
+
+html body .bloco-4 > .c-titulo-numerado::before {
+  content: none;
+}
+
+html body .bloco-4 > .c-titulo-numerado .numero {
+  position: absolute;
+  left: calc(var(--u) * 751);
+  top: calc(var(--u) * 711);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: calc(var(--u) * 66);
+  height: calc(var(--u) * 60);
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
+  line-height: 1;
+  color: var(--creme);
+  background: var(--vermelho);
+  transform: none;
+}
+
+html body .bloco-4 > .c-titulo-numerado .titulo {
+  position: absolute;
+  left: calc(var(--u) * 823);
+  top: calc(var(--u) * 720);
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  height: calc(var(--u) * 42);
+  margin: 0;
+  padding: 0 calc(var(--u) * 14);
+  font-family: var(--fonte-titulo);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
+  line-height: 1;
+  white-space: nowrap;
+  color: var(--creme);
+  background: var(--preto);
+  transform: none;
+  clip-path: polygon(0 6%, 4% 0, 35% 5%, 62% 0, 96% 4%, 100% 0, 99% 50%, 100% 100%, 66% 95%, 38% 100%, 3% 94%, 0 100%, 1% 50%);
 }

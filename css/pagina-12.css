@@ -7,19 +7,16 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #f1e5d1;
-  --preto: #131211;
-  --vermelho: #c60302;
-  --vermelho-sub: #ce1511;
-  --tinta: #1d1b19;
-  --fio: #2e2a24;
+  --papel: color-mix(in srgb, var(--neutro-2) 5%, var(--creme));
+  --vermelho-sub: color-mix(in srgb, var(--vermelho) 95%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --fio: var(--neutro-1);
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -44,7 +41,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.36) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--neutro-1) 8%, transparent) 30%, color-mix(in srgb, var(--preto) 36%, transparent) 50%, color-mix(in srgb, var(--neutro-1) 10%, transparent) 70%, transparent 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -95,7 +92,7 @@ body {
 .abertura h1,
 .cartao h2,
 .cartao h3 {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -112,7 +109,7 @@ body {
 
 .marca span {
   top: calc(var(--u) * 22);
-  font-size: calc(var(--u) * 30.2);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
 }
 
 .marca-sob {
@@ -150,9 +147,9 @@ body {
 .pagina-txt {
   left: calc(var(--u) * 1321);
   top: calc(var(--u) * 27);
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 20);
+  font-size: calc(var(--u) * var(--tam-corpo-pequeno));
   line-height: 1;
   white-space: nowrap;
   color: var(--preto);
@@ -163,7 +160,7 @@ body {
 .pagina-n {
   left: calc(var(--u) * 1384);
   top: calc(var(--u) * 19.8);
-  font-size: calc(var(--u) * 33.7);
+  font-size: calc(var(--u) * var(--tam-destaque));
   color: var(--vermelho);
   transform: scaleX(0.83);
 }
@@ -171,7 +168,7 @@ body {
 .t-vermelho {
   left: calc(var(--u) * 56.2);
   top: calc(var(--u) * 73.5);
-  font-size: calc(var(--u) * 100);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
   color: var(--vermelho);
   transform: scaleX(0.835);
 }
@@ -179,7 +176,7 @@ body {
 .t-preto {
   left: calc(var(--u) * 434);
   top: calc(var(--u) * 76);
-  font-size: calc(var(--u) * 93);
+  font-size: calc(var(--u) * var(--tam-titulo-xl));
   color: var(--preto);
   transform: scaleX(0.741);
 }
@@ -188,7 +185,7 @@ body {
 .texto,
 .veja,
 .rodape p {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   white-space: nowrap;
   color: var(--tinta);
 }
@@ -196,7 +193,7 @@ body {
 .subtitulo {
   left: calc(var(--u) * 256.9);
   top: calc(var(--u) * 177.7);
-  font-size: calc(var(--u) * 26.6);
+  font-size: calc(var(--u) * var(--tam-intertitulo));
   line-height: 1;
 }
 
@@ -236,7 +233,7 @@ body {
 
 .cartao h2 span {
   top: calc(var(--u) * var(--nome-y));
-  font-size: calc(var(--u) * 48.8);
+  font-size: calc(var(--u) * var(--tam-titulo-medio));
 }
 
 .nome {
@@ -254,7 +251,7 @@ body {
 .cartao h3 {
   left: calc(var(--u) * var(--sub-x));
   top: calc(var(--u) * var(--sub-y));
-  font-size: calc(var(--u) * 27.9);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
   color: var(--vermelho-sub);
   transform: scaleX(var(--sub-sx));
 }
@@ -269,14 +266,14 @@ body {
 .veja {
   left: calc(var(--u) * var(--veja-x));
   top: calc(var(--u) * var(--veja-y));
-  font-size: calc(var(--u) * 16.8);
+  font-size: calc(var(--u) * var(--tam-legenda-pequena));
   line-height: 1;
 }
 
 .veja strong {
-  font-family: "Barlow", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: calc(var(--u) * 19);
+  font-size: calc(var(--u) * var(--tam-legenda));
   color: var(--vermelho);
 }
 
@@ -439,6 +436,6 @@ body {
 .rodape p {
   left: calc(var(--u) * 401.4);
   top: calc(var(--u) * 977.3);
-  font-size: calc(var(--u) * 14.53);
+  font-size: calc(var(--u) * var(--tam-nota));
   line-height: 1;
 }

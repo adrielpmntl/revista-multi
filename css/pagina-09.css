@@ -7,22 +7,19 @@
 }
 
 :root {
-  --u: calc(min(100vw, 100vh * 1440 / 1024) / 1440);
-  --papel: #ede4d2;
-  --preto: #131211;
-  --vermelho: #b80202;
-  --vermelho-barra: #be0705;
-  --preenchimento: #b60101;
-  --trilha: #dbd2c3;
-  --tinta: #1d1b19;
-  --branco: #f6f1e8;
-  --fio: #2e2a24;
+  --papel: color-mix(in srgb, var(--neutro-2) 5%, var(--creme));
+  --vermelho-barra: var(--vermelho);
+  --preenchimento: var(--vermelho);
+  --trilha: color-mix(in srgb, var(--preto) 10%, var(--creme));
+  --tinta: color-mix(in srgb, var(--preto) 95%, var(--creme));
+  --branco: var(--creme);
+  --fio: var(--neutro-1);
 }
 
 html,
 body {
   min-height: 100%;
-  background: #000;
+  background: var(--preto);
 }
 
 body {
@@ -47,7 +44,7 @@ body {
   top: 0;
   width: calc(var(--u) * 100);
   height: 100%;
-  background: linear-gradient(90deg, rgba(70, 50, 30, 0) 0%, rgba(70, 50, 30, 0.08) 30%, rgba(40, 28, 15, 0.36) 50%, rgba(70, 50, 30, 0.1) 70%, rgba(70, 50, 30, 0) 100%);
+  background: linear-gradient(90deg, transparent 0%, color-mix(in srgb, var(--neutro-1) 8%, transparent) 30%, color-mix(in srgb, var(--preto) 36%, transparent) 50%, color-mix(in srgb, var(--neutro-1) 10%, transparent) 70%, transparent 100%);
   mix-blend-mode: multiply;
   pointer-events: none;
   z-index: 11;
@@ -138,7 +135,7 @@ body {
 .retrato h2,
 .grande,
 .valor {
-  font-family: "Anton", sans-serif;
+  font-family: var(--fonte-titulo);
   font-weight: 400;
   line-height: 1;
   white-space: nowrap;
@@ -157,7 +154,7 @@ body {
 .numero {
   left: calc(var(--u) * 34.8);
   top: calc(var(--u) * 30.5);
-  font-size: calc(var(--u) * 23.3);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   color: var(--vermelho);
   transform: scaleX(1.01);
 }
@@ -174,7 +171,7 @@ body {
 
 .marca span {
   top: calc(var(--u) * 18.2);
-  font-size: calc(var(--u) * 27.9);
+  font-size: calc(var(--u) * var(--tam-intertitulo-grande));
 }
 
 .marca-sob {
@@ -192,15 +189,15 @@ body {
 .t1 {
   left: calc(var(--u) * 35.5);
   top: calc(var(--u) * 61);
-  font-size: calc(var(--u) * 157);
+  font-size: calc(var(--u) * var(--tam-capa));
   color: var(--preto);
-  transform: scaleX(0.794);
+  transform: scaleX(0.735);
 }
 
 .t2 {
   left: calc(var(--u) * 34.3);
   top: calc(var(--u) * 207);
-  font-size: calc(var(--u) * 155.8);
+  font-size: calc(var(--u) * var(--tam-capa));
   color: var(--vermelho);
   transform: scaleX(0.791);
 }
@@ -211,7 +208,7 @@ body {
 .rotulo,
 .aviso,
 .fontes p {
-  font-family: "Libre Caslon Text", serif;
+  font-family: var(--fonte-corpo);
   white-space: nowrap;
   color: var(--tinta);
 }
@@ -219,7 +216,7 @@ body {
 .subtitulo {
   left: calc(var(--u) * 42.1);
   top: calc(var(--u) * 362.8);
-  font-size: calc(var(--u) * 30.3);
+  font-size: calc(var(--u) * var(--tam-subtitulo));
   line-height: calc(var(--u) * 37);
 }
 
@@ -295,7 +292,7 @@ body {
 
 .bloco-1 h2 span {
   top: calc(var(--u) * 476.3);
-  font-size: calc(var(--u) * 41.9);
+  font-size: calc(var(--u) * var(--tam-titulo-pequeno));
 }
 
 .bloco-1 .preto {
@@ -351,18 +348,18 @@ body {
 .bloco-2 p {
   left: calc(var(--u) * 72.3);
   top: calc(var(--u) * 704.5);
-  font-size: calc(var(--u) * 16.8);
+  font-size: calc(var(--u) * var(--tam-legenda-pequena));
 }
 
 .bloco-3 p {
   left: calc(var(--u) * 72.5);
   top: calc(var(--u) * 864.8);
-  font-size: calc(var(--u) * 16.2);
+  font-size: calc(var(--u) * var(--tam-rodape));
 }
 
 .retrato h2 span {
   top: calc(var(--u) * 477.4);
-  font-size: calc(var(--u) * 72.1);
+  font-size: calc(var(--u) * var(--tam-titulo-grande));
 }
 
 .r-branco {
@@ -385,13 +382,13 @@ body {
 .lecuca-a {
   left: calc(var(--u) * 524.4);
   top: calc(var(--u) * 564.4);
-  font-size: calc(var(--u) * 20.6);
+  font-size: calc(var(--u) * var(--tam-corpo));
 }
 
 .lecuca-b {
   left: calc(var(--u) * 869.3);
   top: calc(var(--u) * 560.8);
-  font-size: calc(var(--u) * 24.85);
+  font-size: calc(var(--u) * var(--tam-intertitulo));
   color: var(--vermelho);
 }
 
@@ -409,7 +406,7 @@ body {
 .grande {
   left: calc(var(--u) * var(--grande-x));
   top: calc(var(--u) * 597);
-  font-size: calc(var(--u) * 46.5);
+  font-size: calc(var(--u) * var(--tam-titulo-medio-pequeno));
   color: var(--vermelho);
   transform: scaleX(var(--grande-sx));
 }
@@ -418,13 +415,13 @@ body {
   left: calc(var(--u) * var(--rotulo-x));
   top: calc(var(--u) * 648.6);
   font-weight: 700;
-  font-size: calc(var(--u) * 16);
+  font-size: calc(var(--u) * var(--tam-rodape));
   line-height: calc(var(--u) * 19.5);
 }
 
 .indicador-1 .rotulo {
   top: calc(var(--u) * 648.2);
-  font-size: calc(var(--u) * 17);
+  font-size: calc(var(--u) * var(--tam-legenda-pequena));
 }
 
 .trilha {
@@ -449,7 +446,7 @@ body {
   left: 0;
   right: 0;
   bottom: calc(var(--u) * 9.2);
-  font-size: calc(var(--u) * 24.4);
+  font-size: calc(var(--u) * var(--tam-corpo-grande));
   text-align: center;
   color: var(--branco);
   transform: scaleX(0.927);
@@ -488,13 +485,13 @@ body {
   top: calc(var(--u) * 853);
   width: calc(var(--u) * 14);
   height: calc(var(--u) * 51);
-  background: #c50202;
+  background: var(--vermelho);
 }
 
 .aviso {
   left: calc(var(--u) * 553.2);
   top: calc(var(--u) * 855.6);
-  font-size: calc(var(--u) * 17.05);
+  font-size: calc(var(--u) * var(--tam-legenda-pequena));
   line-height: calc(var(--u) * 25);
   color: var(--branco);
 }
@@ -512,7 +509,7 @@ body {
 .fontes p {
   left: calc(var(--u) * 516.6);
   top: calc(var(--u) * 955.4);
-  font-size: calc(var(--u) * 12.49);
+  font-size: calc(var(--u) * var(--tam-micro));
   line-height: 1;
 }
 
