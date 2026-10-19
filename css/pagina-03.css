@@ -262,10 +262,11 @@ body {
 .legenda-sociologo {
   left: calc(var(--u) * 586);
   top: calc(var(--u) * 802);
-  width: calc(var(--u) * 136);
-  height: calc(var(--u) * 77);
+  width: calc(var(--u) * 146);
+  height: auto;
   padding-left: calc(var(--u) * 13.5);
-  padding-top: calc(var(--u) * 5.2);
+  padding-top: calc(var(--u) * 7);
+  padding-bottom: calc(var(--u) * 8);
   font-size: calc(var(--u) * var(--tam-nota));
   line-height: calc(var(--u) * 17);
 }
