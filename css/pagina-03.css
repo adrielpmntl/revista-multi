@@ -210,7 +210,7 @@ body {
 .texto-direita p {
   left: calc(var(--u) * 772);
   font-size: calc(var(--u) * var(--tam-nota));
-  line-height: calc(var(--u) * 18.2);
+  line-height: calc(var(--u) * 17.4);
 }
 
 .texto-direita em {
@@ -218,24 +218,24 @@ body {
 }
 
 .paragrafo-1 {
-  top: calc(var(--u) * 44.6);
+  top: calc(var(--u) * 34);
 }
 
 .paragrafo-2 {
-  top: calc(var(--u) * 410.4);
+  top: calc(var(--u) * 376.6);
 }
 
 .paragrafo-3 {
-  top: calc(var(--u) * 721.6);
+  top: calc(var(--u) * 667);
 }
 
 .texto-direita::after {
   content: "";
   position: absolute;
   left: calc(var(--u) * 1130);
-  top: calc(var(--u) * 30);
+  top: calc(var(--u) * 26);
   width: calc(var(--u) * 1);
-  height: calc(var(--u) * 722);
+  height: calc(var(--u) * 632);
   background: var(--borda);
 }
 
