@@ -263,7 +263,7 @@ body {
   left: calc(var(--u) * 586);
   top: calc(var(--u) * 802);
   width: calc(var(--u) * 136);
-  height: calc(var(--u) * 60);
+  height: calc(var(--u) * 77);
   padding-left: calc(var(--u) * 13.5);
   padding-top: calc(var(--u) * 5.2);
   font-size: calc(var(--u) * var(--tam-nota));
