@@ -1,0 +1,6 @@
+:root { --u: 1px !important; }
+html, body { width: 1440px !important; height: 1024px !important; min-height: 1024px !important; overflow: hidden !important; }
+body { padding: 0 !important; margin: 0 !important; }
+.c-nav { display: none !important; }
+:focus-visible { outline: 3px solid var(--vermelho) !important; outline-offset: -3px !important; }
+.indice a:focus-visible .item { outline: 3px solid var(--vermelho); }

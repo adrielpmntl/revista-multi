@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sob Efeito — Leitor</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Libre+Caslon+Text:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/componentes.css">
+  <link rel="stylesheet" href="css/leitor.css">
+  <script src="js/leitor.js" defer></script>
+</head>
+<body>
+  <main class="leitor" aria-label="Revista Sob Efeito">
+    <div class="janela">
+      <div class="livro" id="livro" aria-label="Páginas da revista" aria-busy="true">
+        <div class="page" data-arquivo="index.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-02.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-03.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-04.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-05.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-06.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-07.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-08.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-09.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-10.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-11.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-12.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-13.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-14.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-15.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-16.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-17.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-18.html" data-density="soft"></div>
+        <div class="page" data-arquivo="pagina-19.html" data-density="soft"></div>
+        <div class="page" data-arquivo="contracapa.html" data-density="soft"></div>
+      </div>
+      <div class="lombada" aria-hidden="true"></div>
+    </div>
+  </main>
+  <nav class="c-nav" aria-label="Navegação entre páginas">
+    <a id="anterior" class="c-nav-anterior" href="#p01" aria-label="Página anterior">‹<span>anterior</span></a>
+    <a id="proxima" class="c-nav-proxima" href="#p02" aria-label="Próxima página">›<span>próxima</span></a>
+  </nav>
+  <p id="estado" class="estado" role="status" aria-live="polite" aria-atomic="true">Carregando revista…</p>
+  <p id="erro" class="erro" role="alert" hidden></p>
+</body>
+</html>
