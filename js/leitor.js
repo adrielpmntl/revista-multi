@@ -4,6 +4,7 @@
   const arquivos = paginas.map(pagina => pagina.dataset.arquivo);
   const anterior = document.querySelector('#anterior');
   const proxima = document.querySelector('#proxima');
+  const sumario = document.querySelector('#sumario');
   const estado = document.querySelector('#estado');
   const erro = document.querySelector('#erro');
   const reduzido = matchMedia('(prefers-reduced-motion: reduce)');
@@ -146,6 +147,8 @@
     });
     anterior.setAttribute('aria-disabled', String(atual === 0));
     proxima.setAttribute('aria-disabled', String(atual === 19));
+    if (atual === 1) sumario.setAttribute('aria-current', 'page');
+    else sumario.removeAttribute('aria-current');
     anterior.href = hash(Math.max(0, atual - 1));
     proxima.href = hash(Math.min(19, atual + 1));
     estado.textContent = `Página ${atual + 1} de 20`;
@@ -255,6 +258,7 @@
   function integrar() {
     anterior.addEventListener('click', evento => { evento.preventDefault(); ir(atual - 1, 'anterior'); });
     proxima.addEventListener('click', evento => { evento.preventDefault(); ir(atual + 1, 'proxima'); });
+    sumario.addEventListener('click', evento => { evento.preventDefault(); ir(1, 'direto'); });
     document.addEventListener('keydown', evento => {
       if (evento.defaultPrevented || evento.ctrlKey || evento.altKey || evento.metaKey || evento.shiftKey) return;
       if (evento.composedPath().some(alvo => alvo instanceof Element && alvo.matches('input,textarea,select,[contenteditable="true"]'))) return;

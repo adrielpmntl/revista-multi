@@ -231,11 +231,11 @@ h1 span {
 
 
 .padroes-nota {
-  left: calc(var(--u) * 755);
-  top: calc(var(--u) * 539);
+  left: calc(var(--u) * 1014);
+  top: calc(var(--u) * 260);
   font-size: calc(var(--u) * var(--tam-nota));
   font-style: italic;
-  line-height: 1;
+  line-height: calc(var(--u) * 18);
 }
 
 .tarja-padroes {
@@ -258,14 +258,14 @@ h1 span {
 }
 
 .padrao img {
-  left: calc(var(--u) * (var(--icone) - 37));
+  left: calc(var(--u) * (var(--icone) - 29));
   top: calc(var(--u) * 316);
-  width: calc(var(--u) * 74);
+  width: calc(var(--u) * 58);
 }
 
 .padrao h3 {
   left: calc(var(--u) * var(--titulo));
-  top: calc(var(--u) * 399.4);
+  top: calc(var(--u) * 382);
   font-family: var(--fonte-titulo);
   font-weight: 400;
   font-size: calc(var(--u) * var(--tam-corpo));
@@ -278,10 +278,10 @@ h1 span {
 
 .padrao p {
   left: calc(var(--u) * var(--texto));
-  top: calc(var(--u) * 429.6);
-  font-size: calc(var(--u) * var(--tam-nota));
+  top: calc(var(--u) * 410);
+  font-size: calc(var(--u) * 13);
   letter-spacing: -0.02em;
-  line-height: calc(var(--u) * 20.6);
+  line-height: calc(var(--u) * 16.2);
 }
 
 .padrao-2::before,
@@ -292,35 +292,35 @@ h1 span {
   left: calc(var(--u) * var(--divisor));
   top: calc(var(--u) * 319);
   width: calc(var(--u) * 1);
-  height: calc(var(--u) * 208);
+  height: calc(var(--u) * 236);
   background: var(--fio-padrao);
 }
 
 .padrao-1 {
-  --icone: 828.5;
-  --titulo: 828;
+  --icone: 834;
+  --titulo: 834;
   --texto: 755;
 }
 
 .padrao-2 {
-  --icone: 990.5;
-  --titulo: 990.5;
-  --texto: 931;
-  --divisor: 919;
+  --icone: 1005;
+  --titulo: 1005;
+  --texto: 929;
+  --divisor: 917;
 }
 
 .padrao-3 {
-  --icone: 1155;
-  --titulo: 1158;
-  --texto: 1086;
-  --divisor: 1064.5;
+  --icone: 1176;
+  --titulo: 1176;
+  --texto: 1105;
+  --divisor: 1093;
 }
 
 .padrao-4 {
-  --icone: 1330;
-  --titulo: 1330.5;
-  --texto: 1263;
-  --divisor: 1246;
+  --icone: 1345;
+  --titulo: 1345;
+  --texto: 1271;
+  --divisor: 1259;
 }
 
 .grupos {
