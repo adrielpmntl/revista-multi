@@ -208,18 +208,25 @@
     const caixa = flip.getUI().getDistElement().getBoundingClientRect();
     return { x: evento.clientX - caixa.left, y: evento.clientY - caixa.top };
   }
+  function cantoSuperior(p, rect) {
+    const margem = Math.max(44, rect.pageWidth * .16);
+    return p.y >= 0 && p.y < margem && (p.x < margem || p.x > rect.pageWidth - margem);
+  }
   function iniciarGesto(evento) {
     if (ocupado || evento.button !== 0 || interativo(evento)) return;
     const p = posicao(evento);
     const rect = flip.getBoundsRect();
-    const margem = Math.max(44, rect.pageWidth * .16);
-    const canto = (p.x < margem || p.x > rect.pageWidth - margem) && (p.y < margem || p.y > rect.height - margem);
-    gesto = { id: evento.pointerId, inicio: p, ultimo: p, canto, ativo: false, largura: rect.pageWidth, altura: rect.height };
+    if (!cantoSuperior(p, rect)) return;
+    gesto = { id: evento.pointerId, inicio: p, ultimo: p, canto: true, ativo: false, largura: rect.pageWidth, altura: rect.height };
     livro.setPointerCapture(evento.pointerId);
-    if (canto) dobrar(evento);
+    dobrar(evento);
+  }
+  function indicarCanto(evento) {
+    if (gesto || ocupado || evento.pointerType !== 'mouse') return;
+    livro.style.cursor = !interativo(evento) && cantoSuperior(posicao(evento), flip.getBoundsRect()) ? 'grab' : '';
   }
   function dobrar(evento) {
-    if (!gesto || evento.pointerId !== gesto.id) return;
+    if (!gesto || evento.pointerId !== gesto.id) { indicarCanto(evento); return; }
     const p = posicao(evento);
     gesto.ultimo = p;
     const dx = p.x - gesto.inicio.x;
